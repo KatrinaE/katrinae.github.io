@@ -1,0 +1,234 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Katrina Ellison Geltman</title>
+		<meta name="description" content="">
+		<meta name="author" content="Katrina Ellison Geltman">
+
+		<link rel="stylesheet" href="/theme/css/foundation.css" />
+		<link rel="stylesheet" href="/theme/css/pygment/manni.css" />
+		<link rel="stylesheet" href="/theme/css/custom.css" />
+
+
+		<script src="/theme/js/modernizr.js"></script>
+		<!-- Feeds -->
+
+
+		<!-- mathjax config similar to math.stackexchange -->
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			jax: ["input/TeX", "output/HTML-CSS"],
+			tex2jax: {
+				inlineMath: [ ['$', '$'] ],
+				displayMath: [ ['$$', '$$']],
+				processEscapes: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+			},
+			messageStyle: "none",
+			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+		});
+		</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	</head>
+	<body>
+		<div class="off-canvas-wrap">
+			<div class="inner-wrap">
+				<!-- mobile top bar to activate nav -->
+				<nav class="tab-bar show-for-small">
+					<section class="left-small">
+						<a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+					</section>
+
+					<section class="middle tab-bar-section">
+						<h1 class="title">Katrina&nbsp;Ellison&nbsp;Geltman</h1>
+					</section>
+				</nav>
+
+				<!-- mobile side bar nav -->
+				<aside class="left-off-canvas-menu">
+					<ul class="off-canvas-list">
+						<li><a href="">Home</a></li>
+						<li><label>Categories</label></li>
+							<li ><a href="/category/hacker-school.html">Hacker School</a></li>
+							<li ><a href="/category/how-to.html">How-to</a></li>
+							<li ><a href="/category/seating-chart-creator.html">Seating Chart Creator</a></li>
+
+						<li><label>Links</label></li>
+							<li><a href="http://www.github.com/katrinae">Github</a></li>
+							<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+
+						<!--
+							-->
+
+						<li><label>Monthly Archives</label></li>
+									<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+									<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
+
+						<li><label>Links</label></li>
+					</ul>
+				</aside>
+
+				<!-- top bar nav -->
+				<nav class="top-bar hide-for-small-only" data-topbar>
+					<ul class="title-area">
+						<li class="name">
+							<h1><a href="/">Katrina Ellison Geltman</a></h1>
+						</li>
+					</ul>
+
+					<!-- <section class="top-bar-section">
+						<ul class="left">
+								<li ><a href="/category/hacker-school.html">Hacker School</a></li>
+								<li ><a href="/category/how-to.html">How-to</a></li>
+								<li ><a href="/category/seating-chart-creator.html">Seating Chart Creator</a></li>
+						</ul>
+					</section> -->
+
+					<section class="top-bar-section">
+						<ul class="left">
+								<li ><a href="/pages/about-me.html">About</a></li>
+								<li ><a href="/pages/projects.html">Projects</a></li>
+						</ul>
+					</section>
+
+
+					<section class="top-bar-section">
+					  <ul class="left">
+					    <li><a href="/archives.html">Archives</a></li>
+					  </ul>
+					</section>
+
+
+				</nav>
+
+				<!-- Main Page Content and Sidebar -->
+				<section class="main-section">
+					<div class="row">
+						<!-- Main Content -->
+						<div class="medium-9 small-12 columns" role="content">
+							<div class="row">
+								<div class="small-12 columns">
+									<h2>Seating Chart Creator</h2>
+								</div>
+							</div>
+<div class="row">
+	<div class="small-12 columns">
+		<p>Seating Chart Creator outputs a third CSV file, <code>output.csv</code>.
+Its form is the same as that of <code>people.csv</code>, but all cells
+in the days columns contain a table name.</p>
+<p><strong><em>UPDATE SO HEADERS OF PEOPLE.CSV AND OUTPUT.CSV 
+ARE ACTUALLY THE SAME NAME</em></strong></p>
+<h3>Program Overview</h3>
+<p>Seating Chart Creator <strong><em>HAS A GUI??</em></strong></p>
+<p>Seating Chart Creator imports <code>people.csv</code> and <code>tables.csv</code>
+and from them creates person and table objects.</p>
+<p>A person object has an id, category, first name, and last name, 
+as well as fields for each day (e.g. <code>self.Monday</code>, <code>self.Tuesday</code>),
+which will store the names of the tables where the person will sit.
+A table object has a name, day, capacity, and list of people
+sitting there. (Except for the head table, this list is initially
+empty).</p>
+<p>For convenience, a list of days is created from the header row
+of <code>tables.csv</code>.</p>
+<p>The seating chart is created by populating the days' fields in
+the person objects and the lists of people in the table objects.
+An initial, random solution is generated, and then 
+<a href="/sim-anneal-overview.html">simulated annealing</a>
+is used to refine that solution until an optimum is reached.
+The <code>anneal</code> function switches people around, looking for
+better solutions, according to specific annealing parameters.</p>
+<p>One of those parameters is a variable called <code>T</code>, for temperature.
+<code>T</code> starts out large and is
+slowly lowered. The annealing algorithm behaves slightly
+differently at each value of <code>T</code>, helping it find a
+good solution. Multiple switches are carried out at each
+temperature. </p>
+<p>After each switch, the cost of that solution is calculated.
+A set of cost functions, one for each constraint, is assessed.
+The total cost of the solution is the sum of these individual
+costs.</p>
+<p>Just after <code>T</code> is lowered, the best solution is saved so that
+it can be returned if the algorithm terminates.
+After that, a progress graph - a scatterplot showing 
+the best cost found at the end of each iteration - is updated.
+Initially, the cost drops quickly; by the end,
+many iterations need to be conducted to squeeze out improvements.</p>
+<p>In order to update the progress graph, <code>anneal</code> is used as a
+generator. <strong>ADD MORE</strong>.</p>
+<p>When an optimal solution is found or when the temperature reaches a
+predefined minimum, the program terminates and outputs the best
+solution found.</p>
+<h3>Program Structure</h3>
+<p><em>Make a pretty tree</em></p>
+	</div>
+</div>
+						</div>
+						<!-- End Main Content -->
+						<!-- Sidebar -->
+						<aside class="medium-3 hide-for-small-only columns">
+							<div class="panel">
+								<ul class="side-nav">
+								  <img src="/theme/img/headshot.png" />
+								</ul>
+							</div>
+
+							<div class="panel">
+								<h5>Links</h5>
+								  <p style="margin-bottom:0px;"><a href="http://www.github.com/katrinae">Github</a></p>
+								  <p style="margin-bottom:0px;"><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></p>
+							</div>
+
+							<!-- 
+							<div class="panel">
+								<h5>Tags</h5>
+								<ul class="tag-cloud">
+									<li><a href="/tag/seating-chart/" class="tag-1">Seating Chart</a></li>
+									<li><a href="/tag/arduino/" class="tag-4">Arduino</a></li>
+									<li><a href="/tag/narratives/" class="tag-4">narratives</a></li>
+									<li><a href="/tag/algorithms/" class="tag-4">Algorithms</a></li>
+								</ul>
+							</div>-->
+
+							<div class="panel">
+								<h5>Monthly Archives</h5>
+								<p style="margin-bottom:0px;"><a href="/posts/2014/03/">March 2014 (2)</a>
+								<p style="margin-bottom:0px;"><a href="/posts/2014/02/">February 2014 (2)</a>
+								</ul>
+							</div>
+
+							<!--
+							<div class="panel">
+								<h5>Social</h5>
+								<ul class="side-nav">
+								</ul>
+							</div>
+							-->
+						</aside>
+						<!-- End Sidebar -->
+					</div>
+
+					<!-- Footer -->
+					<footer class="row">
+						<div class="medium-9 small-12">
+							<hr/>
+							<p class="text-center"><span style="font-style:italic; color: lightgray;  font-size:1em">Powered by Pelican and based on a theme by <a href="http://hamaluik.com" style="color:lightgray; hover:lightgray">Kenton Hamaluik</a>.</span></p>
+						</div>
+					</footer>
+					<!-- End Footer -->
+				</section>
+				<a class="exit-off-canvas"></a>
+			</div><!--off-canvas inner-->
+		</div><!--off-canvas wrap-->
+
+		<script src="/theme/js/jquery.js"></script>
+		<script src="/theme/js/foundation.min.js"></script>
+		<script>
+			$(document).foundation();
+		</script>
+	</body>
+</html>
