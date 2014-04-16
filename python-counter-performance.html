@@ -1,0 +1,443 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Katrina Ellison Geltman</title>
+		<meta name="description" content="">
+		<meta name="author" content="Katrina Ellison Geltman">
+
+		<link rel="stylesheet" href="/theme/css/foundation.css" />
+		<link rel="stylesheet" href="/theme/css/pygment/manni.css" />
+		<link rel="stylesheet" href="/theme/css/custom.css" />
+
+
+		<script src="/theme/js/modernizr.js"></script>
+		<!-- Feeds -->
+
+
+		<!-- mathjax config similar to math.stackexchange -->
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			jax: ["input/TeX", "output/HTML-CSS"],
+			tex2jax: {
+				inlineMath: [ ['$', '$'] ],
+				displayMath: [ ['$$', '$$']],
+				processEscapes: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+			},
+			messageStyle: "none",
+			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+		});
+		</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	</head>
+	<body>
+		<div class="off-canvas-wrap">
+			<div class="inner-wrap">
+				<!-- mobile top bar to activate nav -->
+				<nav class="tab-bar show-for-small">
+					<section class="left-small">
+						<a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+					</section>
+
+					<section class="middle tab-bar-section">
+						<h1 class="title">Katrina&nbsp;Ellison&nbsp;Geltman</h1>
+					</section>
+				</nav>
+
+				<!-- mobile side bar nav -->
+				<aside class="left-off-canvas-menu">
+					<ul class="off-canvas-list">
+						<li><a href="">Home</a></li>
+						<li><label>Categories</label></li>
+							<li ><a href="/category/hacker-school.html">Hacker School</a></li>
+							<li ><a href="/category/how-to.html">How-to</a></li>
+							<li class="active"><a href="/category/misc.html">misc</a></li>
+							<li ><a href="/category/seating-chart-creator.html">Seating Chart Creator</a></li>
+
+						<li><label>Links</label></li>
+							<li><a href="http://www.github.com/katrinae">Github</a></li>
+							<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+
+						<!--
+							-->
+
+						<li><label>Monthly Archives</label></li>
+									<li><a href="/posts/2014/04/">April 2014 (2)</a></li>
+									<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+									<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
+
+						<li><label>Links</label></li>
+					</ul>
+				</aside>
+
+				<!-- top bar nav -->
+				<nav class="top-bar hide-for-small-only" data-topbar>
+					<ul class="title-area">
+						<li class="name">
+							<h1><a href="/">Katrina Ellison Geltman</a></h1>
+						</li>
+					</ul>
+
+					<!-- <section class="top-bar-section">
+						<ul class="left">
+								<li ><a href="/category/hacker-school.html">Hacker School</a></li>
+								<li ><a href="/category/how-to.html">How-to</a></li>
+								<li class="active"><a href="/category/misc.html">misc</a></li>
+								<li ><a href="/category/seating-chart-creator.html">Seating Chart Creator</a></li>
+						</ul>
+					</section> -->
+
+					<section class="top-bar-section">
+						<ul class="left">
+								<li ><a href="/pages/about-me.html">About</a></li>
+								<li ><a href="/pages/projects.html">Projects</a></li>
+						</ul>
+					</section>
+
+
+					<section class="top-bar-section">
+					  <ul class="left">
+					    <li><a href="/archives.html">Archives</a></li>
+					  </ul>
+					</section>
+
+
+				</nav>
+
+				<!-- Main Page Content and Sidebar -->
+				<section class="main-section">
+					<div class="row">
+						<!-- Main Content -->
+						<div class="medium-9 small-12 columns" role="content">
+<article>
+	<h2>Python Counter Performance
+	</h2>
+	<h5>Thu 17 April 2014</h5>
+	<p>Python's Counters are a subclass of dictionaries used for tallying how many
+times elements occur in an iterable data structure like a list.
+I'm writing an application that makes heavy use of Counters -
+like creating 10,000,000 counters in one run - and I found that they were
+a performance chokepoint. </p>
+<p>Since each of my counters is very
+similar to the previous one generated, I hoped that I could improve performance
+by continually mutating an existing counter rather than creating all of them from
+scratch. I hoped to do this by creating a Counter with a short list of
+changes and adding it to my existing Counter.</p>
+<h3>tl;dr</h3>
+<p>Adding Python Counters takes the same amount of time as creating
+each of the addend Counters. There's no performance gain from applying
+changes to an existing Counter by adding a second one to it vs.
+generating a new Counter from scratch.</p>
+<h3>Counter performance vs. dictionary performance</h3>
+<p>Python advertises Counters as 'fast'. For small <em>n</em> (here, <em>n</em> = 10) creating one is about 4 times 
+slower than creating a regular dictionary:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">timeit</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="c"># Timing dictionary creation</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">timeit</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="s">&quot;x = { num : &#39;foo&#39; for num in range(0, 10)}&quot;</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="mf">0.003952980041503906</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="c"># Timing Counter creation</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">timeit</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="s">&quot;from collections import Counter; x = Counter({ num : &#39;foo&#39; for num in range(0, 10)})&quot;</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="mf">0.016061067581176758</span>
+</pre></div>
+
+
+<p>For larger <em>n</em>, the performance disparity isn't nearly as extreme. Here, <em>n</em> = 1,000,000 and 
+Counter creation is about 35% slower than dictionary creation:</p>
+<div class="highlight"><pre><span class="c"># Timing dictionary creation</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">timeit</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="s">&quot;x = { num : &#39;foo&#39; for num in range(0, 1000000)}&quot;</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="mf">123.48868298530579</span>
+
+<span class="c"># Timing Counter creation</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">timeit</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="s">&quot;from collections import Counter; x = Counter({ num : &#39;foo&#39; for num in range(0, 1000000)})&quot;</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="mf">167.64849400520325</span>
+</pre></div>
+
+
+<h3>Creating counters</h3>
+<p>When creating a Counter, you can either create an empty Counter, or you can pass it an iterable whose items
+you want to count. If you pass it an iterable, most of the activity to create the Counter takes place in
+its <code>update</code> method - <code>Counter.__init__()</code> just creates an
+empty Counter, then updates it with values from the iterable. For example, here are the interesting parts
+of cProfile output on code to create a Counter of 1,500 elements 1,000 times. </p>
+<table>
+<thead>
+<tr>
+<th>ncalls</th>
+<th>tottime</th>
+<th>percall</th>
+<th>cumtime</th>
+<th>percall</th>
+<th>filename:lineno(function)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1000</td>
+<td>0.957</td>
+<td>0.001</td>
+<td>1.201</td>
+<td>0.001</td>
+<td>collections.py:501(update)</td>
+</tr>
+<tr>
+<td>1575000</td>
+<td>0.219</td>
+<td>0.000</td>
+<td>0.219</td>
+<td>0.000</td>
+<td>{method 'get' of 'dict' objects}</td>
+</tr>
+<tr>
+<td>36000</td>
+<td>0.020</td>
+<td>0.000</td>
+<td>0.020</td>
+<td>0.000</td>
+<td>counter-perf-test.py:18(<genexpr>)</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>0.003</td>
+<td>0.000</td>
+<td>0.004</td>
+<td>0.000</td>
+<td>abc.py:128(<strong>instancecheck</strong>)</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>0.002</td>
+<td>0.000</td>
+<td>1.203</td>
+<td>0.001</td>
+<td>collections.py:438(<strong>init</strong>)</td>
+</tr>
+</tbody>
+</table>
+<p><code>Counter.update()</code> takes by far the most time, and on top of that
+it's what calls most of the functions below it. What does it look like?</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterable</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">iterable</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="p">:</span>
+                <span class="n">self_get</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span>
+                <span class="k">for</span> <span class="n">elem</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">iterable</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+                    <span class="bp">self</span><span class="p">[</span><span class="n">elem</span><span class="p">]</span> <span class="o">=</span> <span class="n">self_get</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">count</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">super</span><span class="p">(</span><span class="n">Counter</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span> <span class="c"># fast path when counter is empty</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">self_get</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span>
+            <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+                <span class="bp">self</span><span class="p">[</span><span class="n">elem</span><span class="p">]</span> <span class="o">=</span> <span class="n">self_get</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">kwds</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds</span><span class="p">)</span>
+</pre></div>
+
+
+<p>First, <code>update</code> checks to see if the input iterable is a <code>Mapping</code> - a dictionary or 
+dictionary subclass (like a Counter). This is so it can use the <code>update</code> method of 
+Counter's parent class, <code>dict</code>, if the Counter is empty - a performance enhancement.</p>
+<p>If the input iterable is not a <code>Mapping</code>, or if the Counter already has stuff in it, 
+<code>update</code> loops through the iterator. Each element in the iterator is a key in the 
+Counter. As <code>update</code> loops, it increments the old value stored in <code>self[elem]</code> by 1. </p>
+<p>Finally, <code>update</code> updates values passed by keyword argument, like those shown below:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">key1</span> <span class="o">=</span> <span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="n">key2</span> <span class="o">=</span> <span class="s">&#39;var&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">x</span>
+<span class="n">Counter</span><span class="p">({</span><span class="s">&#39;key2&#39;</span><span class="p">:</span> <span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="s">&#39;key1&#39;</span><span class="p">:</span> <span class="s">&#39;foo&#39;</span><span class="p">})</span>
+</pre></div>
+
+
+<p>The performance hits in <code>update</code> are in the time it takes to (1) loop through the 
+iterator, and (2) <code>get</code> the Counter value of  each element in the iterator. So 
+performance is tied almost entirely to the size of the iterator we're instantiating 
+the Counter with.</p>
+<h3>Adding Counters</h3>
+<p>Given that, adding a short Counter to a large Counter shouldn't degrade performance
+at all. Here I profile adding a 25-element Counter to the 1500-element one.</p>
+<table>
+<thead>
+<tr>
+<th>ncalls</th>
+<th>tottime</th>
+<th>percall</th>
+<th>cumtime</th>
+<th>percall</th>
+<th>filename:lineno(function)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2000</td>
+<td>1.399</td>
+<td>0.001</td>
+<td>1.729</td>
+<td>0.001</td>
+<td>collections.py:501(update)</td>
+</tr>
+<tr>
+<td>1600000</td>
+<td>0.275</td>
+<td>0.000</td>
+<td>0.275</td>
+<td>0.000</td>
+<td>{method 'get' of 'dict' objects}</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0.234</td>
+<td>0.234</td>
+<td>2.063</td>
+<td>2.063</td>
+<td>counter-perf-test.py:6(main)</td>
+</tr>
+<tr>
+<td>1035</td>
+<td>0.046</td>
+<td>0.000</td>
+<td>0.060</td>
+<td>0.000</td>
+<td>random.py:291(sample)</td>
+</tr>
+<tr>
+<td>36000</td>
+<td>0.040</td>
+<td>0.000</td>
+<td>0.040</td>
+<td>0.000</td>
+<td>counter-perf-test.py:18(<genexpr>)</td>
+</tr>
+<tr>
+<td>36000</td>
+<td>0.032</td>
+<td>0.000</td>
+<td>0.032</td>
+<td>0.000</td>
+<td>counter-perf-test.py:22(<genexpr>)</td>
+</tr>
+<tr>
+<td>2000</td>
+<td>0.007</td>
+<td>0.000</td>
+<td>0.013</td>
+<td>0.000</td>
+<td>abc.py:128(<strong>instancecheck</strong>)</td>
+</tr>
+<tr>
+<td>2000</td>
+<td>0.007</td>
+<td>0.000</td>
+<td>1.736</td>
+<td>0.001</td>
+<td>collections.py:438(<strong>init</strong>)</td>
+</tr>
+<tr>
+<td>25358</td>
+<td>0.006</td>
+<td>0.000</td>
+<td>0.006</td>
+<td>0.000</td>
+<td>{method 'add' of 'set' objects}</td>
+</tr>
+</tbody>
+</table>
+<p>Why does this lengthen the code's running time by 60%? I was surprised, because
+the new Counter is not very big, and I'm not making any copies  - I thought that adding
+Counters would be quick. Let's look at <code>Counter__add__()</code>: </p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Counter</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">elem</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">newcount</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="n">other</span><span class="p">[</span><span class="n">elem</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">newcount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">result</span><span class="p">[</span><span class="n">elem</span><span class="p">]</span> <span class="o">=</span> <span class="n">newcount</span>
+    <span class="k">for</span> <span class="n">elem</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">other</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">elem</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span> <span class="ow">and</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">result</span><span class="p">[</span><span class="n">elem</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+
+
+<p>Here's why it takes so long: it creates an entirely new counter (<code>result</code>) by
+iterating through the items in both of the input Counters (<code>self.items()</code> and <code>other.items()</code>).
+Adding two Counters takes the same amount of time as it took to instantiate those
+Counters initially.</p>
+<p>Gah. Looks like I'll have to come up with another idea to improve my program's running time.</p>
+	<hr/>
+	<h6>Category: <a href="/category/misc.html">misc</a>.</h6>
+</article>
+
+<hr/>
+						</div>
+						<!-- End Main Content -->
+						<!-- Sidebar -->
+						<aside class="medium-3 hide-for-small-only columns">
+							<div class="panel">
+								<ul class="side-nav">
+								  <img src="/theme/img/headshot.png" />
+								</ul>
+							</div>
+
+							<div class="panel">
+								<h5>Links</h5>
+								  <p style="margin-bottom:0px;"><a href="http://www.github.com/katrinae">Github</a></p>
+								  <p style="margin-bottom:0px;"><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></p>
+							</div>
+
+							<!-- 
+							<div class="panel">
+								<h5>Tags</h5>
+								<ul class="tag-cloud">
+									<li><a href="/tag/narratives/" class="tag-4">narratives</a></li>
+									<li><a href="/tag/arduino/" class="tag-4">Arduino</a></li>
+									<li><a href="/tag/algorithms/" class="tag-4">Algorithms</a></li>
+									<li><a href="/tag/seating-chart/" class="tag-1">Seating Chart</a></li>
+								</ul>
+							</div>-->
+
+							<div class="panel">
+								<h5>Monthly Archives</h5>
+								<p style="margin-bottom:0px;"><a href="/posts/2014/04/">April 2014 (2)</a>
+								<p style="margin-bottom:0px;"><a href="/posts/2014/03/">March 2014 (2)</a>
+								<p style="margin-bottom:0px;"><a href="/posts/2014/02/">February 2014 (2)</a>
+								</ul>
+							</div>
+
+							<!--
+							<div class="panel">
+								<h5>Social</h5>
+								<ul class="side-nav">
+								</ul>
+							</div>
+							-->
+						</aside>
+						<!-- End Sidebar -->
+					</div>
+
+					<!-- Footer -->
+					<footer class="row">
+						<div class="medium-9 small-12">
+							<hr/>
+							<p class="text-center"><span style="font-style:italic; color: lightgray;  font-size:1em">Powered by Pelican and based on a theme by <a href="http://hamaluik.com" style="color:lightgray; hover:lightgray">Kenton Hamaluik</a>.</span></p>
+						</div>
+					</footer>
+					<!-- End Footer -->
+				</section>
+				<a class="exit-off-canvas"></a>
+			</div><!--off-canvas inner-->
+		</div><!--off-canvas wrap-->
+
+		<script src="/theme/js/jquery.js"></script>
+		<script src="/theme/js/foundation.min.js"></script>
+		<script>
+			$(document).foundation();
+		</script>
+	</body>
+</html>
