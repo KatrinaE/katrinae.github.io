@@ -135,8 +135,8 @@ working for me.</p>
 is at <code>/Applications/Arduino.app</code> and the WiFi firmware is at <code>/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/firmwares/wifishield</code>.</p>
 <p>You can double-check that you have the right version by going to lines 41-42 of 
 <code>wifishield/wifiHD/src/main.c</code>. They should say this:</p>
-<div class="highlight"><pre><span class="cm">/* FIRMWARE version */</span>
-<span class="k">const</span> <span class="n">char</span><span class="o">*</span> <span class="n">fwVersion</span> <span class="o">=</span> <span class="s">&quot;1.1.0&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span class="cm">/* FIRMWARE version */</span><span class="w"></span>
+const<span class="w"> </span>char<span class="o">*</span><span class="w"> </span>fwVersion<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1.1.0&quot;</span><span class="err">;</span><span class="w"></span>
 </pre></div>
 
 
@@ -182,36 +182,36 @@ in <code>wifishield/firmware/scripts/</code>
 (<code>ArduinoWifiShield_upgrade.sh</code> for Linux, <code>ArduinoWifiShield_upgrade.sh</code> for Mac).
 Before you run them, you'll have to fix a small error in the path
 where it looks for the firmware. Change:</p>
-<div class="highlight"><pre><span class="n">WIFI_FW_PATH</span><span class="o">=</span><span class="s">&quot;/hardware/arduino/firmwares/wifi-shield&quot;</span>
+<div class="highlight"><pre>WIFI_FW_PATH=&quot;/hardware/arduino/firmwares/wifi-shield&quot;
 </pre></div>
 
 
 <p>to:</p>
-<div class="highlight"><pre><span class="n">WIFI_FW_PATH</span><span class="o">=</span><span class="s">&quot;/hardware/arduino/firmwares/wifishield&quot;</span>
+<div class="highlight"><pre>WIFI_FW_PATH=&quot;/hardware/arduino/firmwares/wifishield&quot;
 </pre></div>
 
 
 <h3>5<sup>th</sup>: Upload the Firmware</h3>
 <p>It's go time! Link your WiFi shield to your computer using a mini USB cable (<em>don't</em> 
 leave the shield connected to the Arduino). Then run:</p>
-<div class="highlight"><pre><span class="n">cd</span> <span class="n">wifishield</span><span class="o">/</span><span class="n">firmware</span><span class="o">/</span><span class="n">scripts</span>
-<span class="n">sudo</span> <span class="n">sh</span> <span class="n">ArduinoWifiShield_upgrade_mac</span><span class="p">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">a</span> <span class="o">/</span><span class="n">Applications</span><span class="o">/</span><span class="n">Arduino</span><span class="p">.</span><span class="n">app</span><span class="o">/</span><span class="n">Contents</span><span class="o">/</span><span class="n">Resources</span><span class="o">/</span><span class="n">Java</span> <span class="o">-</span><span class="n">f</span> <span class="n">shield</span>
+<div class="highlight"><pre>cd wifishield/firmware/scripts
+sudo sh ArduinoWifiShield_upgrade_mac.sh -a /Applications/Arduino.app/Contents/Resources/Java -f shield
 </pre></div>
 
 
 <p>You should see output like this:</p>
-<div class="highlight"><pre>       <span class="n">Arduino</span> <span class="n">WiFi</span> <span class="n">Shield</span> <span class="n">upgrade</span>
-<span class="o">=========================================</span>
-<span class="nl">Disclaimer:</span> <span class="n">to</span> <span class="n">access</span> <span class="n">to</span> <span class="n">the</span> <span class="n">USB</span> <span class="n">devices</span> <span class="n">correctly</span><span class="p">,</span> <span class="n">the</span> <span class="n">dfu</span><span class="o">-</span><span class="n">programmer</span> 
-<span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span> <span class="n">as</span> <span class="n">root</span><span class="p">.</span> <span class="n">Run</span> <span class="n">this</span> <span class="n">script</span> <span class="n">as</span> <span class="n">root</span><span class="p">.</span>
+<div class="highlight"><pre>       Arduino WiFi Shield upgrade
+=========================================
+Disclaimer: to access to the USB devices correctly, the dfu-programmer 
+needs to be used as root. Run this script as root.
 
-<span class="o">****</span><span class="n">Upgrade</span> <span class="n">WiFi</span> <span class="n">Shield</span> <span class="n">firmware</span><span class="o">****</span>
+****Upgrade WiFi Shield firmware****
 
-<span class="n">Validating</span><span class="p">...</span>
-<span class="mi">257254</span> <span class="n">bytes</span> <span class="n">used</span> <span class="p">(</span><span class="mf">101.30</span><span class="o">%</span><span class="p">)</span>
+Validating...
+257254 bytes used (101.30%)
 
-<span class="n">Done</span><span class="p">.</span> <span class="n">Remove</span> <span class="n">the</span> <span class="n">J3</span> <span class="n">jumper</span> <span class="n">and</span> <span class="n">press</span> <span class="n">the</span> <span class="n">RESET</span> <span class="n">button</span> <span class="n">on</span> <span class="n">the</span> <span class="n">shield</span><span class="p">.</span>
-<span class="n">Thank</span> <span class="n">you</span><span class="o">!</span>
+Done. Remove the J3 jumper and press the RESET button on the shield.
+Thank you!
 </pre></div>
 
 
@@ -233,8 +233,8 @@ mount the WiFi shield on your Arduino and upload this sketch:</p>
 
 <p>Check the serial output (in the IDE, you can do this by clicking on the magnifying
 glass at the upper right corner of the sketch). It should say:</p>
-<div class="highlight"><pre><span class="n">the</span> <span class="n">version</span> <span class="n">is</span><span class="o">:</span>
-<span class="mf">1.1.0</span>
+<div class="highlight"><pre>the version is:
+1.1.0
 </pre></div>
 	<hr/>
 	<h6>Category: <a href="/category/how-to.html">How-to</a>. Tags: <a href="/tag/arduino.html">Arduino</a>, </h6>

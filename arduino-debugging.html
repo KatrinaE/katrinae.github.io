@@ -128,39 +128,39 @@ is able to reconnect, but cannot re-start a server.</p>
 <div class="highlight"><pre><span class="nv">Attempting</span> <span class="s-Atom">to</span> <span class="s-Atom">connect</span> <span class="s-Atom">to</span> <span class="nv">Network</span> <span class="nn">named</span><span class="p">:</span> <span class="o">&lt;</span><span class="s-Atom">my</span> <span class="s-Atom">network</span><span class="o">&gt;</span>
 <span class="nv">SSID</span><span class="s-Atom">:</span> <span class="o">&lt;</span><span class="s-Atom">my</span> <span class="s-Atom">network</span><span class="o">&gt;</span>
 <span class="nv">IP</span> <span class="nv">Address</span><span class="s-Atom">:</span> <span class="o">&lt;</span><span class="s-Atom">my</span> <span class="nv">IP</span><span class="o">&gt;</span>
-<span class="s-Atom">signal</span> <span class="nf">strength</span> <span class="p">(</span><span class="nv">RSSI</span><span class="p">):-</span><span class="m">46</span> <span class="s-Atom">dBm</span>
+<span class="s-Atom">signal</span> <span class="nf">strength</span> <span class="p">(</span><span class="nv">RSSI</span><span class="p">):-</span><span class="mi">46</span> <span class="s-Atom">dBm</span>
 <span class="nv">To</span> <span class="s-Atom">see</span> <span class="s-Atom">this</span> <span class="s-Atom">page</span> <span class="s-Atom">in</span> <span class="s-Atom">action</span><span class="p">,</span> <span class="s-Atom">open</span> <span class="s-Atom">a</span> <span class="s-Atom">browser</span> <span class="s-Atom">to</span> <span class="nn">http</span><span class="p">:</span><span class="s-Atom">//&lt;my</span> <span class="nv">IP</span><span class="o">&gt;</span>
 </pre></div>
 
 
 <p>Great - I think I'm connected! I can successfully ping the Arduino's IP address:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">ping</span> <span class="o">&lt;</span><span class="n">my</span> <span class="n">IP</span><span class="o">&gt;</span>
-<span class="n">PING</span> <span class="o">&lt;</span><span class="n">my</span> <span class="n">IP</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">my</span> <span class="n">IP</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span> <span class="mi">56</span> <span class="n">data</span> <span class="n">bytes</span>
-<span class="mi">64</span> <span class="n">bytes</span> <span class="n">from</span> <span class="o">&lt;</span><span class="n">my</span> <span class="n">IP</span><span class="o">&gt;:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">0</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">255</span> <span class="n">time</span><span class="o">=</span><span class="mf">4.371</span> <span class="n">ms</span>
-<span class="mi">64</span> <span class="n">bytes</span> <span class="n">from</span> <span class="o">&lt;</span><span class="n">my</span> <span class="n">IP</span><span class="o">&gt;:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">1</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">255</span> <span class="n">time</span><span class="o">=</span><span class="mf">6.826</span> <span class="n">ms</span>
-<span class="mi">64</span> <span class="n">bytes</span> <span class="n">from</span> <span class="o">&lt;</span><span class="n">my</span> <span class="n">IP</span><span class="o">&gt;:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">2</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">255</span> <span class="n">time</span><span class="o">=</span><span class="mf">17.500</span> <span class="n">ms</span>
-<span class="mi">64</span> <span class="n">bytes</span> <span class="n">from</span> <span class="o">&lt;</span><span class="n">my</span> <span class="n">IP</span><span class="o">&gt;:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">3</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">255</span> <span class="n">time</span><span class="o">=</span><span class="mf">5.556</span> <span class="n">ms</span>
-<span class="mi">64</span> <span class="n">bytes</span> <span class="n">from</span> <span class="o">&lt;</span><span class="n">my</span> <span class="n">IP</span><span class="o">&gt;:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">4</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">255</span> <span class="n">time</span><span class="o">=</span><span class="mf">7.440</span> <span class="n">ms</span>
-<span class="o">^</span><span class="n">C</span>
-<span class="o">---</span> <span class="o">&lt;</span><span class="n">my</span> <span class="n">IP</span><span class="o">&gt;</span> <span class="n">ping</span> <span class="n">statistics</span> <span class="o">---</span>
-<span class="mi">5</span> <span class="n">packets</span> <span class="n">transmitted</span><span class="p">,</span> <span class="mi">5</span> <span class="n">packets</span> <span class="n">received</span><span class="p">,</span> <span class="mf">0.0</span><span class="o">%</span> <span class="n">packet</span> <span class="n">loss</span>
-<span class="n">round</span><span class="o">-</span><span class="n">trip</span> <span class="n">min</span><span class="o">/</span><span class="n">avg</span><span class="o">/</span><span class="n">max</span><span class="o">/</span><span class="n">stddev</span> <span class="o">=</span> <span class="mf">4.371</span><span class="o">/</span><span class="mf">8.339</span><span class="o">/</span><span class="mf">17.500</span><span class="o">/</span><span class="mf">4.701</span> <span class="n">ms</span>
+<div class="highlight"><pre><span class="nv">$ </span>ping &lt;my IP&gt;
+PING &lt;my IP&gt; <span class="o">(</span>&lt;my IP&gt;<span class="o">)</span>: <span class="m">56</span> data bytes
+<span class="m">64</span> bytes from &lt;my IP&gt;: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">0</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">255</span> <span class="nb">time</span><span class="o">=</span>4.371 ms
+<span class="m">64</span> bytes from &lt;my IP&gt;: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">1</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">255</span> <span class="nb">time</span><span class="o">=</span>6.826 ms
+<span class="m">64</span> bytes from &lt;my IP&gt;: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">2</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">255</span> <span class="nb">time</span><span class="o">=</span>17.500 ms
+<span class="m">64</span> bytes from &lt;my IP&gt;: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">3</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">255</span> <span class="nb">time</span><span class="o">=</span>5.556 ms
+<span class="m">64</span> bytes from &lt;my IP&gt;: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">4</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">255</span> <span class="nb">time</span><span class="o">=</span>7.440 ms
+^C
+--- &lt;my IP&gt; ping statistics ---
+<span class="m">5</span> packets transmitted, <span class="m">5</span> packets received, 0.0% packet loss
+round-trip min/avg/max/stddev <span class="o">=</span> 4.371/8.339/17.500/4.701 ms
 </pre></div>
 
 
 <p>But I can’t complete HTTP requests:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">G</span> <span class="n">http</span><span class="o">:</span><span class="c1">//&lt;my IP&gt;</span>
-<span class="nl">curl:</span> <span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="n">Failed</span> <span class="n">connect</span> <span class="n">to</span> <span class="o">&lt;</span><span class="n">my</span> <span class="n">IP</span><span class="o">&gt;:</span><span class="mi">80</span><span class="p">;</span> <span class="n">Connection</span> <span class="n">refused</span>
+<div class="highlight"><pre><span class="nv">$ </span>curl -G http://&lt;my IP&gt;
+curl: <span class="o">(</span>7<span class="o">)</span> Failed connect to &lt;my IP&gt;:80<span class="p">;</span> Connection refused
 </pre></div>
 
 
 <p>And using telnet is just weird:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">telnet</span> <span class="o">&lt;</span><span class="n">my</span> <span class="n">IP</span><span class="o">&gt;</span>
-<span class="n">Trying</span> <span class="o">&lt;</span><span class="n">my</span> <span class="n">IP</span><span class="o">&gt;</span><span class="p">...</span>
-<span class="n">Connected</span> <span class="n">to</span> <span class="o">&lt;</span><span class="n">my</span> <span class="n">IP</span><span class="o">&gt;</span><span class="p">.</span>
-<span class="n">Escape</span> <span class="n">character</span> <span class="n">is</span> <span class="err">&#39;</span><span class="o">^</span><span class="p">]</span><span class="err">&#39;</span><span class="p">.</span>
-<span class="n">Hello</span><span class="p">,</span> <span class="n">client</span><span class="o">!</span>
-<span class="o">^</span><span class="n">C</span><span class="o">^</span><span class="p">]</span> <span class="n">Iso</span> <span class="n">conf</span> <span class="n">am</span> <span class="n">uso</span> <span class="n">confsued</span><span class="o">^</span><span class="n">Msed</span><span class="o">??</span> <span class="c1">// should be &#39;I am so confused??&#39;</span>
+<div class="highlight"><pre><span class="nv">$ </span>telnet &lt;my IP&gt;
+Trying &lt;my IP&gt;...
+Connected to &lt;my IP&gt;.
+Escape character is <span class="s1">&#39;^]&#39;</span>.
+Hello, client!
+^C^<span class="o">]</span> Iso conf am uso confsued^Msed?? // should be <span class="s1">&#39;I am so confused??&#39;</span>
 </pre></div>
 
 
@@ -168,15 +168,15 @@ is able to reconnect, but cannot re-start a server.</p>
 <p>To test what happens when the Arduino disconnects from the WiFi network,
 I wrote some code to automatically disconnect every tenth time through
 Arduino's event loop, <code>loop()</code>.</p>
-<div class="highlight"><pre><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Purposely disconnecting WiFi</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="n">WiFi</span><span class="p">.</span><span class="n">disconnect</span><span class="p">();</span>
-<span class="n">delay</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
-<span class="n">WiFiSetup</span><span class="p">();</span>
-  <span class="p">}</span>
-  <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre>void loop() {
+  if (i % 10 == 0) {
+Serial.println(&quot;\nPurposely disconnecting WiFi\n&quot;);
+WiFi.disconnect();
+delay(5000);
+WiFiSetup();
+  }
+  i = i + 1;
+}
 </pre></div>
 
 
@@ -199,13 +199,13 @@ stops the client, but not the server. At least that's expected behavior!</p>
 <a href="https://github.com/Arduino/Arduino/issues/1720">WiFi shield client does not release socket on connect fail</a>. The poster fixed the problem by editing 
 <code>connect()</code> in WiFiClient.cpp, specifically by adding this single line
 to <code>WiFiClient::connect()</code>:</p>
-<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">connected</span><span class="p">())</span>
+<div class="highlight"><pre><span class="nt">if</span> <span class="o">(!</span><span class="nt">connected</span><span class="o">())</span>
 <span class="p">{</span>
-<span class="c1">// Add this</span>
-    <span class="n">WiFiClass</span><span class="o">::</span><span class="n">_state</span><span class="p">[</span><span class="n">_sock</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-<span class="c1">// end of add</span>
+<span class="o">//</span> <span class="n">Add</span> <span class="n">this</span>
+    <span class="n">WiFiClass</span><span class="o">::</span><span class="n">_state</span><span class="cp">[</span><span class="nx">_sock</span><span class="cp">]</span> <span class="o">=</span> <span class="m">-1</span><span class="p">;</span>
+<span class="o">//</span> <span class="n">end</span> <span class="n">of</span> <span class="n">add</span>
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">return</span> <span class="m">0</span><span class="p">;</span>
     <span class="p">}</span>
 </pre></div>
 
@@ -239,9 +239,9 @@ socket 2 and listening on port 80.</p>
 which meant that the server couldn't restart properly.
 To fix it, I created a <code>disconnect()</code> method in 
 WiFiServer.cpp:</p>
-<div class="highlight"><pre><span class="kt">void</span> <span class="n">WiFiServer</span><span class="o">::</span><span class="n">disconnect</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">WiFiClass</span><span class="o">::</span><span class="n">_state</span><span class="p">[</span><span class="n">_sock</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-  <span class="n">WiFiClass</span><span class="o">::</span><span class="n">_server_port</span><span class="p">[</span><span class="n">_sock</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<div class="highlight"><pre><span class="nt">void</span> <span class="nt">WiFiServer</span><span class="o">:</span><span class="nd">:disconnect</span><span class="o">()</span> <span class="p">{</span>
+  <span class="n">WiFiClass</span><span class="o">::</span><span class="n">_state</span><span class="cp">[</span><span class="nx">_sock</span><span class="cp">]</span> <span class="o">=</span> <span class="m">-1</span><span class="p">;</span>
+  <span class="n">WiFiClass</span><span class="o">::</span><span class="n">_server_port</span><span class="cp">[</span><span class="nx">_sock</span><span class="cp">]</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -256,13 +256,13 @@ The problem is that the server doesn’t actually restart.</p>
 before restarting the WiFi.
 Adding the line <code>delay(10000);</code> before running <code>WiFiSetup()</code> does
 the trick:</p>
-<div class="highlight"><pre><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Purposely disconnecting WiFi</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="n">server</span><span class="p">.</span><span class="n">disconnect</span><span class="p">();</span>
-<span class="n">WiFi</span><span class="p">.</span><span class="n">disconnect</span><span class="p">();</span>
-<span class="n">delay</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
-<span class="n">WiFiSetup</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="highlight"><pre>void loop() {
+Serial.println(&quot;\nPurposely disconnecting WiFi\n&quot;);
+server.disconnect();
+WiFi.disconnect();
+delay(10000);
+WiFiSetup();
+}
 </pre></div>
 
 
@@ -274,12 +274,12 @@ disconnected, things don't go smoothly.</p>
 server and client states before reconnecting, just to make sure they were
 reset properly. When I examine the client using <code>serverDrv.getClientState()</code>,
 everything - <em>everything</em> - hangs indefinitely:</p>
-<div class="highlight"><pre><span class="n">Purposely</span> <span class="n">disconnecting</span> <span class="n">WiFi</span>
+<div class="highlight"><pre>Purposely disconnecting WiFi
 
-<span class="o">********************************</span>
+********************************
 
-<span class="n">Initial</span> <span class="n">socket</span> <span class="n">status</span> <span class="p">(</span><span class="n">before</span> <span class="n">new</span> <span class="n">connection</span><span class="p">)</span><span class="o">:</span>
-<span class="o">-</span><span class="mi">1</span>  <span class="mi">0</span>  <span class="n">s</span><span class="o">=</span><span class="mi">0</span>  <span class="n">c</span><span class="o">=</span>
+Initial socket status (before new connection):
+-1  0  s=0  c=
 </pre></div>
 
 
@@ -296,11 +296,11 @@ significantly.</p>
 where it got stuck. It's during the line <code>SpiDrv::waitForSlaveReady()</code>. All this does
 is instruct the Arduino to wait while a pin called <code>SLAVEREADY</code> - the
 Arduino-WiFi Shield handshake pin - is high.</p>
-<div class="highlight"><pre><span class="cp">#define waitSlaveReady() (digitalRead(SLAVEREADY) == LOW)</span>
-<span class="kt">void</span> <span class="n">SpiDrv</span><span class="o">::</span><span class="n">waitForSlaveReady</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">waitSlaveReady</span><span class="p">());</span>
-<span class="p">}</span>
+<div class="highlight"><pre>#define waitSlaveReady() (digitalRead(SLAVEREADY) == LOW)
+void SpiDrv::waitForSlaveReady()
+{
+    while (!waitSlaveReady());
+}
 </pre></div>
 
 
