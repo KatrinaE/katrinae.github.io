@@ -1,0 +1,465 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Katrina Ellison Geltman</title>
+		<meta name="description" content="">
+		<meta name="author" content="Katrina Ellison Geltman">
+
+		<link rel="stylesheet" href="/theme/css/foundation.css" />
+		<link rel="stylesheet" href="/theme/css/pygment/manni.css" />
+		<link rel="stylesheet" href="/theme/css/custom.css" />
+
+
+		<script src="/theme/js/modernizr.js"></script>
+		<!-- Feeds -->
+
+
+		<!-- mathjax config similar to math.stackexchange -->
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			jax: ["input/TeX", "output/HTML-CSS"],
+			tex2jax: {
+				inlineMath: [ ['$', '$'] ],
+				displayMath: [ ['$$', '$$']],
+				processEscapes: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+			},
+			messageStyle: "none",
+			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+		});
+		</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	</head>
+	<body>
+		<div class="off-canvas-wrap">
+			<div class="inner-wrap">
+				<!-- mobile top bar to activate nav -->
+				<nav class="tab-bar show-for-small">
+					<section class="left-small">
+						<a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+					</section>
+
+					<section class="middle tab-bar-section">
+						<h1 class="title">Katrina&nbsp;Ellison&nbsp;Geltman</h1>
+					</section>
+				</nav>
+
+				<!-- mobile side bar nav -->
+				<aside class="left-off-canvas-menu">
+					<ul class="off-canvas-list">
+						<li><a href="">Home</a></li>
+						<li><label>Pages</label></li>
+							<li ><a href="/pages/about-me.html">About</a></li>
+							<li ><a href="/pages/projects.html">Projects</a></li>
+
+						<li><label>Links</label></li>
+							<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+							<li><a href="http://www.github.com/katrinae">GitHub</a></li>
+							<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
+
+						<!--
+							-->
+
+						<li><label>Monthly Archives</label></li>
+									<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
+									<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
+									<li><a href="/posts/2014/04/">April 2014 (3)</a></li>
+									<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+									<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
+
+						<!--<li><label>Links</label></li>
+					</ul>-->
+				</aside>
+
+				<!-- top bar nav -->
+				<nav class="top-bar hide-for-small-only" data-topbar>
+					<ul class="title-area">
+						<li class="name">
+							<h1><a href="/">Katrina Ellison Geltman</a></h1>
+						</li>
+					</ul>
+
+					<!-- <section class="top-bar-section">
+						<ul class="left">
+								<li ><a href="/category/hacker-school.html">Hacker School</a></li>
+								<li class="active"><a href="/category/how-to.html">How-to</a></li>
+								<li ><a href="/category/misc.html">misc</a></li>
+								<li ><a href="/category/python.html">Python</a></li>
+								<li ><a href="/category/seating-chart-creator.html">Seating Chart Creator</a></li>
+						</ul>
+					</section> -->
+
+					<section class="top-bar-section">
+						<ul class="left">
+								<li ><a href="/pages/about-me.html">About</a></li>
+								<li ><a href="/pages/projects.html">Projects</a></li>
+						</ul>
+					</section>
+
+
+					<section class="top-bar-section">
+					  <ul class="left">
+					    <li><a href="/archives.html">Archives</a></li>
+					  </ul>
+					</section>
+
+
+				</nav>
+
+				<!-- Main Page Content and Sidebar -->
+				<section class="main-section">
+					<div class="row">
+						<!-- Main Content -->
+						<div class="medium-9 small-12 columns" role="content">
+<article>
+	<h2>Installing Unison 2.40.63 on OS X El Capitan
+	</h2>
+	<h5>Sun 27 December 2015</h5>
+	<p>I recently needed to install Unison version 2.40.63 on a machine running
+OS X 10.11 El Capitan. There are no prebuilt binaries available (except
+for the GUI versions listed in "The Easy Alternative" below), so I had
+to install from source. It was a bit of a pain, but I ultimately got it
+working successfully. The trickiest part was figuring out which versions
+of Xcode and Ocaml the build required; the actual time to tweak the source
+code and make the binary was minimal. </p>
+<h3>The Easy Alternative: Use a similar GUI version</h3>
+<p>It's possible to download <a href="http://unison-binaries.inria.fr/">official
+binaries</a> of the GUI versions of
+Unison 2.40.61 and 2.40.69. These work out of the box, but only in GUI
+form - the command line tool installer fails because of El Capitan's
+<a href="https://support.apple.com/en-us/HT204899">System Integrity Protection</a>,
+which prevents writing to /usr/bin/, even with sudo.</p>
+<div class="highlight"><pre><span class="nv">$ </span>sudo /Applications/Unison.app/Contents/MacOS/cltool 
+cp: /usr/bin/unison: Operation not permitted
+</pre></div>
+
+
+<h3>Building from Source</h3>
+<p>If you want to install the command line version or
+specifically need 2.40.63, you can build from the Unison source. You'll need
+to install build tools and make a couple of changes to the
+Unison source code before running the build script.</p>
+<h4>Step 1: Installing Prerequisites</h4>
+<p>Prerequisites:</p>
+<ul>
+<li><strong>Xcode</strong> (download from the <a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12">App
+  Store</a>). I
+  used version 7.2. 
+    <em>Note: you need the full Xcode, not just the command line tools.</em></li>
+<li>An <strong>OCaml compiler</strong> (install via Homebrew; see instructions
+  below)</li>
+<li><strong>Unison 2.40.63 source code</strong> tarball (download 'unison-2.40.63.tar.gz' from <a href="http://www.seas.upenn.edu/~bcpierce/unison//download/releases/unison-2.40.63/">the official source</a>)</li>
+</ul>
+<h5>Xcode</h5>
+<p>XCode is an Apple IDE and set of SDKs. To build Unison on El Capitan
+you'll need the Mac OS X El Capitan SDK, which is only available in the
+full version of Xcode. The Unison Makefile also uses some XCode-specific
+commands.</p>
+<p>Xcode is a large download ( &gt; 4GB). If you're installing it for the
+first time, open it once from the Applications folder so you can accept
+the license agreement.</p>
+<h5>OCaml Compiler</h5>
+<p>Unison is written in the OCaml language, but El Capitan does not come
+with an OCaml compiler. However, the OCaml package manager, OPAM, is
+available via Homebrew and comes with a compiler.</p>
+<div class="highlight"><pre><span class="nv">$ </span>brew install opam
+</pre></div>
+
+
+<p>Unfortunately, OPAM's default compiler - version 4.02.3 - does not build
+Unison correctly. The build will appear successful, but Unison will segfault
+immediately. Fortunately, OPAM allows you to specify an alternative version
+when you set it up, and to quickly switch between versions after that.
+The most recent compiler version that worked for me was 4.01.0, so tell
+OPAM to use that.</p>
+<div class="highlight"><pre><span class="nv">$ </span>opam init --comp 4.01.0
+</pre></div>
+
+
+<p>OPAM will ask you to let it modify <code>~/.bash_profile</code> and <code>~/.ocamlinit</code> so
+that it can properly set paths and environment variables. I told it yes
+("y") to make life easier.</p>
+<p>Once OPAM is installed, activate it and verify that it works.</p>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">eval</span> <span class="sb">`</span>opam config env<span class="sb">`</span>
+<span class="nv">$ </span>opam --version
+1.2.2
+<span class="nv">$ </span>ocaml -version
+The OCaml toplevel, version 4.01.0
+</pre></div>
+
+
+<h6>Switching Compilers</h6>
+<p>The 4.01.0 compiler should work correctly. However, you may need to use a
+different version for some reason, e.g. for compatibility with a remote Unison installation.
+Fortunately, this is easy to do. For example, to switch to version 3.12.0 of the compiler, run</p>
+<div class="highlight"><pre><span class="nv">$ </span>opam switch 3.12.0
+<span class="nv">$ </span><span class="nb">eval</span> <span class="sb">`</span>opam config env<span class="sb">`</span>
+</pre></div>
+
+
+<p>To see all available compiler versions, use</p>
+<div class="highlight"><pre><span class="nv">$ </span>opam switch list
+</pre></div>
+
+
+<p>You'll need to rebuild Unison after you switch compilers.</p>
+<h5>Source Code Tarball</h5>
+<p><a href="http://www.seas.upenn.edu/~bcpierce/unison//download/releases/unison-2.40.63/unison-2.40.63.tar.gz">Download the
+tarball</a>.
+If you'd like to keep the source code after installation, move it to
+wherever you'd like to put it. (I usually use /usr/local/src).</p>
+<div class="highlight"><pre><span class="nv">$ </span>tar -C /usr/local/src -zxvf ~/Downloads/unison-2.40.63.tar.gz
+<span class="nv">$ </span><span class="nb">cd</span> /usr/local/src/unison-2.40.63/
+</pre></div>
+
+
+<p>If, on the other hand, you're planning to delete it once the build is complete,
+just leave the source code in ~/Downloads.</p>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~/Downloads
+<span class="nv">$ </span>tar -zxvf unison-2.40.63.tar.gz
+<span class="nv">$ </span><span class="nb">cd </span>unison-2.40.63
+</pre></div>
+
+
+<h4>Step 2: Modifying the Source Code</h4>
+<p>The Mac OS X version is hard-coded to 10.5 in the Unison source,
+which prevents it from building correctly on El Capitan. To fix it,
+you need to update "10.5" to "10.11" everywhere it appears in the code.
+Fortunately, there are not too many places to update:</p>
+<ul>
+<li>
+<p>In <strong>./Makefile.OCaml</strong>, line 183</p>
+<ul>
+<li>Old line: <code>MINOSXVERSION=10.5</code></li>
+<li>New line: <code>MINOSXVERSION=10.11</code></li>
+</ul>
+</li>
+<li>
+<p>In <strong>./uimacnew/uimacnew.xcodeproj/project.pbxproj</strong>, lines 676, 686, and 696</p>
+<ul>
+<li>Old line: <code>SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;</code></li>
+<li>New line: <code>SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk;</code></li>
+<li>Note: this is the default location of the OS X 10.11 SDK when
+   Xcode is installed from the Mac app store. It may be somewhere
+   else on your system.</li>
+</ul>
+</li>
+<li>
+<p>In <strong>./uimacnew09/uimacnew.xcodeproj/project.pbxproj</strong>, lines 702, 713, and 724</p>
+<ul>
+<li>Old line: <code>SDKROOT = macosx10.5;</code></li>
+<li>New line: <code>SDKROOT = macosx10.11;</code></li>
+</ul>
+</li>
+</ul>
+<h4>Step 3: Building</h4>
+<p>It's finally time to build the binary.</p>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /usr/local/src/unison-2.40.63      <span class="c"># Or wherever you put the source code in step 1</span>
+<span class="nv">$ </span>make <span class="nv">UISTYLE</span><span class="o">=</span>text
+</pre></div>
+
+
+<p>If the build fails, clean up after it with 'make clean' before trying
+again:</p>
+<div class="highlight"><pre><span class="nv">$ </span>make clean
+</pre></div>
+
+
+<p>Running Unison without any arguments should bring up the help message. Note that
+you'll need to run <code>./unison</code>, not <code>unison</code>, as you haven't yet placed it on
+your path.</p>
+<div class="highlight"><pre><span class="nv">$ </span>./unison
+Usage: unison <span class="o">[</span>options<span class="o">]</span>
+    or unison root1 root2 <span class="o">[</span>options<span class="o">]</span>
+    or unison profilename <span class="o">[</span>options<span class="o">]</span>
+
+For a list of options, <span class="nb">type</span> <span class="s2">&quot;unison -help&quot;</span>.
+For a tutorial on basic usage, <span class="nb">type</span> <span class="s2">&quot;unison -doc tutorial&quot;</span>.
+For other documentation, <span class="nb">type</span> <span class="s2">&quot;unison -doc topics&quot;</span>.
+</pre></div>
+
+
+<h5>Testing</h5>
+<p>Test the build locally with the directions in <a href="http://www.seas.upenn.edu/~bcpierce/unison//download/releases/unison-2.40.63/unison-2.40.63-manual.html#local">the
+manual</a>.
+Don't worry if you get a warning that begins "Warning: No archive files
+were found for these roots". This is just because it's the first time
+you've used Unison with these directories. Press the spacebar to
+continue, and make sure the last line of output is "Nothing to do:
+replicas have been changed only in identical ways since last sync.".</p>
+<p>If you're planning to use Unison with a remote machine, you should also
+test its compatibility with that machine.</p>
+<h5>Adding to Path</h5>
+<p>Once you're confident Unison works to your liking, you'll probably want
+to copy or link it to <code>/usr/local/bin/unison</code> so that you can call it
+from anywhere via <code>unison</code>.</p>
+<p>If you're saving the source somewhere, you can use a symlink.</p>
+<div class="highlight"><pre><span class="nv">$ </span>ln -s /usr/local/src/unison-2.40.63/unison /usr/local/bin/unison
+</pre></div>
+
+
+<p>Or you can copy the binary directly. (Note: you'll have to do it this
+way if you're planning to remove the source code, since the original
+binary is in the source code directory).</p>
+<div class="highlight"><pre><span class="nv">$ </span>cp unison /usr/local/bin/unison
+</pre></div>
+
+
+<h3>Troubleshooting</h3>
+<h4>Problem</h4>
+<p>You see messages that look like this:</p>
+<div class="highlight"><pre><span class="nv">$ </span>make <span class="nv">UISTYLE</span><span class="o">=</span>text
+ocamlc -o mkProjectInfo unix.cma str.cma mkProjectInfo.ml
+make: ocamlc: No such file or directory
+<span class="c"># [... more error output]</span>
+</pre></div>
+
+
+<h5>Solution</h5>
+<p>Install an OCaml compiler (see step 1)</p>
+<h4>Problem</h4>
+<p>You see lots of warnings that look like this:</p>
+<div class="highlight"><pre><span class="n">ld</span><span class="o">:</span> <span class="n">warning</span><span class="o">:</span> <span class="n">object</span> <span class="n">file</span>
+<span class="o">(/</span><span class="n">usr</span><span class="sr">/local/lib/ocaml/</span><span class="n">libunix</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="n">rewinddir</span><span class="o">.</span><span class="na">o</span><span class="o">))</span> <span class="n">was</span> <span class="n">built</span> <span class="k">for</span> <span class="n">newer</span> <span class="n">OSX</span> <span class="n">version</span> <span class="o">(</span><span class="mf">10.11</span><span class="o">)</span> <span class="n">than</span> <span class="n">being</span> <span class="n">linked</span> <span class="o">(</span><span class="mf">10.5</span><span class="o">)</span>
+</pre></div>
+
+
+<h5>Solution</h5>
+<p>You need to update the source code to reference version 10.5, not 10.11
+(see step 2).</p>
+<h4>Problem</h4>
+<p>Unison runs, but immediately segfaults.</p>
+<div class="highlight"><pre><span class="nv">$ </span>./unison
+0??Segmentation fault: 11
+</pre></div>
+
+
+<h5>Solution 1</h5>
+<p>Use a different OCaml compiler (see step 1). Unison will not build on El Capitan
+with OCaml 4.02.x. Try 4.01.x instead.</p>
+<h5>Solution 2</h5>
+<p>Make sure you've used the correct path to your OS 10.11 SDK (see step
+2). If it's not in
+<code>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk</code>,
+look for it elsewhere(e.g. with mdfind).</p>
+<div class="highlight"><pre><span class="nv">$ </span>mdfind -name .sdk
+</pre></div>
+
+
+<h4>Problem</h4>
+<p>Unison works locally, but not with a remote server. The error output contains
+something like this:</p>
+<div class="highlight"><pre>Fatal error: Internal error: New archives are not identical.
+</pre></div>
+
+
+<h5>Solution</h5>
+<p>Recompile with an OCaml compiler that matches the one used on your remote (see the "Switching Compilers" step above). If
+you don't know the remote version, start by trying a compiler with a different
+major version (e.g. 3.x instead of 4.x).
+See also the discussion on <a href="http://unix.stackexchange.com/questions/52945/how-to-fix-unison-failing-with-fatal-error-internal-error-new-archives-are-no">Stack Exchange</a>.</p><script type= "text/javascript">
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+</script>
+
+	<hr/>
+	<h6>Category: <a href="/category/how-to.html">How-to</a>.</h6>
+</article>
+
+<hr/>
+						</div>
+						<!-- End Main Content -->
+						<!-- Sidebar -->
+						<aside class="medium-3 hide-for-small-only columns">
+							<div class="panel">
+								<ul class="side-nav">
+								  <img src="/theme/img/headshot.png" />
+								</ul>
+							</div>
+
+							<div class="panel">
+								<h5>Links</h5>
+								  <p style="margin-bottom:0px;"><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></p>
+								  <p style="margin-bottom:0px;"><a href="http://www.github.com/katrinae">GitHub</a></p>
+								  <p style="margin-bottom:0px;"><a href="http://www.slideshare.net/kellison00">SlideShare</a></p>
+							</div>
+
+							<!-- 
+							<div class="panel">
+								<h5>Tags</h5>
+								<ul class="tag-cloud">
+								</ul>
+							</div>-->
+
+							<div class="panel">
+								<h5>Monthly Archives</h5>
+								<p style="margin-bottom:0px;"><a href="/posts/2015/12/">December 2015 (1)</a>
+								<p style="margin-bottom:0px;"><a href="/posts/2014/05/">May 2014 (2)</a>
+								<p style="margin-bottom:0px;"><a href="/posts/2014/04/">April 2014 (3)</a>
+								<p style="margin-bottom:0px;"><a href="/posts/2014/03/">March 2014 (2)</a>
+								<p style="margin-bottom:0px;"><a href="/posts/2014/02/">February 2014 (2)</a>
+								</ul>
+							</div>
+
+							<!--
+							<div class="panel">
+								<h5>Social</h5>
+								<ul class="side-nav">
+								</ul>
+							</div>
+							-->
+						</aside>
+						<!-- End Sidebar -->
+					</div>
+
+					<!-- Footer -->
+					<footer class="row">
+						<div class="medium-9 small-12">
+							<hr/>
+							<p class="text-center"><span style="font-style:italic; color: lightgray;  font-size:1em">Powered by Pelican and based on a theme by <a href="http://hamaluik.com" style="color:lightgray; hover:lightgray">Kenton Hamaluik</a>.</span></p>
+						</div>
+					</footer>
+					<!-- End Footer -->
+				</section>
+				<a class="exit-off-canvas"></a>
+			</div><!--off-canvas inner-->
+		</div><!--off-canvas wrap-->
+
+		<script src="/theme/js/jquery.js"></script>
+		<script src="/theme/js/foundation.min.js"></script>
+		<script>
+			$(document).foundation();
+		</script>
+	</body>
+</html>

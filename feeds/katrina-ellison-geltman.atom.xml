@@ -1,5 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Katrina Ellison Geltman</title><link href="/" rel="alternate"></link><link href="/feeds/katrina-ellison-geltman.atom.xml" rel="self"></link><id>/</id><updated>2014-05-30T18:36:00+02:00</updated><entry><title>Hacker School Reflections</title><link href="/hs-reflections.html" rel="alternate"></link><updated>2014-05-30T18:36:00+02:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:,2014-05-30:hs-reflections.html</id><summary type="html">&lt;p&gt;When I arrived at Hacker School, I laid out the following goals for myself:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Katrina Ellison Geltman</title><link href="/" rel="alternate"></link><link href="/feeds/katrina-ellison-geltman.atom.xml" rel="self"></link><id>/</id><updated>2015-12-27T16:59:00+01:00</updated><entry><title>Installing Unison 2.40.63 on OS X El Capitan</title><link href="/unison-el-capitan.html" rel="alternate"></link><updated>2015-12-27T16:59:00+01:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:,2015-12-27:unison-el-capitan.html</id><summary type="html">&lt;p&gt;I recently needed to install Unison version 2.40.63 on a machine running
+OS X 10.11 El Capitan. There are no prebuilt binaries available (except
+for the GUI versions listed in "The Easy Alternative" below), so I had
+to install from source. It was a bit of a pain, but I ultimately got it
+working successfully. The trickiest part was figuring out which versions
+of Xcode and Ocaml the build required; the actual time to tweak the source
+code and make the binary was minimal. &lt;/p&gt;
+&lt;h3&gt;The Easy Alternative: Use a similar GUI version&lt;/h3&gt;
+&lt;p&gt;It's possible to download &lt;a href="http://unison-binaries.inria.fr/"&gt;official
+binaries&lt;/a&gt; of the GUI versions of
+Unison 2.40.61 and 2.40.69. These work out of the box, but only in GUI
+form - the command line tool installer fails because of El Capitan's
+&lt;a href="https://support.apple.com/en-us/HT204899"&gt;System Integrity Protection&lt;/a&gt;,
+which prevents writing to /usr/bin/, even with sudo.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;sudo /Applications/Unison.app/Contents/MacOS/cltool 
+cp: /usr/bin/unison: Operation not permitted
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Building from Source&lt;/h3&gt;
+&lt;p&gt;If you want to install the command line version or
+specifically need 2.40.63, you can build from the Unison source. You'll need
+to install build tools and make a couple of changes to the
+Unison source code before running the build script.&lt;/p&gt;
+&lt;h4&gt;Step 1: Installing Prerequisites&lt;/h4&gt;
+&lt;p&gt;Prerequisites:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Xcode&lt;/strong&gt; (download from the &lt;a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12"&gt;App
+  Store&lt;/a&gt;). I
+  used version 7.2. 
+    &lt;em&gt;Note: you need the full Xcode, not just the command line tools.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;An &lt;strong&gt;OCaml compiler&lt;/strong&gt; (install via Homebrew; see instructions
+  below)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unison 2.40.63 source code&lt;/strong&gt; tarball (download 'unison-2.40.63.tar.gz' from &lt;a href="http://www.seas.upenn.edu/~bcpierce/unison//download/releases/unison-2.40.63/"&gt;the official source&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;Xcode&lt;/h5&gt;
+&lt;p&gt;XCode is an Apple IDE and set of SDKs. To build Unison on El Capitan
+you'll need the Mac OS X El Capitan SDK, which is only available in the
+full version of Xcode. The Unison Makefile also uses some XCode-specific
+commands.&lt;/p&gt;
+&lt;p&gt;Xcode is a large download ( &amp;gt; 4GB). If you're installing it for the
+first time, open it once from the Applications folder so you can accept
+the license agreement.&lt;/p&gt;
+&lt;h5&gt;OCaml Compiler&lt;/h5&gt;
+&lt;p&gt;Unison is written in the OCaml language, but El Capitan does not come
+with an OCaml compiler. However, the OCaml package manager, OPAM, is
+available via Homebrew and comes with a compiler.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install opam
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Unfortunately, OPAM's default compiler - version 4.02.3 - does not build
+Unison correctly. The build will appear successful, but Unison will segfault
+immediately. Fortunately, OPAM allows you to specify an alternative version
+when you set it up, and to quickly switch between versions after that.
+The most recent compiler version that worked for me was 4.01.0, so tell
+OPAM to use that.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;opam init --comp 4.01.0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;OPAM will ask you to let it modify &lt;code&gt;~/.bash_profile&lt;/code&gt; and &lt;code&gt;~/.ocamlinit&lt;/code&gt; so
+that it can properly set paths and environment variables. I told it yes
+("y") to make life easier.&lt;/p&gt;
+&lt;p&gt;Once OPAM is installed, activate it and verify that it works.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="sb"&gt;`&lt;/span&gt;opam config env&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;opam --version
+1.2.2
+&lt;span class="nv"&gt;$ &lt;/span&gt;ocaml -version
+The OCaml toplevel, version 4.01.0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h6&gt;Switching Compilers&lt;/h6&gt;
+&lt;p&gt;The 4.01.0 compiler should work correctly. However, you may need to use a
+different version for some reason, e.g. for compatibility with a remote Unison installation.
+Fortunately, this is easy to do. For example, to switch to version 3.12.0 of the compiler, run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;opam switch 3.12.0
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="sb"&gt;`&lt;/span&gt;opam config env&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To see all available compiler versions, use&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;opam switch list
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You'll need to rebuild Unison after you switch compilers.&lt;/p&gt;
+&lt;h5&gt;Source Code Tarball&lt;/h5&gt;
+&lt;p&gt;&lt;a href="http://www.seas.upenn.edu/~bcpierce/unison//download/releases/unison-2.40.63/unison-2.40.63.tar.gz"&gt;Download the
+tarball&lt;/a&gt;.
+If you'd like to keep the source code after installation, move it to
+wherever you'd like to put it. (I usually use /usr/local/src).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;tar -C /usr/local/src -zxvf ~/Downloads/unison-2.40.63.tar.gz
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/local/src/unison-2.40.63/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If, on the other hand, you're planning to delete it once the build is complete,
+just leave the source code in ~/Downloads.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~/Downloads
+&lt;span class="nv"&gt;$ &lt;/span&gt;tar -zxvf unison-2.40.63.tar.gz
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;unison-2.40.63
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Step 2: Modifying the Source Code&lt;/h4&gt;
+&lt;p&gt;The Mac OS X version is hard-coded to 10.5 in the Unison source,
+which prevents it from building correctly on El Capitan. To fix it,
+you need to update "10.5" to "10.11" everywhere it appears in the code.
+Fortunately, there are not too many places to update:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;In &lt;strong&gt;./Makefile.OCaml&lt;/strong&gt;, line 183&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Old line: &lt;code&gt;MINOSXVERSION=10.5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;New line: &lt;code&gt;MINOSXVERSION=10.11&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In &lt;strong&gt;./uimacnew/uimacnew.xcodeproj/project.pbxproj&lt;/strong&gt;, lines 676, 686, and 696&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Old line: &lt;code&gt;SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;New line: &lt;code&gt;SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Note: this is the default location of the OS X 10.11 SDK when
+   Xcode is installed from the Mac app store. It may be somewhere
+   else on your system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In &lt;strong&gt;./uimacnew09/uimacnew.xcodeproj/project.pbxproj&lt;/strong&gt;, lines 702, 713, and 724&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Old line: &lt;code&gt;SDKROOT = macosx10.5;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;New line: &lt;code&gt;SDKROOT = macosx10.11;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Step 3: Building&lt;/h4&gt;
+&lt;p&gt;It's finally time to build the binary.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/local/src/unison-2.40.63      &lt;span class="c"&gt;# Or wherever you put the source code in step 1&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;make &lt;span class="nv"&gt;UISTYLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;text
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If the build fails, clean up after it with 'make clean' before trying
+again:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;make clean
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Running Unison without any arguments should bring up the help message. Note that
+you'll need to run &lt;code&gt;./unison&lt;/code&gt;, not &lt;code&gt;unison&lt;/code&gt;, as you haven't yet placed it on
+your path.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;./unison
+Usage: unison &lt;span class="o"&gt;[&lt;/span&gt;options&lt;span class="o"&gt;]&lt;/span&gt;
+    or unison root1 root2 &lt;span class="o"&gt;[&lt;/span&gt;options&lt;span class="o"&gt;]&lt;/span&gt;
+    or unison profilename &lt;span class="o"&gt;[&lt;/span&gt;options&lt;span class="o"&gt;]&lt;/span&gt;
+
+For a list of options, &lt;span class="nb"&gt;type&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;unison -help&amp;quot;&lt;/span&gt;.
+For a tutorial on basic usage, &lt;span class="nb"&gt;type&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;unison -doc tutorial&amp;quot;&lt;/span&gt;.
+For other documentation, &lt;span class="nb"&gt;type&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;unison -doc topics&amp;quot;&lt;/span&gt;.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;Testing&lt;/h5&gt;
+&lt;p&gt;Test the build locally with the directions in &lt;a href="http://www.seas.upenn.edu/~bcpierce/unison//download/releases/unison-2.40.63/unison-2.40.63-manual.html#local"&gt;the
+manual&lt;/a&gt;.
+Don't worry if you get a warning that begins "Warning: No archive files
+were found for these roots". This is just because it's the first time
+you've used Unison with these directories. Press the spacebar to
+continue, and make sure the last line of output is "Nothing to do:
+replicas have been changed only in identical ways since last sync.".&lt;/p&gt;
+&lt;p&gt;If you're planning to use Unison with a remote machine, you should also
+test its compatibility with that machine.&lt;/p&gt;
+&lt;h5&gt;Adding to Path&lt;/h5&gt;
+&lt;p&gt;Once you're confident Unison works to your liking, you'll probably want
+to copy or link it to &lt;code&gt;/usr/local/bin/unison&lt;/code&gt; so that you can call it
+from anywhere via &lt;code&gt;unison&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you're saving the source somewhere, you can use a symlink.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ln -s /usr/local/src/unison-2.40.63/unison /usr/local/bin/unison
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Or you can copy the binary directly. (Note: you'll have to do it this
+way if you're planning to remove the source code, since the original
+binary is in the source code directory).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;cp unison /usr/local/bin/unison
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Troubleshooting&lt;/h3&gt;
+&lt;h4&gt;Problem&lt;/h4&gt;
+&lt;p&gt;You see messages that look like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;make &lt;span class="nv"&gt;UISTYLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;text
+ocamlc -o mkProjectInfo unix.cma str.cma mkProjectInfo.ml
+make: ocamlc: No such file or directory
+&lt;span class="c"&gt;# [... more error output]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;Solution&lt;/h5&gt;
+&lt;p&gt;Install an OCaml compiler (see step 1)&lt;/p&gt;
+&lt;h4&gt;Problem&lt;/h4&gt;
+&lt;p&gt;You see lots of warnings that look like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ld&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;warning&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;object&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;
+&lt;span class="o"&gt;(/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="sr"&gt;/local/lib/ocaml/&lt;/span&gt;&lt;span class="n"&gt;libunix&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;a&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rewinddir&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;o&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt; &lt;span class="n"&gt;was&lt;/span&gt; &lt;span class="n"&gt;built&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;newer&lt;/span&gt; &lt;span class="n"&gt;OSX&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;10.11&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="n"&gt;than&lt;/span&gt; &lt;span class="n"&gt;being&lt;/span&gt; &lt;span class="n"&gt;linked&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;10.5&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;Solution&lt;/h5&gt;
+&lt;p&gt;You need to update the source code to reference version 10.5, not 10.11
+(see step 2).&lt;/p&gt;
+&lt;h4&gt;Problem&lt;/h4&gt;
+&lt;p&gt;Unison runs, but immediately segfaults.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;./unison
+0??Segmentation fault: 11
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;Solution 1&lt;/h5&gt;
+&lt;p&gt;Use a different OCaml compiler (see step 1). Unison will not build on El Capitan
+with OCaml 4.02.x. Try 4.01.x instead.&lt;/p&gt;
+&lt;h5&gt;Solution 2&lt;/h5&gt;
+&lt;p&gt;Make sure you've used the correct path to your OS 10.11 SDK (see step
+2). If it's not in
+&lt;code&gt;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk&lt;/code&gt;,
+look for it elsewhere(e.g. with mdfind).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mdfind -name .sdk
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Problem&lt;/h4&gt;
+&lt;p&gt;Unison works locally, but not with a remote server. The error output contains
+something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Fatal error: Internal error: New archives are not identical.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;Solution&lt;/h5&gt;
+&lt;p&gt;Recompile with an OCaml compiler that matches the one used on your remote (see the "Switching Compilers" step above). If
+you don't know the remote version, start by trying a compiler with a different
+major version (e.g. 3.x instead of 4.x).
+See also the discussion on &lt;a href="http://unix.stackexchange.com/questions/52945/how-to-fix-unison-failing-with-fatal-error-internal-error-new-archives-are-no"&gt;Stack Exchange&lt;/a&gt;.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</summary></entry><entry><title>Hacker School Reflections</title><link href="/hs-reflections.html" rel="alternate"></link><updated>2014-05-30T18:36:00+02:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:,2014-05-30:hs-reflections.html</id><summary type="html">&lt;p&gt;When I arrived at Hacker School, I laid out the following goals for myself:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;While I'm here, I want to:&lt;/p&gt;
 &lt;ul&gt;
