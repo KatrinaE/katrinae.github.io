@@ -249,7 +249,7 @@ can be returned if the algorithm terminates at a sub-optimal place.</p>
                 <span class="n">old_cost</span> <span class="o">=</span> <span class="n">new_cost</span>
             <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="n">T</span> <span class="o">=</span> <span class="n">T</span><span class="o">*</span><span class="n">alpha</span>
-    <span class="k">return</span> <span class="n">sol</span><span class="p">,</span> <span class="n">cost</span>
+    <span class="k">return</span> <span class="n">sol</span><span class="p">,</span> <span class="n">old_cost</span>
 </pre></div>
 
 
@@ -277,10 +277,10 @@ random number, you're switching!</p>
 <h4>Calculating the acceptance probability</h4>
 <p>The equation typically used for the acceptance probability is:</p>
 <p>$$
-a = e^{\frac{c_{new} - c_{old}}{T}}
+a = e^{\frac{c_{old} - c_{new}}{T}}
 $$</p>
-<p>where $a$ is the acceptance probability, $(c_{new}-c_{old})$ is the
-difference between the new cost and the old one, $T$ is the temperature,
+<p>where $a$ is the acceptance probability, $(c_{old}-c_{new})$ is the
+difference between the old cost and the new one, $T$ is the temperature,
 and $e$ is 2.71828, that mathematical constant that pops up in all
 sorts of unexpected places.</p>
 <p>This equation is the part of simulated annealing that was inspired
@@ -294,8 +294,8 @@ solution to one with a very low cost. </p>
 <p>This equation means that the acceptance probability:</p>
 <ul>
 <li>
-<p>is always &gt; 1 when the new solution is better than the old one. Since you can't have a probability greater than 100%, we use $\alpha = 1$ in 
-this case..</p>
+<p>is always &gt; 1 when the new solution is better (has a lower cost) than the
+old one. Since you can't have a probability greater than 100%, we use $\alpha = 1$ in this case..</p>
 </li>
 <li>
 <p>gets smaller as the new solution gets more worse than the old one.</p>
@@ -321,6 +321,10 @@ from <a href="http://www.cs.nott.ac.uk/~gxk/aim/">Graham Kendall</a> at Nottingh
 and on Steven Skiena's <a href="http://www.algorist.com/">Algorithm Design Manual</a>. Another excellent source is the 
 1983 paper <a href="http://home.gwu.edu/~stroud/classics/KirkpatrickGelattVecchi83.pdf">"Optimization by Simulated Annealing"</a> by Kirkpatrick, Gelatti,
 and Vecchi. It's a bit dense, but relatively readable for an academic paper.</p>
+<p><br /><br />
+<strong><em>Update 1/29/16:</em></strong> Fixed a couple of errors - the most egregious
+of which claimed the acceptance probability function to be
+$a = e^{\frac{c_{new} - c_{old}}{T}}$ instead of $a = e^{\frac{c_{old} - c_{new}}{T}}$.</p>
 	<hr/>
 	<h6>Category: <a href="/category/how-to.html">How-to</a>. Tags: <a href="/tag/seating-chart.html">Seating Chart</a>, <a href="/tag/algorithms.html">Algorithms</a>, </h6>
 </article>

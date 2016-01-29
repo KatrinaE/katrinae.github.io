@@ -1233,7 +1233,7 @@ can be returned if the algorithm terminates at a sub-optimal place.&lt;/p&gt;
                 &lt;span class="n"&gt;old_cost&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_cost&lt;/span&gt;
             &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
         &lt;span class="n"&gt;T&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;alpha&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sol&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cost&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sol&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;old_cost&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1261,10 +1261,10 @@ random number, you're switching!&lt;/p&gt;
 &lt;h4&gt;Calculating the acceptance probability&lt;/h4&gt;
 &lt;p&gt;The equation typically used for the acceptance probability is:&lt;/p&gt;
 &lt;p&gt;$$
-a = e^{\frac{c_{new} - c_{old}}{T}}
+a = e^{\frac{c_{old} - c_{new}}{T}}
 $$&lt;/p&gt;
-&lt;p&gt;where $a$ is the acceptance probability, $(c_{new}-c_{old})$ is the
-difference between the new cost and the old one, $T$ is the temperature,
+&lt;p&gt;where $a$ is the acceptance probability, $(c_{old}-c_{new})$ is the
+difference between the old cost and the new one, $T$ is the temperature,
 and $e$ is 2.71828, that mathematical constant that pops up in all
 sorts of unexpected places.&lt;/p&gt;
 &lt;p&gt;This equation is the part of simulated annealing that was inspired
@@ -1278,8 +1278,8 @@ solution to one with a very low cost. &lt;/p&gt;
 &lt;p&gt;This equation means that the acceptance probability:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;is always &amp;gt; 1 when the new solution is better than the old one. Since you can't have a probability greater than 100%, we use $\alpha = 1$ in 
-this case..&lt;/p&gt;
+&lt;p&gt;is always &amp;gt; 1 when the new solution is better (has a lower cost) than the
+old one. Since you can't have a probability greater than 100%, we use $\alpha = 1$ in this case..&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;gets smaller as the new solution gets more worse than the old one.&lt;/p&gt;
@@ -1304,7 +1304,11 @@ solution works admirably. It is my heuristic method of choice."&lt;/p&gt;
 from &lt;a href="http://www.cs.nott.ac.uk/~gxk/aim/"&gt;Graham Kendall&lt;/a&gt; at Nottingham University
 and on Steven Skiena's &lt;a href="http://www.algorist.com/"&gt;Algorithm Design Manual&lt;/a&gt;. Another excellent source is the 
 1983 paper &lt;a href="http://home.gwu.edu/~stroud/classics/KirkpatrickGelattVecchi83.pdf"&gt;"Optimization by Simulated Annealing"&lt;/a&gt; by Kirkpatrick, Gelatti,
-and Vecchi. It's a bit dense, but relatively readable for an academic paper.&lt;/p&gt;</summary><category term="Seating Chart"></category><category term="Algorithms"></category></entry><entry><title>Hacker School: Weeks 1 &amp; 2</title><link href="/hacker-school-w1.html" rel="alternate"></link><updated>2014-02-18T10:20:00+01:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:,2014-02-18:hacker-school-w1.html</id><summary type="html">&lt;h3&gt;What is Hacker School?&lt;/h3&gt;
+and Vecchi. It's a bit dense, but relatively readable for an academic paper.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;Update 1/29/16:&lt;/em&gt;&lt;/strong&gt; Fixed a couple of errors - the most egregious
+of which claimed the acceptance probability function to be
+$a = e^{\frac{c_{new} - c_{old}}{T}}$ instead of $a = e^{\frac{c_{old} - c_{new}}{T}}$.&lt;/p&gt;</summary><category term="Seating Chart"></category><category term="Algorithms"></category></entry><entry><title>Hacker School: Weeks 1 &amp; 2</title><link href="/hacker-school-w1.html" rel="alternate"></link><updated>2014-02-18T10:20:00+01:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:,2014-02-18:hacker-school-w1.html</id><summary type="html">&lt;h3&gt;What is Hacker School?&lt;/h3&gt;
 &lt;p&gt;After many times trying and utterly failing to communicate to people
 what Hacker School is, I've discovered that it's best to cut to
 the chase:&lt;/p&gt;
