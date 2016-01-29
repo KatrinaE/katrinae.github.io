@@ -241,37 +241,7 @@ something like this:&lt;/p&gt;
 &lt;p&gt;Recompile with an OCaml compiler that matches the one used on your remote (see the "Switching Compilers" step above). If
 you don't know the remote version, start by trying a compiler with a different
 major version (e.g. 3.x instead of 4.x).
-See also the discussion on &lt;a href="http://unix.stackexchange.com/questions/52945/how-to-fix-unison-failing-with-fatal-error-internal-error-new-archives-are-no"&gt;Stack Exchange&lt;/a&gt;.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>Hacker School Reflections</title><link href="/hs-reflections.html" rel="alternate"></link><updated>2014-05-30T18:36:00+02:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:,2014-05-30:hs-reflections.html</id><summary type="html">&lt;p&gt;When I arrived at Hacker School, I laid out the following goals for myself:&lt;/p&gt;
+See also the discussion on &lt;a href="http://unix.stackexchange.com/questions/52945/how-to-fix-unison-failing-with-fatal-error-internal-error-new-archives-are-no"&gt;Stack Exchange&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>Hacker School Reflections</title><link href="/hs-reflections.html" rel="alternate"></link><updated>2014-05-30T18:36:00+02:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:,2014-05-30:hs-reflections.html</id><summary type="html">&lt;p&gt;When I arrived at Hacker School, I laid out the following goals for myself:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;While I'm here, I want to:&lt;/p&gt;
 &lt;ul&gt;
@@ -958,37 +928,7 @@ void SpiDrv::waitForSlaveReady()
 &lt;p&gt;No matter how long I wait, that friggin slave just isn't ready.
 If this is the problem, I'm going to have to throw in the towel. There's
 no more code to debug - I'd have to get out datasheets and begin
-from there. &lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>How to Update the Arduino WiFi Shield Firmware</title><link href="/arduino-wifi-firmware-upgrade.html" rel="alternate"></link><updated>2014-03-21T11:41:00+01:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:,2014-03-21:arduino-wifi-firmware-upgrade.html</id><summary type="html">&lt;p&gt;The firmware that ships with the Arduino WiFi shield (v. 1.0.0) doesn't work properly. 
+from there. &lt;/p&gt;</summary></entry><entry><title>How to Update the Arduino WiFi Shield Firmware</title><link href="/arduino-wifi-firmware-upgrade.html" rel="alternate"></link><updated>2014-03-21T11:41:00+01:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:,2014-03-21:arduino-wifi-firmware-upgrade.html</id><summary type="html">&lt;p&gt;The firmware that ships with the Arduino WiFi shield (v. 1.0.0) doesn't work properly. 
 Fortunately, they've written new firmware (v. 1.1.0). Unfortunately, updating it is
 a bit tricky. I found both the
 &lt;a href="http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading"&gt;official Arduino instructions&lt;/a&gt;
@@ -1364,37 +1304,7 @@ solution works admirably. It is my heuristic method of choice."&lt;/p&gt;
 from &lt;a href="http://www.cs.nott.ac.uk/~gxk/aim/"&gt;Graham Kendall&lt;/a&gt; at Nottingham University
 and on Steven Skiena's &lt;a href="http://www.algorist.com/"&gt;Algorithm Design Manual&lt;/a&gt;. Another excellent source is the 
 1983 paper &lt;a href="http://home.gwu.edu/~stroud/classics/KirkpatrickGelattVecchi83.pdf"&gt;"Optimization by Simulated Annealing"&lt;/a&gt; by Kirkpatrick, Gelatti,
-and Vecchi. It's a bit dense, but relatively readable for an academic paper.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="Seating Chart"></category><category term="Algorithms"></category></entry><entry><title>Hacker School: Weeks 1 &amp; 2</title><link href="/hacker-school-w1.html" rel="alternate"></link><updated>2014-02-18T10:20:00+01:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:,2014-02-18:hacker-school-w1.html</id><summary type="html">&lt;h3&gt;What is Hacker School?&lt;/h3&gt;
+and Vecchi. It's a bit dense, but relatively readable for an academic paper.&lt;/p&gt;</summary><category term="Seating Chart"></category><category term="Algorithms"></category></entry><entry><title>Hacker School: Weeks 1 &amp; 2</title><link href="/hacker-school-w1.html" rel="alternate"></link><updated>2014-02-18T10:20:00+01:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:,2014-02-18:hacker-school-w1.html</id><summary type="html">&lt;h3&gt;What is Hacker School?&lt;/h3&gt;
 &lt;p&gt;After many times trying and utterly failing to communicate to people
 what Hacker School is, I've discovered that it's best to cut to
 the chase:&lt;/p&gt;
