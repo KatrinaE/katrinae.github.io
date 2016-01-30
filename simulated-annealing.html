@@ -233,23 +233,23 @@ always keep track of the best solution found so far so that it
 can be returned if the algorithm terminates at a sub-optimal place.</p>
 <div class="highlight"><pre><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
 
-<span class="k">def</span> <span class="nf">anneal</span><span class="p">(</span><span class="n">sol</span><span class="p">):</span>
-    <span class="n">old_cost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">anneal</span><span class="p">(</span><span class="n">solution</span><span class="p">):</span>
+    <span class="n">old_cost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span>
     <span class="n">T</span> <span class="o">=</span> <span class="mf">1.0</span>
     <span class="n">T_min</span> <span class="o">=</span> <span class="mf">0.00001</span>
     <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.9</span>
     <span class="k">while</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="n">T_min</span><span class="p">:</span>
         <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
-            <span class="n">new_sol</span> <span class="o">=</span> <span class="n">neighbor</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
-            <span class="n">new_cost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">new_sol</span><span class="p">)</span>
+            <span class="n">new_solution</span> <span class="o">=</span> <span class="n">neighbor</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span>
+            <span class="n">new_cost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">new_solution</span><span class="p">)</span>
             <span class="n">ap</span> <span class="o">=</span> <span class="n">acceptance_probability</span><span class="p">(</span><span class="n">old_cost</span><span class="p">,</span> <span class="n">new_cost</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">ap</span> <span class="o">&gt;</span> <span class="n">random</span><span class="p">():</span>
-                <span class="n">sol</span> <span class="o">=</span> <span class="n">new_sol</span>
+                <span class="n">solution</span> <span class="o">=</span> <span class="n">new_solution</span>
                 <span class="n">old_cost</span> <span class="o">=</span> <span class="n">new_cost</span>
             <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="n">T</span> <span class="o">=</span> <span class="n">T</span><span class="o">*</span><span class="n">alpha</span>
-    <span class="k">return</span> <span class="n">sol</span><span class="p">,</span> <span class="n">old_cost</span>
+    <span class="k">return</span> <span class="n">solution</span><span class="p">,</span> <span class="n">old_cost</span>
 </pre></div>
 
 
