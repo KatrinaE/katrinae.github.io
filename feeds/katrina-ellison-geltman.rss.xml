@@ -241,7 +241,37 @@ something like this:&lt;/p&gt;
 &lt;p&gt;Recompile with an OCaml compiler that matches the one used on your remote (see the "Switching Compilers" step above). If
 you don't know the remote version, start by trying a compiler with a different
 major version (e.g. 3.x instead of 4.x).
-See also the discussion on &lt;a href="http://unix.stackexchange.com/questions/52945/how-to-fix-unison-failing-with-fatal-error-internal-error-new-archives-are-no"&gt;Stack Exchange&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Sun, 27 Dec 2015 16:59:00 +0100</pubDate><guid>tag:,2015-12-27:unison-el-capitan.html</guid></item><item><title>Hacker School Reflections</title><link>/hs-reflections.html</link><description>&lt;p&gt;When I arrived at Hacker School, I laid out the following goals for myself:&lt;/p&gt;
+See also the discussion on &lt;a href="http://unix.stackexchange.com/questions/52945/how-to-fix-unison-failing-with-fatal-error-internal-error-new-archives-are-no"&gt;Stack Exchange&lt;/a&gt;.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Sun, 27 Dec 2015 16:59:00 +0100</pubDate><guid>tag:,2015-12-27:unison-el-capitan.html</guid></item><item><title>Hacker School Reflections</title><link>/hs-reflections.html</link><description>&lt;p&gt;When I arrived at Hacker School, I laid out the following goals for myself:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;While I'm here, I want to:&lt;/p&gt;
 &lt;ul&gt;
@@ -928,7 +958,37 @@ void SpiDrv::waitForSlaveReady()
 &lt;p&gt;No matter how long I wait, that friggin slave just isn't ready.
 If this is the problem, I'm going to have to throw in the towel. There's
 no more code to debug - I'd have to get out datasheets and begin
-from there. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Tue, 01 Apr 2014 12:03:00 +0200</pubDate><guid>tag:,2014-04-01:arduino-debugging.html</guid></item><item><title>How to Update the Arduino WiFi Shield Firmware</title><link>/arduino-wifi-firmware-upgrade.html</link><description>&lt;p&gt;The firmware that ships with the Arduino WiFi shield (v. 1.0.0) doesn't work properly. 
+from there. &lt;/p&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Tue, 01 Apr 2014 12:03:00 +0200</pubDate><guid>tag:,2014-04-01:arduino-debugging.html</guid></item><item><title>How to Update the Arduino WiFi Shield Firmware</title><link>/arduino-wifi-firmware-upgrade.html</link><description>&lt;p&gt;The firmware that ships with the Arduino WiFi shield (v. 1.0.0) doesn't work properly. 
 Fortunately, they've written new firmware (v. 1.1.0). Unfortunately, updating it is
 a bit tricky. I found both the
 &lt;a href="http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading"&gt;official Arduino instructions&lt;/a&gt;
@@ -1217,23 +1277,23 @@ always keep track of the best solution found so far so that it
 can be returned if the algorithm terminates at a sub-optimal place.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;
 
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;anneal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;solution&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;old_cost&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cost&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;solution&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;anneal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sol&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;old_cost&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cost&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sol&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;T&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;
     &lt;span class="n"&gt;T_min&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.00001&lt;/span&gt;
     &lt;span class="n"&gt;alpha&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.9&lt;/span&gt;
     &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;T&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;T_min&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
         &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="n"&gt;new_solution&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;neighbor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;solution&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-            &lt;span class="n"&gt;new_cost&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cost&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_solution&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="n"&gt;new_sol&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;neighbor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sol&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="n"&gt;new_cost&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cost&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_sol&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
             &lt;span class="n"&gt;ap&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;acceptance_probability&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;old_cost&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_cost&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
             &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ap&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-                &lt;span class="n"&gt;solution&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_solution&lt;/span&gt;
+                &lt;span class="n"&gt;sol&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_sol&lt;/span&gt;
                 &lt;span class="n"&gt;old_cost&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_cost&lt;/span&gt;
             &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
         &lt;span class="n"&gt;T&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;alpha&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;solution&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;old_cost&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sol&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cost&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1261,10 +1321,10 @@ random number, you're switching!&lt;/p&gt;
 &lt;h4&gt;Calculating the acceptance probability&lt;/h4&gt;
 &lt;p&gt;The equation typically used for the acceptance probability is:&lt;/p&gt;
 &lt;p&gt;$$
-a = e^{\frac{c_{old} - c_{new}}{T}}
+a = e^{\frac{c_{new} - c_{old}}{T}}
 $$&lt;/p&gt;
-&lt;p&gt;where $a$ is the acceptance probability, $(c_{old}-c_{new})$ is the
-difference between the old cost and the new one, $T$ is the temperature,
+&lt;p&gt;where $a$ is the acceptance probability, $(c_{new}-c_{old})$ is the
+difference between the new cost and the old one, $T$ is the temperature,
 and $e$ is 2.71828, that mathematical constant that pops up in all
 sorts of unexpected places.&lt;/p&gt;
 &lt;p&gt;This equation is the part of simulated annealing that was inspired
@@ -1278,8 +1338,8 @@ solution to one with a very low cost. &lt;/p&gt;
 &lt;p&gt;This equation means that the acceptance probability:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;is always &amp;gt; 1 when the new solution is better (has a lower cost) than the
-old one. Since you can't have a probability greater than 100%, we use $\alpha = 1$ in this case..&lt;/p&gt;
+&lt;p&gt;is always &amp;gt; 1 when the new solution is better than the old one. Since you can't have a probability greater than 100%, we use $\alpha = 1$ in 
+this case..&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;gets smaller as the new solution gets more worse than the old one.&lt;/p&gt;
@@ -1304,11 +1364,37 @@ solution works admirably. It is my heuristic method of choice."&lt;/p&gt;
 from &lt;a href="http://www.cs.nott.ac.uk/~gxk/aim/"&gt;Graham Kendall&lt;/a&gt; at Nottingham University
 and on Steven Skiena's &lt;a href="http://www.algorist.com/"&gt;Algorithm Design Manual&lt;/a&gt;. Another excellent source is the 
 1983 paper &lt;a href="http://home.gwu.edu/~stroud/classics/KirkpatrickGelattVecchi83.pdf"&gt;"Optimization by Simulated Annealing"&lt;/a&gt; by Kirkpatrick, Gelatti,
-and Vecchi. It's a bit dense, but relatively readable for an academic paper.&lt;/p&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;em&gt;Update 1/29/16:&lt;/em&gt;&lt;/strong&gt; Fixed a couple of errors - the most egregious
-of which claimed the acceptance probability function to be
-$a = e^{\frac{c_{new} - c_{old}}{T}}$ instead of $a = e^{\frac{c_{old} - c_{new}}{T}}$.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Thu, 20 Feb 2014 19:29:00 +0100</pubDate><guid>tag:,2014-02-20:simulated-annealing.html</guid><category>Seating Chart</category><category>Algorithms</category></item><item><title>Hacker School: Weeks 1 &amp; 2</title><link>/hacker-school-w1.html</link><description>&lt;h3&gt;What is Hacker School?&lt;/h3&gt;
+and Vecchi. It's a bit dense, but relatively readable for an academic paper.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Thu, 20 Feb 2014 19:29:00 +0100</pubDate><guid>tag:,2014-02-20:simulated-annealing.html</guid><category>Seating Chart</category><category>Algorithms</category></item><item><title>Hacker School: Weeks 1 &amp; 2</title><link>/hacker-school-w1.html</link><description>&lt;h3&gt;What is Hacker School?&lt;/h3&gt;
 &lt;p&gt;After many times trying and utterly failing to communicate to people
 what Hacker School is, I've discovered that it's best to cut to
 the chase:&lt;/p&gt;

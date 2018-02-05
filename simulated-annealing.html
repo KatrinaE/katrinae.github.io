@@ -233,23 +233,23 @@ always keep track of the best solution found so far so that it
 can be returned if the algorithm terminates at a sub-optimal place.</p>
 <div class="highlight"><pre><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
 
-<span class="k">def</span> <span class="nf">anneal</span><span class="p">(</span><span class="n">solution</span><span class="p">):</span>
-    <span class="n">old_cost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">anneal</span><span class="p">(</span><span class="n">sol</span><span class="p">):</span>
+    <span class="n">old_cost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
     <span class="n">T</span> <span class="o">=</span> <span class="mf">1.0</span>
     <span class="n">T_min</span> <span class="o">=</span> <span class="mf">0.00001</span>
     <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.9</span>
     <span class="k">while</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="n">T_min</span><span class="p">:</span>
         <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
-            <span class="n">new_solution</span> <span class="o">=</span> <span class="n">neighbor</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span>
-            <span class="n">new_cost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">new_solution</span><span class="p">)</span>
+            <span class="n">new_sol</span> <span class="o">=</span> <span class="n">neighbor</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+            <span class="n">new_cost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">new_sol</span><span class="p">)</span>
             <span class="n">ap</span> <span class="o">=</span> <span class="n">acceptance_probability</span><span class="p">(</span><span class="n">old_cost</span><span class="p">,</span> <span class="n">new_cost</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">ap</span> <span class="o">&gt;</span> <span class="n">random</span><span class="p">():</span>
-                <span class="n">solution</span> <span class="o">=</span> <span class="n">new_solution</span>
+                <span class="n">sol</span> <span class="o">=</span> <span class="n">new_sol</span>
                 <span class="n">old_cost</span> <span class="o">=</span> <span class="n">new_cost</span>
             <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="n">T</span> <span class="o">=</span> <span class="n">T</span><span class="o">*</span><span class="n">alpha</span>
-    <span class="k">return</span> <span class="n">solution</span><span class="p">,</span> <span class="n">old_cost</span>
+    <span class="k">return</span> <span class="n">sol</span><span class="p">,</span> <span class="n">cost</span>
 </pre></div>
 
 
@@ -277,10 +277,10 @@ random number, you're switching!</p>
 <h4>Calculating the acceptance probability</h4>
 <p>The equation typically used for the acceptance probability is:</p>
 <p>$$
-a = e^{\frac{c_{old} - c_{new}}{T}}
+a = e^{\frac{c_{new} - c_{old}}{T}}
 $$</p>
-<p>where $a$ is the acceptance probability, $(c_{old}-c_{new})$ is the
-difference between the old cost and the new one, $T$ is the temperature,
+<p>where $a$ is the acceptance probability, $(c_{new}-c_{old})$ is the
+difference between the new cost and the old one, $T$ is the temperature,
 and $e$ is 2.71828, that mathematical constant that pops up in all
 sorts of unexpected places.</p>
 <p>This equation is the part of simulated annealing that was inspired
@@ -294,8 +294,8 @@ solution to one with a very low cost. </p>
 <p>This equation means that the acceptance probability:</p>
 <ul>
 <li>
-<p>is always &gt; 1 when the new solution is better (has a lower cost) than the
-old one. Since you can't have a probability greater than 100%, we use $\alpha = 1$ in this case..</p>
+<p>is always &gt; 1 when the new solution is better than the old one. Since you can't have a probability greater than 100%, we use $\alpha = 1$ in 
+this case..</p>
 </li>
 <li>
 <p>gets smaller as the new solution gets more worse than the old one.</p>
@@ -320,11 +320,37 @@ solution works admirably. It is my heuristic method of choice."</p>
 from <a href="http://www.cs.nott.ac.uk/~gxk/aim/">Graham Kendall</a> at Nottingham University
 and on Steven Skiena's <a href="http://www.algorist.com/">Algorithm Design Manual</a>. Another excellent source is the 
 1983 paper <a href="http://home.gwu.edu/~stroud/classics/KirkpatrickGelattVecchi83.pdf">"Optimization by Simulated Annealing"</a> by Kirkpatrick, Gelatti,
-and Vecchi. It's a bit dense, but relatively readable for an academic paper.</p>
-<p><br /><br />
-<strong><em>Update 1/29/16:</em></strong> Fixed a couple of errors - the most egregious
-of which claimed the acceptance probability function to be
-$a = e^{\frac{c_{new} - c_{old}}{T}}$ instead of $a = e^{\frac{c_{old} - c_{new}}{T}}$.</p>
+and Vecchi. It's a bit dense, but relatively readable for an academic paper.</p><script type= "text/javascript">
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+</script>
+
 	<hr/>
 	<h6>Category: <a href="/category/how-to.html">How-to</a>. Tags: <a href="/tag/seating-chart.html">Seating Chart</a>, <a href="/tag/algorithms.html">Algorithms</a>, </h6>
 </article>
