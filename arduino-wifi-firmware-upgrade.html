@@ -6,15 +6,21 @@
 
 		<title>Katrina Ellison Geltman</title>
 		<meta name="description" content="">
-		<meta name="author" content="Katrina Ellison Geltman">
+		<meta name="author" content="">
 
 		<link rel="stylesheet" href="/theme/css/foundation.css" />
-		<link rel="stylesheet" href="/theme/css/pygment/manni.css" />
+		<link rel="stylesheet" href="/theme/css/pygment/bw.css" />
 		<link rel="stylesheet" href="/theme/css/custom.css" />
 
+		<!-- GOOGLE WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cookie&family=Pacifico&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/alt-fonts.css" />
 
 		<script src="/theme/js/modernizr.js"></script>
+
 		<!-- Feeds -->
+		<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Katrina Ellison Geltman Atom Feed" />
 
 
 		<!-- mathjax config similar to math.stackexchange -->
@@ -31,9 +37,7 @@
 			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
 		});
 		</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	</head>
 	<body>
 		<div class="off-canvas-wrap">
@@ -53,62 +57,41 @@
 				<aside class="left-off-canvas-menu">
 					<ul class="off-canvas-list">
 						<li><a href="">Home</a></li>
-						<li><label>Pages</label></li>
-							<li ><a href="/pages/about-me.html">About</a></li>
+						<li><label>Categories</label></li>
+							<li ><a href="/pages/about-me.html">About Me</a></li>
 							<li ><a href="/pages/projects.html">Projects</a></li>
+						<li><a href="/archives.html">Archives</a></li>
 
 						<li><label>Links</label></li>
 							<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
 							<li><a href="http://www.github.com/katrinae">GitHub</a></li>
 							<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
 
-						<!--
-							-->
-
 						<li><label>Monthly Archives</label></li>
+									<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
 									<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
 									<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
-									<li><a href="/posts/2014/04/">April 2014 (3)</a></li>
+									<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
 									<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
 									<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
-
-						<!--<li><label>Links</label></li>
-					</ul>-->
+					</ul>	
 				</aside>
 
 				<!-- top bar nav -->
 				<nav class="top-bar hide-for-small-only" data-topbar>
 					<ul class="title-area">
 						<li class="name">
-							<h1><a href="/">Katrina Ellison Geltman</a></h1>
+							<h1 id="pagetitle"><span id="pagetitle"><a href="/" style="text-decoration:none">Katrina Ellison Geltman</a><span></h1>
 						</li>
 					</ul>
 
-					<!-- <section class="top-bar-section">
-						<ul class="left">
-								<li ><a href="/category/hacker-school.html">Hacker School</a></li>
-								<li class="active"><a href="/category/how-to.html">How-to</a></li>
-								<li ><a href="/category/misc.html">misc</a></li>
-								<li ><a href="/category/python.html">Python</a></li>
-								<li ><a href="/category/seating-chart-creator.html">Seating Chart Creator</a></li>
-						</ul>
-					</section> -->
-
 					<section class="top-bar-section">
 						<ul class="left">
-								<li ><a href="/pages/about-me.html">About</a></li>
-								<li ><a href="/pages/projects.html">Projects</a></li>
+						            <li ><a style="text-decoration:none;" href="/pages/about-me.html">About Me</a></li>
+						            <li ><a style="text-decoration:none;" href="/pages/projects.html">Projects</a></li>
+							    <li><a style="text-decoration:none;" href="/archives.html">Archives</a>
 						</ul>
 					</section>
-
-
-					<section class="top-bar-section">
-					  <ul class="left">
-					    <li><a href="/archives.html">Archives</a></li>
-					  </ul>
-					</section>
-
-
 				</nav>
 
 				<!-- Main Page Content and Sidebar -->
@@ -117,91 +100,89 @@
 						<!-- Main Content -->
 						<div class="medium-9 small-12 columns" role="content">
 <article>
-	<h2>How to Update the Arduino WiFi Shield Firmware
-	</h2>
-	<h5>Fri 21 March 2014</h5>
-	<p>The firmware that ships with the Arduino WiFi shield (v. 1.0.0) doesn't work properly. 
-Fortunately, they've written new firmware (v. 1.1.0). Unfortunately, updating it is
-a bit tricky. I found both the
-<a href="http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading">official Arduino instructions</a>
-and the <a href="http://flashgamer.com/arduino/comments/how-to-update-the-official-arduino-wifi-shield">instructions at Flashgamer.com</a> helpful (particularly the latter), but neither of them
-worked perfectly for me, and after I completed them I had trouble telling if the 
-firmware was updated or not.</p>
-<p>I've had to complete this process several times now. Here's what is consistently
-working for me.</p>
-<h3>1<sup>st</sup>: Get the Firmware</h3>
+    <h2>How to Update the Arduino WiFi Shield Firmware</h2>
+  	<h6>Written by <a href="/author/katrina-ellison-geltman.html">Katrina Ellison Geltman</a> on Fri 21 March 2014.</h6>
+	<p>The firmware that ships with the Arduino WiFi shield (v. 1.0.0) doesn't work
+properly. Fortunately, they've written new firmware (v. 1.1.0). Unfortunately,
+updating it is a bit tricky. I found both the <a href="http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading">official Arduino
+instructions</a> and
+the <a href="http://flashgamer.com/arduino/comments/how-to-update-the-
+official-arduino-wifi-shield">instructions at
+Flashgamer.com</a> helpful (particularly the latter), but neither
+of them worked perfectly for me, and after I completed them I had trouble
+telling if the firmware was updated or not.</p>
+<p>I've had to complete this process several times now. Here's what is
+consistently working for me.</p>
+<h3>1st: Get the Firmware</h3>
 <h4>From your Arduino IDE</h4>
-<p>If you have the Arduino IDE v. 1.0.5, the new firmware should be inside - you can skip the rest of this section. 
-(I'm not sure about other IDE versions). On my Mac, the IDE
-is at <code>/Applications/Arduino.app</code> and the WiFi firmware is at <code>/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/firmwares/wifishield</code>.</p>
-<p>You can double-check that you have the right version by going to lines 41-42 of 
-<code>wifishield/wifiHD/src/main.c</code>. They should say this:</p>
-<div class="highlight"><pre><span class="cm">/* FIRMWARE version */</span><span class="w"></span>
-const<span class="w"> </span>char<span class="o">*</span><span class="w"> </span>fwVersion<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1.1.0&quot;</span><span class="err">;</span><span class="w"></span>
-</pre></div>
-
+<p>If you have the Arduino IDE v. 1.0.5, the new firmware should be inside - you
+can skip the rest of this section. (I'm not sure about other IDE versions). On
+my Mac, the IDE is at <code>/Applications/Arduino.app</code> and the WiFi firmware is at
+<code>/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/firmwares/wifishield</code>.</p>
+<p>You can double-check that you have the right version by going to lines 41-42
+of <code>wifishield/wifiHD/src/main.c</code>. They should say this:</p>
+<div class="highlight"><pre><span></span><code><span class="o">/*</span><span class="w"> </span><span class="n">FIRMWARE</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">*/</span>
+<span class="k">const</span><span class="w"> </span><span class="nb">char</span><span class="o">*</span><span class="w"> </span><span class="n">fwVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1.1.0&quot;</span><span class="p">;</span>
+</code></pre></div>
 
 <h4>From Github</h4>
-<p>The code is also on Github if you need it. There are two versions
-on Arduino’s Github account:</p>
+<p>The code is also on Github if you need it. There are two versions on Arduino’s
+Github account:</p>
 <ul>
 <li>https://github.com/arduino/wifishield (firmware last updated 2013-01-19)</li>
 <li><a href="https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield">https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield</a> (firmware last upgraded 2013-03-28)</li>
 </ul>
-<p><strong>The second repository is the one you want.</strong> The first one contains the old firmware.</p>
-<p>Cloning the second repo is a pain because you have
-to download the full Arduino IDE, not just the WiFi shield firmware,
-and the repository is over 250 MB. I found it easier to just download the
-individual files, which are located in the <code>wifishield</code> folder linked to above.</p>
+<p><strong>The second repository is the one you want.</strong> The first one contains the old
+firmware.</p>
+<p>Cloning the second repo is a pain because you have to download the full
+Arduino IDE, not just the WiFi shield firmware, and the repository is over 250
+MB. I found it easier to just download the individual files, which are located
+in the <code>wifishield</code> folder linked to above.</p>
 <h4>Where should I put it?</h4>
-<p>The official instructions are not clear about where to keep the new firmware. Putting
-them in an arbitrary folder 
-caused me a lot of problems later on. I recommend keeping the new version
-where the old version used to be.
-Back up the old firmware with version control or by copying it to a different
+<p>The official instructions are not clear about where to keep the new firmware.
+Putting them in an arbitrary folder caused me a lot of problems later on. I
+recommend keeping the new version where the old version used to be. Back up
+the old firmware with version control or by copying it to a different
 directory outside of Arduino.app.</p>
-<h3>2<sup>nd</sup>: DFU Programmer</h3>
-<p>DFU Programmer is the software that gets your new firmware on your Arduino 
+<h3>2nd: DFU Programmer</h3>
+<p>DFU Programmer is the software that gets your new firmware on your Arduino
 (DFU stands for 'Device Firmware Update'). I was able to download it using
-<a href="http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading">the official Arduino instructions</a>,
-but you can also get DFU Programmer directly from its 
-<a href="http://dfu-programmer.sourceforge.net/">project homepage</a>.</p>
-<h3>3<sup>rd</sup>: Set the Jumper</h3>
-<p>You need to set the jumper to put the WiFi shield in programmable mode.
-The jumper is a a tall, rectangular piece on your WiFi shield, located near the
+<a href="http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading">the official Arduino
+instructions</a>, but
+you can also get DFU Programmer directly from its <a href="http://dfu-programmer.sourceforge.net/">project
+homepage</a>.</p>
+<h3>3rd: Set the Jumper</h3>
+<p>You need to set the jumper to put the WiFi shield in programmable mode. The
+jumper is a a tall, rectangular piece on your WiFi shield, located near the
 power and ground pins.</p>
-<p><img alt="Arduino WiFi Jumper" src="/images/arduino/arduino-wifi-jumper.jpg" title="Arduino WiFi Jumper" /></p>
-<p>The jumper is held up by two pins. Actually, right now it should only sit on one of the pins 
-(as shown in the picture above).
-To set it, pull it off and replace it so that it sits over both pins. This puts the shield in
-programmable mode, allowing you to update the firmware. After the update, you'll need to unset it before
-you use your Arduino again.</p>
-<h3>4<sup>th</sup>: Fix the Path in the Install Script</h3>
-<p>If you're on Linux
-or Mac, you can transfer the new firmware to the Arduino with one of the install scripts 
-in <code>wifishield/firmware/scripts/</code>
-(<code>ArduinoWifiShield_upgrade.sh</code> for Linux, <code>ArduinoWifiShield_upgrade.sh</code> for Mac).
-Before you run them, you'll have to fix a small error in the path
-where it looks for the firmware. Change:</p>
-<div class="highlight"><pre>WIFI_FW_PATH=&quot;/hardware/arduino/firmwares/wifi-shield&quot;
-</pre></div>
-
+<p><img alt="Arduino WiFi Jumper" src="/images/arduino/arduino-wifi-jumper.jpg"></p>
+<p>The jumper is held up by two pins. Actually, right now it should only sit on
+one of the pins (as shown in the picture above). To set it, pull it off and
+replace it so that it sits over both pins. This puts the shield in
+programmable mode, allowing you to update the firmware. After the update,
+you'll need to unset it before you use your Arduino again.</p>
+<h3>4th: Fix the Path in the Install Script</h3>
+<p>If you're on Linux or Mac, you can transfer the new firmware to the Arduino
+with one of the install scripts in <code>wifishield/firmware/scripts/</code>
+(<code>ArduinoWifiShield_upgrade.sh</code> for Linux, <code>ArduinoWifiShield_upgrade.sh</code> for
+Mac). Before you run them, you'll have to fix a small error in the path where
+it looks for the firmware. Change:</p>
+<div class="highlight"><pre><span></span><code>WIFI_FW_PATH=&quot;/hardware/arduino/firmwares/wifi-shield&quot;
+</code></pre></div>
 
 <p>to:</p>
-<div class="highlight"><pre>WIFI_FW_PATH=&quot;/hardware/arduino/firmwares/wifishield&quot;
-</pre></div>
+<div class="highlight"><pre><span></span><code>WIFI_FW_PATH=&quot;/hardware/arduino/firmwares/wifishield&quot;
+</code></pre></div>
 
-
-<h3>5<sup>th</sup>: Upload the Firmware</h3>
-<p>It's go time! Link your WiFi shield to your computer using a mini USB cable (<em>don't</em> 
-leave the shield connected to the Arduino). Then run:</p>
-<div class="highlight"><pre>cd wifishield/firmware/scripts
+<h3>5th: Upload the Firmware</h3>
+<p>It's go time! Link your WiFi shield to your computer using a mini USB cable
+(<em>don't</em> leave the shield connected to the Arduino). Then run:</p>
+<div class="highlight"><pre><span></span><code>cd wifishield/firmware/scripts
 sudo sh ArduinoWifiShield_upgrade_mac.sh -a /Applications/Arduino.app/Contents/Resources/Java -f shield
-</pre></div>
-
+</code></pre></div>
 
 <p>You should see output like this:</p>
-<div class="highlight"><pre>       Arduino WiFi Shield upgrade
+<div class="highlight"><pre><span></span><code>       Arduino WiFi Shield upgrade
 =========================================
 Disclaimer: to access to the USB devices correctly, the dfu-programmer 
 needs to be used as root. Run this script as root.
@@ -213,76 +194,57 @@ Validating...
 
 Done. Remove the J3 jumper and press the RESET button on the shield.
 Thank you!
-</pre></div>
+</code></pre></div>
 
+<h3>6th: Check that the install was successful</h3>
+<p>To verify that your WiFi shield is using the new firmware, mount the WiFi
+shield on your Arduino and upload this sketch:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;WiFi.h&gt;</span>
 
-<h3>6<sup>th</sup>: Check that the install was successful</h3>
-<p>To verify that your WiFi shield is using the new firmware,
-mount the WiFi shield on your Arduino and upload this sketch:</p>
-<div class="highlight"><pre><span class="cp">#include &lt;WiFi.h&gt;</span>
-
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
-  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;the version is: &quot;</span><span class="p">);</span>
-  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">firmwareVersion</span><span class="p">());</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;the version is: &quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">firmwareVersion</span><span class="p">());</span>
 <span class="p">}</span>
 
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
-
-<p>Check the serial output (in the IDE, you can do this by clicking on the magnifying
-glass at the upper right corner of the sketch). It should say:</p>
-<div class="highlight"><pre>the version is:
+<p>Check the serial output (in the IDE, you can do this by clicking on the
+magnifying glass at the upper right corner of the sketch). It should say:</p>
+<div class="highlight"><pre><span></span><code>the version is:
 1.1.0
-</pre></div>
-	<hr/>
-	<h6>Category: <a href="/category/how-to.html">How-to</a>. Tags: <a href="/tag/arduino.html">Arduino</a>, </h6>
+</code></pre></div>
+
+<hr>
 </article>
 
-<hr/>
 						</div>
 						<!-- End Main Content -->
 						<!-- Sidebar -->
 						<aside class="medium-3 hide-for-small-only columns">
 							<div class="panel">
-								<ul class="side-nav">
-								  <img src="/theme/img/headshot.png" />
-								</ul>
-							</div>
-
-							<div class="panel">
 								<h5>Links</h5>
-								  <p style="margin-bottom:0px;"><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></p>
-								  <p style="margin-bottom:0px;"><a href="http://www.github.com/katrinae">GitHub</a></p>
-								  <p style="margin-bottom:0px;"><a href="http://www.slideshare.net/kellison00">SlideShare</a></p>
-							</div>
-
-							<!-- 
-							<div class="panel">
-								<h5>Tags</h5>
-								<ul class="tag-cloud">
+								<ul class="side-nav">
+									<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+									<li><a href="http://www.github.com/katrinae">GitHub</a></li>
+									<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
 								</ul>
-							</div>-->
+							</div>
 
 							<div class="panel">
 								<h5>Monthly Archives</h5>
-								<p style="margin-bottom:0px;"><a href="/posts/2015/12/">December 2015 (1)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/05/">May 2014 (2)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/04/">April 2014 (3)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/03/">March 2014 (2)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/02/">February 2014 (2)</a>
+								<ul class="side-nav">
+											<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
+											<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
+											<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
+											<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
+											<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+											<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
 								</ul>
 							</div>
 
-							<!--
-							<div class="panel">
-								<h5>Social</h5>
-								<ul class="side-nav">
-								</ul>
-							</div>
-							-->
 						</aside>
 						<!-- End Sidebar -->
 					</div>
@@ -290,8 +252,7 @@ glass at the upper right corner of the sketch). It should say:</p>
 					<!-- Footer -->
 					<footer class="row">
 						<div class="medium-9 small-12">
-							<hr/>
-							<p class="text-center"><span style="font-style:italic; color: lightgray;  font-size:1em">Powered by Pelican and based on a theme by <a href="http://hamaluik.com" style="color:lightgray; hover:lightgray">Kenton Hamaluik</a>.</span></p>
+							<p class="text-center"> </p>
 						</div>
 					</footer>
 					<!-- End Footer -->

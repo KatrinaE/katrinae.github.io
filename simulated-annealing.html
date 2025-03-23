@@ -6,15 +6,21 @@
 
 		<title>Katrina Ellison Geltman</title>
 		<meta name="description" content="">
-		<meta name="author" content="Katrina Ellison Geltman">
+		<meta name="author" content="">
 
 		<link rel="stylesheet" href="/theme/css/foundation.css" />
-		<link rel="stylesheet" href="/theme/css/pygment/manni.css" />
+		<link rel="stylesheet" href="/theme/css/pygment/bw.css" />
 		<link rel="stylesheet" href="/theme/css/custom.css" />
 
+		<!-- GOOGLE WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cookie&family=Pacifico&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/alt-fonts.css" />
 
 		<script src="/theme/js/modernizr.js"></script>
+
 		<!-- Feeds -->
+		<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Katrina Ellison Geltman Atom Feed" />
 
 
 		<!-- mathjax config similar to math.stackexchange -->
@@ -31,9 +37,7 @@
 			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
 		});
 		</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	</head>
 	<body>
 		<div class="off-canvas-wrap">
@@ -53,62 +57,41 @@
 				<aside class="left-off-canvas-menu">
 					<ul class="off-canvas-list">
 						<li><a href="">Home</a></li>
-						<li><label>Pages</label></li>
-							<li ><a href="/pages/about-me.html">About</a></li>
+						<li><label>Categories</label></li>
+							<li ><a href="/pages/about-me.html">About Me</a></li>
 							<li ><a href="/pages/projects.html">Projects</a></li>
+						<li><a href="/archives.html">Archives</a></li>
 
 						<li><label>Links</label></li>
 							<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
 							<li><a href="http://www.github.com/katrinae">GitHub</a></li>
 							<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
 
-						<!--
-							-->
-
 						<li><label>Monthly Archives</label></li>
+									<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
 									<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
 									<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
-									<li><a href="/posts/2014/04/">April 2014 (3)</a></li>
+									<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
 									<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
 									<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
-
-						<!--<li><label>Links</label></li>
-					</ul>-->
+					</ul>	
 				</aside>
 
 				<!-- top bar nav -->
 				<nav class="top-bar hide-for-small-only" data-topbar>
 					<ul class="title-area">
 						<li class="name">
-							<h1><a href="/">Katrina Ellison Geltman</a></h1>
+							<h1 id="pagetitle"><span id="pagetitle"><a href="/" style="text-decoration:none">Katrina Ellison Geltman</a><span></h1>
 						</li>
 					</ul>
 
-					<!-- <section class="top-bar-section">
-						<ul class="left">
-								<li ><a href="/category/hacker-school.html">Hacker School</a></li>
-								<li class="active"><a href="/category/how-to.html">How-to</a></li>
-								<li ><a href="/category/misc.html">misc</a></li>
-								<li ><a href="/category/python.html">Python</a></li>
-								<li ><a href="/category/seating-chart-creator.html">Seating Chart Creator</a></li>
-						</ul>
-					</section> -->
-
 					<section class="top-bar-section">
 						<ul class="left">
-								<li ><a href="/pages/about-me.html">About</a></li>
-								<li ><a href="/pages/projects.html">Projects</a></li>
+						            <li ><a style="text-decoration:none;" href="/pages/about-me.html">About Me</a></li>
+						            <li ><a style="text-decoration:none;" href="/pages/projects.html">Projects</a></li>
+							    <li><a style="text-decoration:none;" href="/archives.html">Archives</a>
 						</ul>
 					</section>
-
-
-					<section class="top-bar-section">
-					  <ul class="left">
-					    <li><a href="/archives.html">Archives</a></li>
-					  </ul>
-					</section>
-
-
 				</nav>
 
 				<!-- Main Page Content and Sidebar -->
@@ -117,286 +100,210 @@
 						<!-- Main Content -->
 						<div class="medium-9 small-12 columns" role="content">
 <article>
-	<h2>The Simulated Annealing Algorithm
-	</h2>
-	<h5>Thu 20 February 2014</h5>
-	<p>Simulated annealing is a method for finding a good (not necessarily
-perfect) solution to an optimization problem. If you're in a
-situation where you want to maximize or minimize something, your
-problem can likely be tackled with simulated annealing.</p>
-<p>The traveling salesman problem is a good example: the salesman
-is looking to visit a set of cities in the order that minimizes
-the total number of miles he travels. As the number of cities gets
-large, it becomes too computationally intensive to check every
-possible itinerary. At that point, you need an algorithm.</p>
+    <h2>The Simulated Annealing Algorithm</h2>
+  	<h6>Written by <a href="/author/katrina-ellison-geltman.html">Katrina Ellison Geltman</a> on Thu 20 February 2014.</h6>
+	<p>Simulated annealing is a method for finding a good (not necessarily perfect)
+solution to an optimization problem. If you're in a situation where you want
+to maximize or minimize something, your problem can likely be tackled with
+simulated annealing.</p>
+<p>The traveling salesman problem is a good example: the salesman is looking to
+visit a set of cities in the order that minimizes the total number of miles he
+travels. As the number of cities gets large, it becomes too computationally
+intensive to check every possible itinerary. At that point, you need an
+algorithm.</p>
 <h3>Why choose simulated annealing?</h3>
-<p>There are many optimization algorithms, including hill climbing,
-genetic algorithms, gradient descent, and more. 
-Simulated annealing's strength
-is that it avoids getting caught at local maxima - solutions that
-are better than any others nearby, but aren't the very best.</p>
-<p>You can visualize this by imagining a 2D graph like the one below.
-Each x-coordinate represents a particular solution (e.g., a
-particular itinerary for the salesman). Each y-coordinate represents
-how good that solution is (e.g., the inverse
-of that itinerary's mileage).</p>
-<p><img alt="Optimization problem solution space" src="/images/sim_anneal/sol-space1.png" title="Solution space" /></p>
-<p>Broadly, an optimization algorithm searches for the best solution
-by generating a random initial solution and
-"exploring" the area nearby. If a neighboring solution is better
-than the current one, then it moves to it. If not, then
-the algorithm stays put. </p>
-<p>This is perfectly logical, but it can
-lead to situations where you're stuck at a sub-optimal place.
-In the graph below, the best solution is at the yellow star
-on the left. But if a simple algorithm finds its way to the
-green star on the right, it won't move away from it:
-all of the neighboring solutions are worse. The green star is a
-local maximum.</p>
-<p><img alt="Optimization problem solution space 2" src="/images/sim_anneal/sol-space2.png" title="Solution space" /></p>
-<p>Simulated annealing injects just the right amount of randomness into
-things to escape local maxima early in the process without getting
-off course late in the game, when a solution is nearby. This makes
-it pretty good at tracking down a decent answer, no matter its
-starting point.</p>
-<p><img alt="Optimization problem solution space 3" src="/images/sim_anneal/sol-space3.png" title="Solution space" /></p>
-<p>On top of this, simulated annealing is not that
-difficult to implement, despite its somewhat scary name.</p>
+<p>There are many optimization algorithms, including hill climbing, genetic
+algorithms, gradient descent, and more. Simulated annealing's strength is that
+it avoids getting caught at local maxima - solutions that are better than any
+others nearby, but aren't the very best.</p>
+<p>You can visualize this by imagining a 2D graph like the one below. Each
+x-coordinate represents a particular solution (e.g., a particular itinerary
+for the salesman). Each y-coordinate represents how good that solution is
+(e.g., the inverse of that itinerary's mileage).</p>
+<p><img alt="Optimization problem solution space" src="/images/sim_anneal/sol-space1.png"></p>
+<p>Broadly, an optimization algorithm searches for the best solution by
+generating a random initial solution and "exploring" the area nearby. If a
+neighboring solution is better than the current one, then it moves to it. If
+not, then the algorithm stays put.</p>
+<p>This is perfectly logical, but it can lead to situations where you're stuck at
+a sub-optimal place. In the graph below, the best solution is at the yellow
+star on the left. But if a simple algorithm finds its way to the green star on
+the right, it won't move away from it: all of the neighboring solutions are
+worse. The green star is a local maximum.</p>
+<p><img alt="Optimization problem solution space 2" src="/images/sim_anneal/sol-space2.png"></p>
+<p>Simulated annealing injects just the right amount of randomness into things to
+escape local maxima early in the process without getting off course late in
+the game, when a solution is nearby. This makes it pretty good at tracking
+down a decent answer, no matter its starting point.</p>
+<p><img alt="Optimization problem solution space 3" src="/images/sim_anneal/sol-space3.png"></p>
+<p>On top of this, simulated annealing is not that difficult to implement,
+despite its somewhat scary name.</p>
 <h3>The basic algorithm</h3>
-<p>Here's a really high-level overview. It skips some very important
-details, which we'll get to in a moment.</p>
+<p>Here's a really high-level overview. It skips some very important details,
+which we'll get to in a moment.</p>
 <ol>
 <li>First, generate a random solution</li>
 <li>Calculate its cost using some cost function you've defined</li>
 <li>Generate a random neighboring solution</li>
 <li>Calculate the new solution's cost</li>
-<li>Compare them:<ul>
-<li>If c<sub>new</sub> &lt; c<sub>old</sub>: move to the new solution</li>
-<li>If c<sub>new</sub> &gt; c<sub>old</sub>: <em>maybe</em> move to the new solution</li>
-</ul>
-</li>
-<li>Repeat steps 3-5 above until an acceptable solution is found or
-    you reach some maximum number of iterations.</li>
+<li>Compare them:</li>
+<li>If cnew &lt; cold: move to the new solution</li>
+<li>If cnew &gt; cold: <em>maybe</em> move to the new solution</li>
+<li>Repeat steps 3-5 above until an acceptable solution is found or you reach some maximum number of iterations.</li>
 </ol>
 <h3>Let's break it down</h3>
 <h5>First, generate a random solution</h5>
-<p>You can do this however you want. The main point is that it's random
-- it doesn't need to be be your best guess at the optimal
-solution.</p>
+<p>You can do this however you want. The main point is that it's random - it
+doesn't need to be be your best guess at the optimal solution.</p>
 <h5>Calculate its cost using some cost function you've defined</h5>
-<p>This, too, is entirely up to you. Depending on your problem, it 
-might be as simple as counting
-the total number of miles the traveling salesman's traveled. Or it might
-be an incredibly complex melding of multiple factors. Calculating
-the cost of each solution is often the most expensive part of the
+<p>This, too, is entirely up to you. Depending on your problem, it might be as
+simple as counting the total number of miles the traveling salesman's
+traveled. Or it might be an incredibly complex melding of multiple factors.
+Calculating the cost of each solution is often the most expensive part of the
 algorithm, so it pays to keep it simple.</p>
 <h5>Generate a random neighboring solution</h5>
-<p>"Neighboring" means there's only one thing that differs between
-the old solution and the new solution. Effectively, you switch
-two elements of your solution and re-calculate the cost. The main
-requirement is that it be done randomly.</p>
+<p>"Neighboring" means there's only one thing that differs between the old
+solution and the new solution. Effectively, you switch two elements of your
+solution and re-calculate the cost. The main requirement is that it be done
+randomly.</p>
 <h5>Calculate the new solution's cost</h5>
-<p>Use the same cost function as above. You can see why it needs to
-perform well - it gets called with each iteration of the algorithm.</p>
-<h5>If c<sub>new</sub> &lt; c<sub>old</sub>: move to the new solution</h5>
-<p>If the new solution has a smaller cost than the old solution,
-the new one is better. This makes the algorithm happy 
-- it's getting closer to an optimum. 
-It will "move" to that new solution, saving it as
-the base for its next iteration.</p>
-<h5>If c<sub>new</sub> &gt; c<sub>old</sub>: <em>maybe</em> move to the new solution</h5>
-<p>This is where things get interesting. Most of the time, the algorithm
-will eschew moving to a worse solution. If it did that all of the
-time, though, it would get caught at local maxima. To avoid that
-problem, it sometimes elects to keep the worse solution. To decide,
-the algorithm calculates something called the 'acceptance probability'
-and then compares it to a random number.</p>
+<p>Use the same cost function as above. You can see why it needs to perform well
+- it gets called with each iteration of the algorithm.</p>
+<h5>If cnew &lt; cold: move to the new solution</h5>
+<p>If the new solution has a smaller cost than the old solution, the new one is
+better. This makes the algorithm happy - it's getting closer to an optimum.
+It will "move" to that new solution, saving it as the base for its next
+iteration.</p>
+<h5>If cnew &gt; cold: <em>maybe</em> move to the new solution</h5>
+<p>This is where things get interesting. Most of the time, the algorithm will
+eschew moving to a worse solution. If it did that all of the time, though, it
+would get caught at local maxima. To avoid that problem, it sometimes elects
+to keep the worse solution. To decide, the algorithm calculates something
+called the 'acceptance probability' and then compares it to a random number.</p>
 <h3>Those highly important details</h3>
-<p>The explanation above leaves out an extremely important parameter called
-the "temperature". The temperature is a function of which iteration
-you're on; its name comes from
-the fact that this algorithm was inspired by a method of heating
-and cooling metals. </p>
-<p>Usually, the temperature is started at 1.0
-and is decreased at the end of each iteration by multiplying it
-by a constant called $\alpha$. You get to decide what value to
-use for $\alpha$; typical choices are between 0.8 and 0.99.</p>
-<p>Furthermore, simulated annealing does better when the 
-neighbor-cost-compare-move process is carried about many times
-(typically somewhere between 100 and 1,000) at each temperature. So the production-grade
-algorithm is somewhat more complicated than the one
-discussed above. It's implemented in the example Python code below.</p>
+<p>The explanation above leaves out an extremely important parameter called the
+"temperature". The temperature is a function of which iteration you're on; its
+name comes from the fact that this algorithm was inspired by a method of
+heating and cooling metals.</p>
+<p>Usually, the temperature is started at 1.0 and is decreased at the end of each
+iteration by multiplying it by a constant called $\alpha$. You get to decide
+what value to use for $\alpha$; typical choices are between 0.8 and 0.99.</p>
+<p>Furthermore, simulated annealing does better when the neighbor-cost-compare-
+move process is carried about many times (typically somewhere between 100 and
+1,000) at each temperature. So the production-grade algorithm is somewhat more
+complicated than the one discussed above. It's implemented in the example
+Python code below.</p>
 <h3>Example Code</h3>
-<p>This code is for a very basic version of the simulated
-annealing algorithm. A useful additional optimization is to
-always keep track of the best solution found so far so that it
-can be returned if the algorithm terminates at a sub-optimal place.</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
+<p>This code is for a very basic version of the simulated annealing algorithm. A
+useful additional optimization is to always keep track of the best solution
+found so far so that it can be returned if the algorithm terminates at a sub-
+optimal place.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">random</span>
 
-<span class="k">def</span> <span class="nf">anneal</span><span class="p">(</span><span class="n">sol</span><span class="p">):</span>
-    <span class="n">old_cost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
-    <span class="n">T</span> <span class="o">=</span> <span class="mf">1.0</span>
-    <span class="n">T_min</span> <span class="o">=</span> <span class="mf">0.00001</span>
-    <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.9</span>
-    <span class="k">while</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="n">T_min</span><span class="p">:</span>
-        <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
-            <span class="n">new_sol</span> <span class="o">=</span> <span class="n">neighbor</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
-            <span class="n">new_cost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">new_sol</span><span class="p">)</span>
-            <span class="n">ap</span> <span class="o">=</span> <span class="n">acceptance_probability</span><span class="p">(</span><span class="n">old_cost</span><span class="p">,</span> <span class="n">new_cost</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">ap</span> <span class="o">&gt;</span> <span class="n">random</span><span class="p">():</span>
-                <span class="n">sol</span> <span class="o">=</span> <span class="n">new_sol</span>
-                <span class="n">old_cost</span> <span class="o">=</span> <span class="n">new_cost</span>
-            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">T</span> <span class="o">=</span> <span class="n">T</span><span class="o">*</span><span class="n">alpha</span>
-    <span class="k">return</span> <span class="n">sol</span><span class="p">,</span> <span class="n">cost</span>
-</pre></div>
+<span class="k">def</span><span class="w"> </span><span class="nf">anneal</span><span class="p">(</span><span class="n">sol</span><span class="p">):</span>
+<span class="w">    </span><span class="n">old_cost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+<span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span>
+<span class="w">    </span><span class="n">T_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.00001</span>
+<span class="w">    </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.9</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">T_min</span><span class="p">:</span>
+<span class="w">        </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">100</span><span class="p">:</span>
+<span class="w">            </span><span class="n">new_sol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">neighbor</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+<span class="w">            </span><span class="n">new_cost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">new_sol</span><span class="p">)</span>
+<span class="w">            </span><span class="n">ap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">acceptance_probability</span><span class="p">(</span><span class="n">old_cost</span><span class="p">,</span><span class="w"> </span><span class="n">new_cost</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="n">ap</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">random</span><span class="p">():</span>
+<span class="w">                </span><span class="n">sol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_sol</span>
+<span class="w">                </span><span class="n">old_cost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_cost</span>
+<span class="w">            </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="n">T</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="o">*</span><span class="n">alpha</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sol</span><span class="p">,</span><span class="w"> </span><span class="n">cost</span>
+</code></pre></div>
 
-
-<p>This skeleton leaves a few gaps for you to fill in: <code>neighbor()</code>, 
-in which you generate a random neighboring solution, 
-<code>cost()</code>, in which you apply your cost function, and 
-<code>acceptance_probability()</code>, which is basically defined for you.</p>
+<p>This skeleton leaves a few gaps for you to fill in: <code>neighbor()</code>, in which you
+generate a random neighboring solution, <code>cost()</code>, in which you apply your cost
+function, and <code>acceptance_probability()</code>, which is basically defined for you.</p>
 <h3>The acceptance probability function</h3>
-<p>The acceptance probability function takes in the old cost,
-new cost, and current temperature and spits out a number 
-between 0 and 1, which is a sort of 
-recommendation on whether or not to jump to the new
-solution. For example:</p>
+<p>The acceptance probability function takes in the old cost, new cost, and
+current temperature and spits out a number between 0 and 1, which is a sort of
+recommendation on whether or not to jump to the new solution. For example:</p>
 <ul>
-<li>1.0: definitely switch (the new solution is 
-    better)</li>
-<li>0.0: definitely stay put (the new solution 
-    is infinitely worse)</li>
+<li>1.0: definitely switch (the new solution is better)</li>
+<li>0.0: definitely stay put (the new solution is infinitely worse)</li>
 <li>0.5: the odds are 50-50</li>
 </ul>
-<p>Once the acceptance probability is calculated, it's compared
-to a randomly-generated number
-between 0 and 1. If the acceptance probability is larger than the
-random number, you're switching!</p>
+<p>Once the acceptance probability is calculated, it's compared to a randomly-
+generated number between 0 and 1. If the acceptance probability is larger than
+the random number, you're switching!</p>
 <h4>Calculating the acceptance probability</h4>
 <p>The equation typically used for the acceptance probability is:</p>
-<p>$$
-a = e^{\frac{c_{new} - c_{old}}{T}}
-$$</p>
-<p>where $a$ is the acceptance probability, $(c_{new}-c_{old})$ is the
-difference between the new cost and the old one, $T$ is the temperature,
-and $e$ is 2.71828, that mathematical constant that pops up in all
-sorts of unexpected places.</p>
-<p>This equation is the part of simulated annealing that was inspired
-by metalworking. Throw in a constant and it describes the embodied 
-energy of metal particles
-as they are cooled slowly after being subjected to high heat. 
-This process allows the particles to move from a random
-configuration to one with a very low embodied energy. Computer scientists
-borrow the annealing equation to help them move from a random 
-solution to one with a very low cost. </p>
+<p>$$ a = e^{\frac{c_{new} - c_{old}}{T}} $$</p>
+<p>where $a$ is the acceptance probability, $(c_{new}-c_{old})$ is the difference
+between the new cost and the old one, $T$ is the temperature, and $e$ is
+2.71828, that mathematical constant that pops up in all sorts of unexpected
+places.</p>
+<p>This equation is the part of simulated annealing that was inspired by
+metalworking. Throw in a constant and it describes the embodied energy of
+metal particles as they are cooled slowly after being subjected to high heat.
+This process allows the particles to move from a random configuration to one
+with a very low embodied energy. Computer scientists borrow the annealing
+equation to help them move from a random solution to one with a very low cost.</p>
 <p>This equation means that the acceptance probability:</p>
 <ul>
 <li>
-<p>is always &gt; 1 when the new solution is better than the old one. Since you can't have a probability greater than 100%, we use $\alpha = 1$ in 
-this case..</p>
+<p>is always &gt; 1 when the new solution is better than the old one. Since you can't have a probability greater than 100%, we use $\alpha = 1$ in this case..</p>
 </li>
 <li>
 <p>gets smaller as the new solution gets more worse than the old one.</p>
 </li>
 <li>
-<p>gets smaller as the temperature decreases (if the new solution 
-is worse than the old one)</p>
+<p>gets smaller as the temperature decreases (if the new solution is worse than the old one)</p>
 </li>
 </ul>
-<p>What this means is that the algorithm is more likely to accept
-sort-of-bad jumps than really-bad jumps, and is more likely to accept
-them early on, when the temperature is high.</p>
+<p>What this means is that the algorithm is more likely to accept sort-of-bad
+jumps than really-bad jumps, and is more likely to accept them early on, when
+the temperature is high.</p>
 <h3>Conclusion</h3>
-<p>If you ever have a combinatorial optimization problem to solve,
-simulated annealing should cross your mind.
- Plenty of other strategies exist, but as
-algorithms expert Steven Skiena says, "[The] simulated annealing
-solution works admirably. It is my heuristic method of choice."</p>
+<p>If you ever have a combinatorial optimization problem to solve, simulated
+annealing should cross your mind. Plenty of other strategies exist, but as
+algorithms expert Steven Skiena says, "[The] simulated annealing solution
+works admirably. It is my heuristic method of choice."</p>
 <h3>References</h3>
-<p>This post relies heavily on 
-<a href="http://www.cs.nott.ac.uk/~gxk/aim/notes/simulatedannealing.doc">these notes</a>
-from <a href="http://www.cs.nott.ac.uk/~gxk/aim/">Graham Kendall</a> at Nottingham University
-and on Steven Skiena's <a href="http://www.algorist.com/">Algorithm Design Manual</a>. Another excellent source is the 
-1983 paper <a href="http://home.gwu.edu/~stroud/classics/KirkpatrickGelattVecchi83.pdf">"Optimization by Simulated Annealing"</a> by Kirkpatrick, Gelatti,
-and Vecchi. It's a bit dense, but relatively readable for an academic paper.</p><script type= "text/javascript">
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-</script>
-
-	<hr/>
-	<h6>Category: <a href="/category/how-to.html">How-to</a>. Tags: <a href="/tag/seating-chart.html">Seating Chart</a>, <a href="/tag/algorithms.html">Algorithms</a>, </h6>
+<p>This post relies heavily on <a href="http://www.cs.nott.ac.uk/~gxk/aim/notes/simulatedannealing.doc">these
+notes</a> from
+<a href="http://www.cs.nott.ac.uk/~gxk/aim/">Graham Kendall</a> at Nottingham University
+and on Steven Skiena's <a href="http://www.algorist.com/">Algorithm Design Manual</a>.
+Another excellent source is the 1983 paper <a href="http://home.gwu.edu/~stroud/classics/KirkpatrickGelattVecchi83.pdf">"Optimization by Simulated
+Annealing"</a>
+by Kirkpatrick, Gelatti, and Vecchi. It's a bit dense, but relatively readable
+for an academic paper.</p>
+<hr>
 </article>
 
-<hr/>
 						</div>
 						<!-- End Main Content -->
 						<!-- Sidebar -->
 						<aside class="medium-3 hide-for-small-only columns">
 							<div class="panel">
-								<ul class="side-nav">
-								  <img src="/theme/img/headshot.png" />
-								</ul>
-							</div>
-
-							<div class="panel">
 								<h5>Links</h5>
-								  <p style="margin-bottom:0px;"><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></p>
-								  <p style="margin-bottom:0px;"><a href="http://www.github.com/katrinae">GitHub</a></p>
-								  <p style="margin-bottom:0px;"><a href="http://www.slideshare.net/kellison00">SlideShare</a></p>
-							</div>
-
-							<!-- 
-							<div class="panel">
-								<h5>Tags</h5>
-								<ul class="tag-cloud">
+								<ul class="side-nav">
+									<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+									<li><a href="http://www.github.com/katrinae">GitHub</a></li>
+									<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
 								</ul>
-							</div>-->
+							</div>
 
 							<div class="panel">
 								<h5>Monthly Archives</h5>
-								<p style="margin-bottom:0px;"><a href="/posts/2015/12/">December 2015 (1)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/05/">May 2014 (2)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/04/">April 2014 (3)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/03/">March 2014 (2)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/02/">February 2014 (2)</a>
+								<ul class="side-nav">
+											<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
+											<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
+											<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
+											<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
+											<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+											<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
 								</ul>
 							</div>
 
-							<!--
-							<div class="panel">
-								<h5>Social</h5>
-								<ul class="side-nav">
-								</ul>
-							</div>
-							-->
 						</aside>
 						<!-- End Sidebar -->
 					</div>
@@ -404,8 +311,7 @@ and Vecchi. It's a bit dense, but relatively readable for an academic paper.</p>
 					<!-- Footer -->
 					<footer class="row">
 						<div class="medium-9 small-12">
-							<hr/>
-							<p class="text-center"><span style="font-style:italic; color: lightgray;  font-size:1em">Powered by Pelican and based on a theme by <a href="http://hamaluik.com" style="color:lightgray; hover:lightgray">Kenton Hamaluik</a>.</span></p>
+							<p class="text-center"> </p>
 						</div>
 					</footer>
 					<!-- End Footer -->

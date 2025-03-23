@@ -6,15 +6,21 @@
 
 		<title>Katrina Ellison Geltman</title>
 		<meta name="description" content="">
-		<meta name="author" content="Katrina Ellison Geltman">
+		<meta name="author" content="">
 
 		<link rel="stylesheet" href="/theme/css/foundation.css" />
-		<link rel="stylesheet" href="/theme/css/pygment/manni.css" />
+		<link rel="stylesheet" href="/theme/css/pygment/bw.css" />
 		<link rel="stylesheet" href="/theme/css/custom.css" />
 
+		<!-- GOOGLE WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cookie&family=Pacifico&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/alt-fonts.css" />
 
 		<script src="/theme/js/modernizr.js"></script>
+
 		<!-- Feeds -->
+		<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Katrina Ellison Geltman Atom Feed" />
 
 
 		<!-- mathjax config similar to math.stackexchange -->
@@ -31,9 +37,7 @@
 			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
 		});
 		</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	</head>
 	<body>
 		<div class="off-canvas-wrap">
@@ -53,62 +57,41 @@
 				<aside class="left-off-canvas-menu">
 					<ul class="off-canvas-list">
 						<li><a href="">Home</a></li>
-						<li><label>Pages</label></li>
-							<li ><a href="/pages/about-me.html">About</a></li>
+						<li><label>Categories</label></li>
+							<li ><a href="/pages/about-me.html">About Me</a></li>
 							<li ><a href="/pages/projects.html">Projects</a></li>
+						<li><a href="/archives.html">Archives</a></li>
 
 						<li><label>Links</label></li>
 							<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
 							<li><a href="http://www.github.com/katrinae">GitHub</a></li>
 							<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
 
-						<!--
-							-->
-
 						<li><label>Monthly Archives</label></li>
+									<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
 									<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
 									<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
-									<li><a href="/posts/2014/04/">April 2014 (3)</a></li>
+									<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
 									<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
 									<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
-
-						<!--<li><label>Links</label></li>
-					</ul>-->
+					</ul>	
 				</aside>
 
 				<!-- top bar nav -->
 				<nav class="top-bar hide-for-small-only" data-topbar>
 					<ul class="title-area">
 						<li class="name">
-							<h1><a href="/">Katrina Ellison Geltman</a></h1>
+							<h1 id="pagetitle"><span id="pagetitle"><a href="/" style="text-decoration:none">Katrina Ellison Geltman</a><span></h1>
 						</li>
 					</ul>
 
-					<!-- <section class="top-bar-section">
-						<ul class="left">
-								<li ><a href="/category/hacker-school.html">Hacker School</a></li>
-								<li ><a href="/category/how-to.html">How-to</a></li>
-								<li class="active"><a href="/category/misc.html">misc</a></li>
-								<li ><a href="/category/python.html">Python</a></li>
-								<li ><a href="/category/seating-chart-creator.html">Seating Chart Creator</a></li>
-						</ul>
-					</section> -->
-
 					<section class="top-bar-section">
 						<ul class="left">
-								<li ><a href="/pages/about-me.html">About</a></li>
-								<li ><a href="/pages/projects.html">Projects</a></li>
+						            <li ><a style="text-decoration:none;" href="/pages/about-me.html">About Me</a></li>
+						            <li ><a style="text-decoration:none;" href="/pages/projects.html">Projects</a></li>
+							    <li><a style="text-decoration:none;" href="/archives.html">Archives</a>
 						</ul>
 					</section>
-
-
-					<section class="top-bar-section">
-					  <ul class="left">
-					    <li><a href="/archives.html">Archives</a></li>
-					  </ul>
-					</section>
-
-
 				</nav>
 
 				<!-- Main Page Content and Sidebar -->
@@ -117,16 +100,14 @@
 						<!-- Main Content -->
 						<div class="medium-9 small-12 columns" role="content">
 <article>
-	<h2>Counting Overlapping Elements in Python
-	</h2>
-	<h5>Wed 16 April 2014</h5>
+    <h2>Counting Overlapping Elements in Python</h2>
+  	<h6>Written by <a href="/author/katrina-ellison-geltman.html">Katrina Ellison Geltman</a> on Wed 16 April 2014.</h6>
 	<p>Say you have a list of lists, like:</p>
-<div class="highlight"><pre>matrix = [[1, 2, 3], [4, 5, 6], [1, 2, 6]]
-</pre></div>
+<div class="highlight"><pre><span></span><code>matrix = [[1, 2, 3], [4, 5, 6], [1, 2, 6]]
+</code></pre></div>
 
-
-<p>You want to know how many times pairs of numbers occur in the same list, or overlap. 
-In the example above, you'd have:</p>
+<p>You want to know how many times pairs of numbers occur in the same list, or
+overlap. In the example above, you'd have:</p>
 <ul>
 <li>1 &amp; 2: paired twice</li>
 <li>1 &amp; 3: paired once</li>
@@ -137,131 +118,108 @@ In the example above, you'd have:</p>
 <li>1 &amp; 6: paired once</li>
 <li>2 &amp; 6: paired once</li>
 </ul>
-<p>You'd like some code that tells you that there's one pairing that occur twice and
-seven pairings that occur once. <a href="http://stackoverflow.com/questions/10844556/python-counting-frequency-of-pairs-of-elements-in-a-list-of-lists">Stack Overflow will tell you how to do it</a>:</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span><span class="p">,</span> <span class="n">combinations</span>
-<span class="n">Counter</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">matrix</span><span class="p">))</span>
-</pre></div>
+<p>You'd like some code that tells you that there's one pairing that occur twice
+and seven pairings that occur once. <a href="http://stackoverflow.com/questions/10844556/python-counting-frequency-of-
+pairs-of-elements-in-a-list-of-lists">Stack Overflow will tell you how to do
+it</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">Counter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">chain</span><span class="p">,</span><span class="w"> </span><span class="n">combinations</span>
+<span class="n">Counter</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="n">row</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">matrix</span><span class="p">))</span>
+</code></pre></div>
 
+<p>That works, but it's completely confusing. I'm going to break down what it's
+doing, beginning with <code>combinations(row, 2)</code>.</p>
+<h3>Producing combinations</h3>
+<p><code>combinations()</code> produces an iterator containing the pairs in an input
+iterable (e.g. a list). The code below uses <code>combinations</code> to generate all the
+pairs in the matrix's first row. Each tuple represents one pairing; for
+example, <code>(1, 2)</code> indicates that 1 and 2 were in the same row one time.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">combinations</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
 
-<p>That works, but it's completely confusing. I'm going to break down what it's doing, beginning
-with <code>combinations(row, 2)</code>.</p>
-<h4>Producing combinations</h4>
-<p><code>combinations()</code> produces an iterator containing the pairs 
-in an input iterable (e.g. a list).
-The code below uses <code>combinations</code> to generate all the pairs in the matrix's first
-row. Each tuple represents one pairing; for example, <code>(1, 2)</code> indicates that
-1 and 2 were in the same row one time.</p>
-<div class="highlight"><pre>&gt;&gt;&gt; x = combinations(matrix[0], 2)
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nb">print</span><span class="w"> </span><span class="n">x</span>
+<span class="o">&lt;</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="mh">0x10d1719f0</span><span class="o">&gt;</span>
 
-&gt;&gt;&gt; print x
-&lt;itertools.combinations object at 0x10d1719f0&gt;
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nb">print</span><span class="w"> </span><span class="n">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)]</span>
+</code></pre></div>
 
-&gt;&gt;&gt; print list(x)
-[(1, 2), (1, 3), (2, 3)]
-</pre></div>
+<p>To find the combinations in all of the rows in the matrix, we apply
+<code>combinations()</code> to each row through a generator comprehension. A generator
+comprehension has the same syntax as a list comprehension but produces a
+generator instead of a list.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nv">combos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">(</span><span class="nv">combinations</span><span class="ss">(</span><span class="nv">row</span>,<span class="w"> </span><span class="mi">2</span><span class="ss">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">row</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">matrix</span><span class="ss">)</span>
 
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nv">print</span><span class="w"> </span><span class="nv">combos</span>
+<span class="o">&lt;</span><span class="nv">generator</span><span class="w"> </span><span class="nv">object</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">genexpr</span><span class="o">&gt;</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="mi">0</span><span class="nv">x10d168f00</span><span class="o">&gt;</span>
 
-<p>To find the combinations in all of the rows in the matrix, we apply <code>combinations()</code>
-to each row through a generator comprehension. A generator comprehension has the 
-same syntax as a list comprehension but produces a generator instead of a list.</p>
-<div class="highlight"><pre>&gt;&gt;&gt; combos = (combinations(row, 2) for row in matrix)
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nv">print</span><span class="w"> </span>[<span class="nv">list</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">combos</span>]
+[[<span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span><span class="ss">)</span>,<span class="w"> </span><span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">3</span><span class="ss">)</span>,<span class="w"> </span><span class="ss">(</span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span><span class="ss">)</span>],<span class="w"> </span>[<span class="ss">(</span><span class="mi">4</span>,<span class="w"> </span><span class="mi">5</span><span class="ss">)</span>,<span class="w"> </span><span class="ss">(</span><span class="mi">4</span>,<span class="w"> </span><span class="mi">6</span><span class="ss">)</span>,<span class="w"> </span><span class="ss">(</span><span class="mi">5</span>,<span class="w"> </span><span class="mi">6</span><span class="ss">)</span>],<span class="w"> </span>[<span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span><span class="ss">)</span>,<span class="w"> </span><span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">6</span><span class="ss">)</span>,<span class="w"> </span><span class="ss">(</span><span class="mi">2</span>,<span class="w"> </span><span class="mi">6</span><span class="ss">)</span>]]
+</code></pre></div>
 
-&gt;&gt;&gt; print combos
-&lt;generator object &lt;genexpr&gt; at 0x10d168f00&gt;
-
-&gt;&gt;&gt; print [list(x) for x in combos]
-[[(1, 2), (1, 3), (2, 3)], [(4, 5), (4, 6), (5, 6)], [(1, 2), (1, 6), (2, 6)]]
-</pre></div>
-
-
-<h4>Chaining the combinations</h4>
-<p>Our end goal is to count how many there are of each tuple; we should end up with one
-that occurs twice (<code>(1, 2)</code>) and seven that occur once. By inspecting the output above,
-<em>we</em> can see that this is the case, but Python can't because the tuples aren't all 
-in the same combinations object. Enter <code>chain.from_iterable()</code>, a function that will combine each of the <code>combinations</code> objects in 
-<code>combos</code> into one giant iterator:</p>
-<div class="highlight"><pre>&gt;&gt;&gt; chained_combos = chain.from_iterable(combos)
+<h3>Chaining the combinations</h3>
+<p>Our end goal is to count how many there are of each tuple; we should end up
+with one that occurs twice (<code>(1, 2)</code>) and seven that occur once. By inspecting
+the output above, <em>we</em> can see that this is the case, but Python can't because
+the tuples aren't all in the same combinations object. Enter
+<code>chain.from_iterable()</code>, a function that will combine each of the
+<code>combinations</code> objects in <code>combos</code> into one giant iterator:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; chained_combos = chain.from_iterable(combos)
 &gt;&gt;&gt; list(chained_combos)
 [(1, 2), (1, 3), (2, 3), (4, 5), (4, 6), (5, 6), (1, 2), (1, 6), (2, 6)]
-</pre></div>
+</code></pre></div>
 
-
-<h4>Counting the pairs in the chain</h4>
-<p>Now we can create a <code>Counter</code> object to tally the frequency of each pairing.
-A <code>Counter</code> is a type of dictionary used for creating tallies: the keys are the items
-you're counting, and the values are the tallies.</p>
-<div class="highlight"><pre>&gt;&gt;&gt; counts = Counter(chained_combos)
+<h3>Counting the pairs in the chain</h3>
+<p>Now we can create a <code>Counter</code> object to tally the frequency of each pairing. A
+<code>Counter</code> is a type of dictionary used for creating tallies: the keys are the
+items you're counting, and the values are the tallies.</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; counts = Counter(chained_combos)
 &gt;&gt;&gt; print counts
 Counter({(1, 2): 2, (1, 3): 1, (4, 6): 1, (4, 5): 1, (5, 6): 1, (2, 6): 1, (2, 3): 1, (1, 6): 1})
 &gt;&gt;&gt; print counts.values()
 [2, 1, 1, 1, 1, 1, 1, 1]
-</pre></div>
+</code></pre></div>
 
-
-<h4>Tallying the overall frequencies</h4>
-<p>Finally, to count the overall frequencies,
-we use a second counter:</p>
-<div class="highlight"><pre>&gt;&gt;&gt; overall_counts = Counter(counts.values())
+<h3>Tallying the overall frequencies</h3>
+<p>Finally, to count the overall frequencies, we use a second counter:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; overall_counts = Counter(counts.values())
 &gt;&gt;&gt; print overall_counts
 Counter({1: 7, 2: 1})
-</pre></div>
+</code></pre></div>
 
-
-<p>Ta da! 7 pairs together once, 1 pair together twice. </p>
-<p>This can be easily extended from
-pairs to trios, quartets, and larger groups by replacing <code>combinations(row, 2)</code> with
-<code>combinations(row, &lt;your-size&gt;)</code>.</p>
-<p>Finally, an important note: this will only work if the values inside each tuple 
-are always listed
-in the same order. <code>(1, 2)</code> is not the same as <code>(2, 1)</code>.</p>
-	<hr/>
-	<h6>Category: <a href="/category/misc.html">misc</a>.</h6>
+<p>Ta da! 7 pairs together once, 1 pair together twice.</p>
+<p>This can be easily extended from pairs to trios, quartets, and larger groups
+by replacing <code>combinations(row, 2)</code> with <code>combinations(row, &lt;your-size&gt;)</code>.</p>
+<p>Finally, an important note: this will only work if the values inside each
+tuple are always listed in the same order. <code>(1, 2)</code> is not the same as <code>(2,
+1)</code>.</p>
+<hr>
 </article>
 
-<hr/>
 						</div>
 						<!-- End Main Content -->
 						<!-- Sidebar -->
 						<aside class="medium-3 hide-for-small-only columns">
 							<div class="panel">
-								<ul class="side-nav">
-								  <img src="/theme/img/headshot.png" />
-								</ul>
-							</div>
-
-							<div class="panel">
 								<h5>Links</h5>
-								  <p style="margin-bottom:0px;"><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></p>
-								  <p style="margin-bottom:0px;"><a href="http://www.github.com/katrinae">GitHub</a></p>
-								  <p style="margin-bottom:0px;"><a href="http://www.slideshare.net/kellison00">SlideShare</a></p>
-							</div>
-
-							<!-- 
-							<div class="panel">
-								<h5>Tags</h5>
-								<ul class="tag-cloud">
+								<ul class="side-nav">
+									<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+									<li><a href="http://www.github.com/katrinae">GitHub</a></li>
+									<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
 								</ul>
-							</div>-->
+							</div>
 
 							<div class="panel">
 								<h5>Monthly Archives</h5>
-								<p style="margin-bottom:0px;"><a href="/posts/2015/12/">December 2015 (1)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/05/">May 2014 (2)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/04/">April 2014 (3)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/03/">March 2014 (2)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/02/">February 2014 (2)</a>
+								<ul class="side-nav">
+											<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
+											<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
+											<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
+											<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
+											<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+											<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
 								</ul>
 							</div>
 
-							<!--
-							<div class="panel">
-								<h5>Social</h5>
-								<ul class="side-nav">
-								</ul>
-							</div>
-							-->
 						</aside>
 						<!-- End Sidebar -->
 					</div>
@@ -269,8 +227,7 @@ in the same order. <code>(1, 2)</code> is not the same as <code>(2, 1)</code>.</
 					<!-- Footer -->
 					<footer class="row">
 						<div class="medium-9 small-12">
-							<hr/>
-							<p class="text-center"><span style="font-style:italic; color: lightgray;  font-size:1em">Powered by Pelican and based on a theme by <a href="http://hamaluik.com" style="color:lightgray; hover:lightgray">Kenton Hamaluik</a>.</span></p>
+							<p class="text-center"> </p>
 						</div>
 					</footer>
 					<!-- End Footer -->

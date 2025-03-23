@@ -6,15 +6,21 @@
 
 		<title>Katrina Ellison Geltman</title>
 		<meta name="description" content="">
-		<meta name="author" content="Katrina Ellison Geltman">
+		<meta name="author" content="">
 
 		<link rel="stylesheet" href="/theme/css/foundation.css" />
-		<link rel="stylesheet" href="/theme/css/pygment/manni.css" />
+		<link rel="stylesheet" href="/theme/css/pygment/bw.css" />
 		<link rel="stylesheet" href="/theme/css/custom.css" />
 
+		<!-- GOOGLE WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cookie&family=Pacifico&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/alt-fonts.css" />
 
 		<script src="/theme/js/modernizr.js"></script>
+
 		<!-- Feeds -->
+		<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Katrina Ellison Geltman Atom Feed" />
 
 
 		<!-- mathjax config similar to math.stackexchange -->
@@ -31,9 +37,7 @@
 			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
 		});
 		</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	</head>
 	<body>
 		<div class="off-canvas-wrap">
@@ -54,59 +58,40 @@
 					<ul class="off-canvas-list">
 						<li><a href="">Home</a></li>
 						<li><label>Categories</label></li>
-							<li ><a href="/category/hacker-school.html">Hacker School</a></li>
-							<li ><a href="/category/how-to.html">How-to</a></li>
-							<li class="active"><a href="/category/misc.html">misc</a></li>
-							<li ><a href="/category/seating-chart-creator.html">Seating Chart Creator</a></li>
+							<li ><a href="/pages/about-me.html">About Me</a></li>
+							<li ><a href="/pages/projects.html">Projects</a></li>
+						<li><a href="/archives.html">Archives</a></li>
 
 						<li><label>Links</label></li>
-							<li><a href="http://www.github.com/katrinae">Github</a></li>
 							<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
-
-						<!--
-							-->
+							<li><a href="http://www.github.com/katrinae">GitHub</a></li>
+							<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
 
 						<li><label>Monthly Archives</label></li>
-									<li><a href="/posts/2014/04/">April 2014 (3)</a></li>
+									<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
+									<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
+									<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
+									<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
 									<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
 									<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
-
-						<li><label>Links</label></li>
-					</ul>
+					</ul>	
 				</aside>
 
 				<!-- top bar nav -->
 				<nav class="top-bar hide-for-small-only" data-topbar>
 					<ul class="title-area">
 						<li class="name">
-							<h1><a href="/">Katrina Ellison Geltman</a></h1>
+							<h1 id="pagetitle"><span id="pagetitle"><a href="/" style="text-decoration:none">Katrina Ellison Geltman</a><span></h1>
 						</li>
 					</ul>
 
-					<!-- <section class="top-bar-section">
-						<ul class="left">
-								<li ><a href="/category/hacker-school.html">Hacker School</a></li>
-								<li ><a href="/category/how-to.html">How-to</a></li>
-								<li class="active"><a href="/category/misc.html">misc</a></li>
-								<li ><a href="/category/seating-chart-creator.html">Seating Chart Creator</a></li>
-						</ul>
-					</section> -->
-
 					<section class="top-bar-section">
 						<ul class="left">
-								<li ><a href="/pages/about-me.html">About</a></li>
-								<li ><a href="/pages/projects.html">Projects</a></li>
+						            <li ><a style="text-decoration:none;" href="/pages/about-me.html">About Me</a></li>
+						            <li ><a style="text-decoration:none;" href="/pages/projects.html">Projects</a></li>
+							    <li><a style="text-decoration:none;" href="/archives.html">Archives</a>
 						</ul>
 					</section>
-
-
-					<section class="top-bar-section">
-					  <ul class="left">
-					    <li><a href="/archives.html">Archives</a></li>
-					  </ul>
-					</section>
-
-
 				</nav>
 
 				<!-- Main Page Content and Sidebar -->
@@ -115,38 +100,32 @@
 						<!-- Main Content -->
 						<div class="medium-9 small-12 columns" role="content">
 <article>
-	<h2>blah
-	</h2>
-	<h5>Wed 16 April 2014</h5>
-	<h1>B_FURIOUS</h1>
-<p>This is the code and simple circuit diagram for a wifi-enabled 
-remote control car driven by an Arduino Uno + Arduino WiFi Shield.
-The base for our car is a toy RC car called the 
-<a href="http://www.toysrus.com/buy/rc-trucks-buggies-off-road/fast-lane-b-furious-radio-control-vehicle-49-mhz-colors-vary-5f5e1f1-12456731">B-Furious</a>,
-which is driven by one DC motor and can move forwards or backwards,
-but cannot turn left or right.</p>
-<p><strong>The motor driver circuit and code work effectively, but we
-could not make the wifi shield work consistently enough
-to drive the car.</strong></p>
-<h2>Motor Control Circuit</h2>
-<p>We adapted our circuit from the Arduino starter kit's 'Zoetrope'
-project (project #10), which controls a DC motor's direction
-and speed via buttons and a potentiometer. We left the Arduino's
-output signals, the H-bridge, and the power supplies in place, 
-but swapped out the buttons
-and pot for HTTP requests processed by a small server running
-on the Arduino.</p>
-<p>The three blue wires in the schematic below are what carry
-signals from the Arduino to the motor. The leftmost wire,
-from Arduino pin #9 to the lower-left pin of the H-bridge,
-is an on/off switch. The other two wires control the direction:
-the motor turns forward if the left one is HIGH and the right
-one is LOW and vice-versa. The speed is controlled by
-a parameter passed in the HTTP request.</p>
-<p><img alt="Arduino wifi car schematic" src="schematic.png" /></p>
+    <h2>B_FURIOUS</h2>
+  	<h6>Written by <a href="/author/katrina-ellison-geltman.html">Katrina Ellison Geltman</a> on Wed 16 April 2014.</h6>
+	<p>This is the code and simple circuit diagram for a wifi-enabled remote control
+car driven by an Arduino Uno + Arduino WiFi Shield. The base for our car is a
+toy RC car called the <a href="http://www.toysrus.com/buy/rc-trucks-
+buggies-off-road/fast-lane-b-furious-radio-control-vehicle-49-mhz-colors-
+vary-5f5e1f1-12456731">B-Furious</a>, which is driven by one DC motor and can move forwards
+or backwards, but cannot turn left or right.</p>
+<p><strong>The motor driver circuit and code work effectively, but we could not make
+the wifi shield work consistently enough to drive the car.</strong></p>
+<h3>Motor Control Circuit</h3>
+<p>We adapted our circuit from the Arduino starter kit's 'Zoetrope' project
+(project #10), which controls a DC motor's direction and speed via buttons and
+a potentiometer. We left the Arduino's output signals, the H-bridge, and the
+power supplies in place, but swapped out the buttons and pot for HTTP requests
+processed by a small server running on the Arduino.</p>
+<p>The three blue wires in the schematic below are what carry signals from the
+Arduino to the motor. The leftmost wire, from Arduino pin #9 to the lower-left
+pin of the H-bridge, is an on/off switch. The other two wires control the
+direction: the motor turns forward if the left one is HIGH and the right one
+is LOW and vice-versa. The speed is controlled by a parameter passed in the
+HTTP request.</p>
+<p><img alt="Arduino wifi car schematic" src="schematic.png"></p>
 <p>Note: we used an L293DNE H-bridge, not the LD293D depicted in the schematic.</p>
-<h2>Arduino Sketch</h2>
-<p>The most up-to-date version of the code is in 
+<h3>Arduino Sketch</h3>
+<p>The most up-to-date version of the code is in
 CurrentReceiver/CurrentReceiver.ino.</p>
 <table>
 <thead>
@@ -186,91 +165,68 @@ CurrentReceiver/CurrentReceiver.ino.</p>
 </tr>
 </tbody>
 </table>
-<h3>Controlling the Car</h3>
+<h4>Controlling the Car</h4>
 <p>The car can be controlled via CURL:</p>
-<div class="highlight"><pre><span class="nb">curl</span> <span class="o">&lt;</span><span class="nx">Arduino</span><span class="s1">&#39;s-ip-address&gt; -G &lt;params&gt;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="nx">curl</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">Arduino</span><span class="err">&#39;</span><span class="nx">s</span><span class="o">-</span><span class="nx">ip</span><span class="o">-</span><span class="nx">address</span><span class="p">&gt;</span><span class="w"> </span><span class="o">-</span><span class="nx">G</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">params</span><span class="p">&gt;</span>
+</code></pre></div>
 
-
-<p><code>&lt;params&gt;</code> is a string of integers.
-<em> The first integer, 0 or 1, indicates whether the motor is to be turned on or off.
-</em> The second integer, 0 or 1, indicates the motor's direction.
-* the third integer, 000 to 255, indicates the motor's speed.</p>
+<p><code>&lt;params&gt;</code> is a string of integers. <em>The first integer, 0 or 1, indicates
+whether the motor is to be turned on or off.</em> The second integer, 0 or 1,
+indicates the motor's direction. * the third integer, 000 to 255, indicates
+the motor's speed.</p>
 <p>For example,</p>
-<div class="highlight"><pre><span class="n">curl</span> <span class="o">&lt;</span><span class="n">ip</span><span class="o">-</span><span class="n">address</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">G</span> <span class="mi">11255</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nx">curl</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">ip</span><span class="o">-</span><span class="nx">address</span><span class="p">&gt;</span><span class="w"> </span><span class="o">-</span><span class="nx">G</span><span class="w"> </span><span class="mi">11255</span>
+</code></pre></div>
 
 <p>sends the car forward at top speed.</p>
-<div class="highlight"><pre><span class="n">curl</span> <span class="o">&lt;</span><span class="n">ip</span><span class="o">-</span><span class="n">address</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">G</span> <span class="mi">10020</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nx">curl</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">ip</span><span class="o">-</span><span class="nx">address</span><span class="p">&gt;</span><span class="w"> </span><span class="o">-</span><span class="nx">G</span><span class="w"> </span><span class="mi">10020</span>
+</code></pre></div>
 
 <p>moves the car backward very slowly.</p>
-<div class="highlight"><pre><span class="n">curl</span> <span class="o">&lt;</span><span class="n">ip</span><span class="o">-</span><span class="n">address</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">G</span> <span class="mo">01255</span>
-<span class="n">curl</span> <span class="o">&lt;</span><span class="n">ip</span><span class="o">-</span><span class="n">address</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">G</span> <span class="mo">00000</span>
-<span class="n">curl</span> <span class="o">&lt;</span><span class="n">ip</span><span class="o">-</span><span class="n">address</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">G</span> <span class="mo">00125</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nx">curl</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">ip</span><span class="o">-</span><span class="nx">address</span><span class="p">&gt;</span><span class="w"> </span><span class="o">-</span><span class="nx">G</span><span class="w"> </span><span class="mi">01255</span>
+<span class="nx">curl</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">ip</span><span class="o">-</span><span class="nx">address</span><span class="p">&gt;</span><span class="w"> </span><span class="o">-</span><span class="nx">G</span><span class="w"> </span><span class="mi">00000</span>
+<span class="nx">curl</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">ip</span><span class="o">-</span><span class="nx">address</span><span class="p">&gt;</span><span class="w"> </span><span class="o">-</span><span class="nx">G</span><span class="w"> </span><span class="mi">00125</span>
+</code></pre></div>
 
 <p>All of the above (and anything else beginning with a zero) turn the motor off.</p>
-<h3>Project Status and Further Ideas</h3>
-<p>While our own code and circuit are in working order, we were
-never able to drive our car because of problems with the Arduino's 
-wifi shield. Our problem was that we had to restart everything any time
-the Arduino disconnected from the wireless network, which happened
-frequently enough that it rendered the car unusable.</p>
-<p>We did experiment with the <a href="https://www.spark.io/">Spark Core</a>,
-an alternative microcontroller with built-in wifi. It showed promise,
-but had its own problems. After a couple of weeks of finicking with
-the hardware, we decided to drop the project.</p>
-	<hr/>
-	<h6>Category: <a href="/category/misc.html">misc</a>.</h6>
+<h4>Project Status and Further Ideas</h4>
+<p>While our own code and circuit are in working order, we were never able to
+drive our car because of problems with the Arduino's wifi shield. Our problem
+was that we had to restart everything any time the Arduino disconnected from
+the wireless network, which happened frequently enough that it rendered the
+car unusable.</p>
+<p>We did experiment with the <a href="https://www.spark.io/">Spark Core</a>, an alternative
+microcontroller with built-in wifi. It showed promise, but had its own
+problems. After a couple of weeks of finicking with the hardware, we decided
+to drop the project.</p>
+<hr>
 </article>
 
-<hr/>
 						</div>
 						<!-- End Main Content -->
 						<!-- Sidebar -->
 						<aside class="medium-3 hide-for-small-only columns">
 							<div class="panel">
-								<ul class="side-nav">
-								  <img src="/theme/img/headshot.png" />
-								</ul>
-							</div>
-
-							<div class="panel">
 								<h5>Links</h5>
-								  <p style="margin-bottom:0px;"><a href="http://www.github.com/katrinae">Github</a></p>
-								  <p style="margin-bottom:0px;"><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></p>
-							</div>
-
-							<!-- 
-							<div class="panel">
-								<h5>Tags</h5>
-								<ul class="tag-cloud">
-									<li><a href="/tag/seating-chart/" class="tag-1">Seating Chart</a></li>
-									<li><a href="/tag/algorithms/" class="tag-4">Algorithms</a></li>
-									<li><a href="/tag/narratives/" class="tag-4">narratives</a></li>
-									<li><a href="/tag/arduino/" class="tag-4">Arduino</a></li>
+								<ul class="side-nav">
+									<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+									<li><a href="http://www.github.com/katrinae">GitHub</a></li>
+									<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
 								</ul>
-							</div>-->
+							</div>
 
 							<div class="panel">
 								<h5>Monthly Archives</h5>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/04/">April 2014 (3)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/03/">March 2014 (2)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/02/">February 2014 (2)</a>
+								<ul class="side-nav">
+											<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
+											<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
+											<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
+											<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
+											<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+											<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
 								</ul>
 							</div>
 
-							<!--
-							<div class="panel">
-								<h5>Social</h5>
-								<ul class="side-nav">
-								</ul>
-							</div>
-							-->
 						</aside>
 						<!-- End Sidebar -->
 					</div>
@@ -278,8 +234,7 @@ the hardware, we decided to drop the project.</p>
 					<!-- Footer -->
 					<footer class="row">
 						<div class="medium-9 small-12">
-							<hr/>
-							<p class="text-center"><span style="font-style:italic; color: lightgray;  font-size:1em">Powered by Pelican and based on a theme by <a href="http://hamaluik.com" style="color:lightgray; hover:lightgray">Kenton Hamaluik</a>.</span></p>
+							<p class="text-center"> </p>
 						</div>
 					</footer>
 					<!-- End Footer -->

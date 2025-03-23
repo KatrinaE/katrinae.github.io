@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Katrina Ellison Geltman - Hacker School</title><link href="/" rel="alternate"></link><link href="/feeds/hacker-school.atom.xml" rel="self"></link><id>/</id><updated>2014-05-30T00:00:00+00:00</updated><entry><title>Hacker School Reflections</title><link href="/hs-reflections.html" rel="alternate"></link><published>2014-05-30T00:00:00+00:00</published><updated>2014-05-30T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2014-05-30:/hs-reflections.html</id><summary type="html">&lt;p&gt;When I arrived at Hacker School, I laid out the following goals for myself:&lt;/p&gt;
+&lt;p&gt;While I'm here, I want to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Fill in some gaps
+(learn a statically typed language, use git correctly),&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Finish a 'real' project, &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Explore some cool stuff (right now I'm curious
+about algorithms, the Linux kernel, and …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;When I arrived at Hacker School, I laid out the following goals for myself:&lt;/p&gt;
+&lt;p&gt;While I'm here, I want to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Fill in some gaps
+(learn a statically typed language, use git correctly),&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Finish a 'real' project, &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Explore some cool stuff (right now I'm curious
+about algorithms, the Linux kernel, and distributed computing),&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generally sharpen my skills (I wrote in my application that I
+wanted to become a Python ninja). &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So... how'd I do?&lt;/p&gt;
+&lt;h2&gt;Learning a statically typed language&lt;/h2&gt;
+&lt;p&gt;I set this goal for myself because I felt like, having worked mostly in Python,
+I wouldn't be a real programmer until I could use something besides a scripting
+language.&lt;/p&gt;
+&lt;p&gt;At Hacker School, I learned to read and write a little bit of Arduino code (a
+close cousin of C++), and I started learning about low-level concepts like
+pointers memory allocation (it helped that I read
+&lt;a href="http://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&amp;amp;ie=UTF8&amp;amp;qid=1401493596&amp;amp;sr=1-1&amp;amp;keywords=code"&gt;Code&lt;/a&gt;
+- a great book!). Unfortunately, I didn't spend as much time on this as I would
+have liked because I got distracted by solving problems that arose in my
+existing projects.&lt;/p&gt;
+&lt;h2&gt;Using git correctly&lt;/h2&gt;
+&lt;p&gt;I've had some scares (most recently, I accidentally created a duplicate copy of
+every single commit in a repository), but overall I'm much more confident in my
+git abilities than I was when I arrived at Hacker School.&lt;/p&gt;
+&lt;h2&gt;Finishing a 'real' project&lt;/h2&gt;
+&lt;p&gt;I did that! I finished my Seating Chart Creator application and handed it off to
+my 'client' (the work was pro-bono and open source) earlier this month.&lt;/p&gt;
+&lt;h2&gt;Learning algorithms&lt;/h2&gt;
+&lt;p&gt;I set this goal because algorithms problems always seemed to involve solving fun
+puzzles, and I like doing that. I felt like I had missed out on something by
+failing to study algorithms during undergrad and then taking a
+less-than-satisfying course on them afterwards.&lt;/p&gt;
+&lt;p&gt;At Hacker School, I became intimately acquainted with &lt;a href="/simulated-annealing.html"&gt;simulated
+annealing&lt;/a&gt;, but I didn't really study other
+algorithms. I think I turned away from them because it felt too much like being
+a 'student' and not enough like being a 'real person'. After what feels like a
+lifetime of studying things that have no immediate application, I was ready to
+focus on more applied skills.&lt;/p&gt;
+&lt;h2&gt;Exploring the Linux kernel and distributed computing&lt;/h2&gt;
+&lt;p&gt;No and no. Maybe another session at Hacker School is in my future?&lt;/p&gt;
+&lt;h4&gt;Becoming a Python ninja&lt;/h4&gt;
+&lt;p&gt;Well, I wouldn't say I'm a ninja (aside: I hate that word. Why did I use it?)
+but I'm definitely much more well-versed in Python. I'm comfortable writing
+idiomatic code, know a bit of what's going on under the covers, and am
+comfortable diving into the source code when I need to know more.&lt;/p&gt;
+&lt;p&gt;My most satisfying Python learning moment? When I finally understood the syntax
+of doubly-nested list comprehensions:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="c1"&gt;# prints [1, 1]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;What else did I do?&lt;/h2&gt;
+&lt;p&gt;So if I didn't convincingly achieve all of my goals, what did I do?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Built an Arduino RC car&lt;/li&gt;
+&lt;li&gt;Made a simple web app with Node.js and Angular&lt;/li&gt;
+&lt;li&gt;Wrote a bunch of blog posts (never intended to do that!)&lt;/li&gt;
+&lt;li&gt;Whiteboarded ideas for reducing a program's execution time&lt;/li&gt;
+&lt;li&gt;Heard great tech talks from residents and visiting companies&lt;/li&gt;
+&lt;li&gt;Got over my fears of asking for help on IRC and Stack Overflow&lt;/li&gt;
+&lt;li&gt;Played other Hacker Schoolers' video games, then learned how they worked&lt;/li&gt;
+&lt;li&gt;Received lots of great life/career advice from more experienced Hacker
+Schoolers, facilitators, and alums&lt;/li&gt;
+&lt;li&gt;Went on many walks along the West Side greenway&lt;/li&gt;
+&lt;li&gt;Made tons of great friends&lt;/li&gt;
+&lt;li&gt;Became confident I could move to New York if I wanted to&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Most of these 'accomplishments' are intangible, but I'm okay with that. When
+you're working, most things have some sort of deliverable that needs to be
+delivered at some specific time. Hacker School gave me the luxury of focusing on
+the journey itself.&lt;/p&gt;</content><category term="Hacker School"></category><category term="reflections"></category><category term="goals"></category><category term="learning"></category></entry></feed>

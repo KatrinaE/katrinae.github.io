@@ -10,10 +10,11 @@ h1, h2, h3 {
 	font-weight: bold;
 }
 
-pre, code {
-	font-family: 'Droid Sans Mono', monospace;
+
+pre {
+        padding-left: 20px;
 }
 
 code {
-	font-size: 0.7em ;
+        font-size: 0.8rem;
 }

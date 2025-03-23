@@ -50,6 +50,9 @@
 .highlighttable {
 	background: #272822;
 	border: 1px solid #8f908a;
+	/* uncomment to center the code blocks */
+	/*margin-left: auto;
+	margin-right: auto;*/
 	width: 100%;
 }
 
@@ -83,22 +86,9 @@
 	content: "- ";
 }
 
-code {
-	color: #222222;
-	background: #f8f8f8;
-	border: 1px solid #dddddd;
-	margin: 0 2px;
-	padding: 0 5px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	font-weight: normal;
-	font-family: "monaco", "monospace";
-	font-size: 80%;
-}
 
 p {
-	text-align: left;
+	text-align: justify;
 }
 
 .continue {
@@ -107,35 +97,9 @@ p {
 }
 
 .archive-year {
-	border-top: 0px;
+	border-top: 1px solid;
 }
 
 .archive-entry {
 	border-top: 1px dotted;
-}
-
-table.highlighttable {
-	table-layout: fixed;
-	white-space: nowrap;
-	width:100%;
-}
-
-.linenos {
-	width: 2.25rem;
-	text-align: right;
-	margin: 0;
-	padding: 0;
-	vertical-align: top;
-}
-       
-.highlight{
-	width: 100%;
-	height: auto;
-	overflow: auto;
-	margin-bottom: 1rem;
-}
-
-.linenodiv {
-	margin: 0.55rem 0.5rem 0 0;
-	padding: 0;
 }

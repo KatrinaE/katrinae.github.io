@@ -6,15 +6,21 @@
 
 		<title>Katrina Ellison Geltman</title>
 		<meta name="description" content="">
-		<meta name="author" content="Katrina Ellison Geltman">
+		<meta name="author" content="">
 
 		<link rel="stylesheet" href="/theme/css/foundation.css" />
-		<link rel="stylesheet" href="/theme/css/pygment/manni.css" />
+		<link rel="stylesheet" href="/theme/css/pygment/bw.css" />
 		<link rel="stylesheet" href="/theme/css/custom.css" />
 
+		<!-- GOOGLE WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cookie&family=Pacifico&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/alt-fonts.css" />
 
 		<script src="/theme/js/modernizr.js"></script>
+
 		<!-- Feeds -->
+		<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Katrina Ellison Geltman Atom Feed" />
 
 
 		<!-- mathjax config similar to math.stackexchange -->
@@ -31,9 +37,7 @@
 			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
 		});
 		</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	</head>
 	<body>
 		<div class="off-canvas-wrap">
@@ -53,62 +57,41 @@
 				<aside class="left-off-canvas-menu">
 					<ul class="off-canvas-list">
 						<li><a href="">Home</a></li>
-						<li><label>Pages</label></li>
-							<li ><a href="/pages/about-me.html">About</a></li>
+						<li><label>Categories</label></li>
+							<li ><a href="/pages/about-me.html">About Me</a></li>
 							<li ><a href="/pages/projects.html">Projects</a></li>
+						<li><a href="/archives.html">Archives</a></li>
 
 						<li><label>Links</label></li>
 							<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
 							<li><a href="http://www.github.com/katrinae">GitHub</a></li>
 							<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
 
-						<!--
-							-->
-
 						<li><label>Monthly Archives</label></li>
+									<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
 									<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
 									<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
-									<li><a href="/posts/2014/04/">April 2014 (3)</a></li>
+									<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
 									<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
 									<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
-
-						<!--<li><label>Links</label></li>
-					</ul>-->
+					</ul>	
 				</aside>
 
 				<!-- top bar nav -->
 				<nav class="top-bar hide-for-small-only" data-topbar>
 					<ul class="title-area">
 						<li class="name">
-							<h1><a href="/">Katrina Ellison Geltman</a></h1>
+							<h1 id="pagetitle"><span id="pagetitle"><a href="/" style="text-decoration:none">Katrina Ellison Geltman</a><span></h1>
 						</li>
 					</ul>
 
-					<!-- <section class="top-bar-section">
-						<ul class="left">
-								<li ><a href="/category/hacker-school.html">Hacker School</a></li>
-								<li ><a href="/category/how-to.html">How-to</a></li>
-								<li ><a href="/category/misc.html">misc</a></li>
-								<li class="active"><a href="/category/python.html">Python</a></li>
-								<li ><a href="/category/seating-chart-creator.html">Seating Chart Creator</a></li>
-						</ul>
-					</section> -->
-
 					<section class="top-bar-section">
 						<ul class="left">
-								<li ><a href="/pages/about-me.html">About</a></li>
-								<li ><a href="/pages/projects.html">Projects</a></li>
+						            <li ><a style="text-decoration:none;" href="/pages/about-me.html">About Me</a></li>
+						            <li ><a style="text-decoration:none;" href="/pages/projects.html">Projects</a></li>
+							    <li><a style="text-decoration:none;" href="/archives.html">Archives</a>
 						</ul>
 					</section>
-
-
-					<section class="top-bar-section">
-					  <ul class="left">
-					    <li><a href="/archives.html">Archives</a></li>
-					  </ul>
-					</section>
-
-
 				</nav>
 
 				<!-- Main Page Content and Sidebar -->
@@ -117,125 +100,104 @@
 						<!-- Main Content -->
 						<div class="medium-9 small-12 columns" role="content">
 <article>
-	<h2>A Python LRU Cache
-	</h2>
-	<h5>Mon 05 May 2014</h5>
-	<p>Caches are structures for storing data for future use so that it doesn't 
-have to be re-calculated each time it is accessed. You might be familiar
-with them in the context of the web (your browser can cache a page so that it
-doesn't need to be reloaded the next time you view it; a server can cache a
-page so that its data doesn't need to be regenerated from scratch for the next
-client), but caches can be used anywhere that you need to re-retrieve expensive-to-
-calculate data. This article ignores the web stuff to focus on the cache
-structure.</p>
-<p>A cache has a finite size, so it will eventually run out of room for new results.
-The optimal strategy for handling subsequent requests depends on the specific
-situation. There are a multitude of such algorithms - Wikipedia has 
-<a href="https://en.wikipedia.org/wiki/Cache_algorithms">a nice list</a>). </p>
-<p>I'm going to 
-discuss the least-recently-used (LRU) algorithm, which is probably the most intuitive
-strategy. It's useful when the most-recently-accessed content is likely to be the most
-desired in the future. </p>
+    <h2>A Python LRU Cache</h2>
+  	<h6>Written by <a href="/author/katrina-ellison-geltman.html">Katrina Ellison Geltman</a> on Mon 05 May 2014.</h6>
+	<p>Caches are structures for storing data for future use so that it doesn't have
+to be re-calculated each time it is accessed. You might be familiar with them
+in the context of the web (your browser can cache a page so that it doesn't
+need to be reloaded the next time you view it; a server can cache a page so
+that its data doesn't need to be regenerated from scratch for the next
+client), but caches can be used anywhere that you need to re-retrieve
+expensive-to- calculate data. This article ignores the web stuff to focus on
+the cache structure.</p>
+<p>A cache has a finite size, so it will eventually run out of room for new
+results. The optimal strategy for handling subsequent requests depends on the
+specific situation. There are a multitude of such algorithms - Wikipedia has
+<a href="https://en.wikipedia.org/wiki/Cache_algorithms">a nice list</a>).</p>
+<p>I'm going to discuss the least-recently-used (LRU) algorithm, which is
+probably the most intuitive strategy. It's useful when the most-recently-
+accessed content is likely to be the most desired in the future.</p>
 <h3>LRU Caches</h3>
-<p>In an LRU cache, when a new input arrives, the resulting output is added
-to the cache and the oldest output is kicked out. Adding to the cache is much like using 
-a FIFO queue: an item is added to one end of the data structure, then eventually 
-removed from the other. The items in the cache is always sorted by the time they were
-last accessed.</p>
-<p>Retrieving items from the cache is more difficult because a regular queue doesn't allow you
-to access items arbitrarily. To solve this problem, we can use a hash map: retrieve an
-item by looking it up in the hash map, then keep track of when it was accessed by moving it
-to the front of the linked list.</p>
+<p>In an LRU cache, when a new input arrives, the resulting output is added to
+the cache and the oldest output is kicked out. Adding to the cache is much
+like using a FIFO queue: an item is added to one end of the data structure,
+then eventually removed from the other. The items in the cache is always
+sorted by the time they were last accessed.</p>
+<p>Retrieving items from the cache is more difficult because a regular queue
+doesn't allow you to access items arbitrarily. To solve this problem, we can
+use a hash map: retrieve an item by looking it up in the hash map, then keep
+track of when it was accessed by moving it to the front of the linked list.</p>
 <h3>Implementation: Linked List + Hash Map</h3>
-<p>In this implementation, results are stored in a circular, 
-doubly-linked list, with each result node pointing to the result node just older than it.
-When you add a new item to the list, you remove the last item and prepend the new result
-to the head. If you need to access an existing item, you find it in the middle of
-the list and move it to the head of the list.</p>
-<p>How do you find existing items? You use a hash table. The hashes are representations
-of particular inputs, and the values are the result nodes (so each result node has
-two pointers on it - one from the hash table, and one from the linked list). </p>
-<p><img alt="LRU cache architecture" src="/images/lru_cache.png" /></p>
-<p>In the diagram above, hashed versions of 'func(a)', 'func(b)', etc. would serve
-as the keys in the hash table, and the linked list nodes containing 'Most recent',
-'Result b', etc. would be the values.</p>
-<p>I've posted a basic Python implementation on 
-<a href="https://github.com/KatrinaE/miniprojects/tree/master/lru-cache">Github</a>. It has two
-separate parts: the cache itself and the circular doubly linked list. The cache is
-an object, so you can do things like:</p>
-<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">LRUCache</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">myfunc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">cache</span><span class="o">.</span><span class="n">save_and_return</span><span class="p">(</span><span class="n">myfunc</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<p>In this implementation, results are stored in a circular, doubly-linked list,
+with each result node pointing to the result node just older than it. When you
+add a new item to the list, you remove the last item and prepend the new
+result to the head. If you need to access an existing item, you find it in the
+middle of the list and move it to the head of the list.</p>
+<p>How do you find existing items? You use a hash table. The hashes are
+representations of particular inputs, and the values are the result nodes (so
+each result node has two pointers on it - one from the hash table, and one
+from the linked list).</p>
+<p><img alt="LRU cache architecture" src="/images/lru_cache.png"></p>
+<p>In the diagram above, hashed versions of 'func(a)', 'func(b)', etc. would
+serve as the keys in the hash table, and the linked list nodes containing
+'Most recent', 'Result b', etc. would be the values.</p>
+<p>I've posted a basic Python implementation on
+<a href="https://github.com/KatrinaE/miniprojects/tree/master/lru-cache">Github</a>. It
+has two separate parts: the cache itself and the circular doubly linked list.
+The cache is an object, so you can do things like:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LRUCache</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">myfunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="n">y</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">cache</span><span class="o">.</span><span class="n">save_and_return</span><span class="p">(</span><span class="n">myfunc</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
 <span class="mi">6</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">cache</span><span class="o">.</span><span class="n">save_and_return</span><span class="p">(</span><span class="n">myfunc</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">cache</span><span class="o">.</span><span class="n">save_and_return</span><span class="p">(</span><span class="n">myfunc</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span>
 <span class="mi">12</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">cache</span><span class="o">.</span><span class="n">print_items</span><span class="p">()</span>
-<span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-</pre></div>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">cache</span><span class="o">.</span><span class="n">print_items</span><span class="p">()</span>
+<span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]</span>
+</code></pre></div>
 
-
-<p>Python 3 has LRU caches built in, but they're implemented as decorators rather than 
-objects. If you want to use a cache with a particular function, you can wrap that
-function with an LRU cache decorator:</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
+<p>Python 3 has LRU caches built in, but they're implemented as decorators rather
+than objects. If you want to use a cache with a particular function, you can
+wrap that function with an LRU cache decorator:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">lru_cache</span>
 <span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
-</pre></div>
+<span class="k">def</span><span class="w"> </span><span class="nf">myfunc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">):</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="n">y</span>
+</code></pre></div>
 
-
-<p>This presentation is perhaps more useful, though the underlying mechanics are exactly the
-same (hash map + linked list). In the current Python 3 implementation, the hash
-map is a basic dictionary and the 'nodes' in the linked list are 4-element lists
-whose items represent the previous item, the next item, the item key, and the item
-result.</p>
+<p>This presentation is perhaps more useful, though the underlying mechanics are
+exactly the same (hash map + linked list). In the current Python 3
+implementation, the hash map is a basic dictionary and the 'nodes' in the
+linked list are 4-element lists whose items represent the previous item, the
+next item, the item key, and the item result.</p>
 <p>And that's it: a simple cache implementation.</p>
-	<hr/>
-	<h6>Category: <a href="/category/python.html">Python</a>. Tags: <a href="/tag/python.html">Python</a>, </h6>
+<hr>
 </article>
 
-<hr/>
 						</div>
 						<!-- End Main Content -->
 						<!-- Sidebar -->
 						<aside class="medium-3 hide-for-small-only columns">
 							<div class="panel">
-								<ul class="side-nav">
-								  <img src="/theme/img/headshot.png" />
-								</ul>
-							</div>
-
-							<div class="panel">
 								<h5>Links</h5>
-								  <p style="margin-bottom:0px;"><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></p>
-								  <p style="margin-bottom:0px;"><a href="http://www.github.com/katrinae">GitHub</a></p>
-								  <p style="margin-bottom:0px;"><a href="http://www.slideshare.net/kellison00">SlideShare</a></p>
-							</div>
-
-							<!-- 
-							<div class="panel">
-								<h5>Tags</h5>
-								<ul class="tag-cloud">
+								<ul class="side-nav">
+									<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+									<li><a href="http://www.github.com/katrinae">GitHub</a></li>
+									<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
 								</ul>
-							</div>-->
+							</div>
 
 							<div class="panel">
 								<h5>Monthly Archives</h5>
-								<p style="margin-bottom:0px;"><a href="/posts/2015/12/">December 2015 (1)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/05/">May 2014 (2)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/04/">April 2014 (3)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/03/">March 2014 (2)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/02/">February 2014 (2)</a>
+								<ul class="side-nav">
+											<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
+											<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
+											<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
+											<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
+											<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+											<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
 								</ul>
 							</div>
 
-							<!--
-							<div class="panel">
-								<h5>Social</h5>
-								<ul class="side-nav">
-								</ul>
-							</div>
-							-->
 						</aside>
 						<!-- End Sidebar -->
 					</div>
@@ -243,8 +205,7 @@ result.</p>
 					<!-- Footer -->
 					<footer class="row">
 						<div class="medium-9 small-12">
-							<hr/>
-							<p class="text-center"><span style="font-style:italic; color: lightgray;  font-size:1em">Powered by Pelican and based on a theme by <a href="http://hamaluik.com" style="color:lightgray; hover:lightgray">Kenton Hamaluik</a>.</span></p>
+							<p class="text-center"> </p>
 						</div>
 					</footer>
 					<!-- End Footer -->

@@ -1,0 +1,257 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Katrina Ellison Geltman</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<link rel="stylesheet" href="/theme/css/foundation.css" />
+		<link rel="stylesheet" href="/theme/css/pygment/bw.css" />
+		<link rel="stylesheet" href="/theme/css/custom.css" />
+
+		<!-- GOOGLE WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cookie&family=Pacifico&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/alt-fonts.css" />
+
+		<script src="/theme/js/modernizr.js"></script>
+
+		<!-- Feeds -->
+		<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Katrina Ellison Geltman Atom Feed" />
+
+
+		<!-- mathjax config similar to math.stackexchange -->
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			jax: ["input/TeX", "output/HTML-CSS"],
+			tex2jax: {
+				inlineMath: [ ['$', '$'] ],
+				displayMath: [ ['$$', '$$']],
+				processEscapes: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+			},
+			messageStyle: "none",
+			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+		});
+		</script>
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	</head>
+	<body>
+		<div class="off-canvas-wrap">
+			<div class="inner-wrap">
+				<!-- mobile top bar to activate nav -->
+				<nav class="tab-bar show-for-small">
+					<section class="left-small">
+						<a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+					</section>
+
+					<section class="middle tab-bar-section">
+						<h1 class="title">Katrina&nbsp;Ellison&nbsp;Geltman</h1>
+					</section>
+				</nav>
+
+				<!-- mobile side bar nav -->
+				<aside class="left-off-canvas-menu">
+					<ul class="off-canvas-list">
+						<li><a href="">Home</a></li>
+						<li><label>Categories</label></li>
+							<li ><a href="/pages/about-me.html">About Me</a></li>
+							<li ><a href="/pages/projects.html">Projects</a></li>
+						<li><a href="/archives.html">Archives</a></li>
+
+						<li><label>Links</label></li>
+							<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+							<li><a href="http://www.github.com/katrinae">GitHub</a></li>
+							<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
+
+						<li><label>Monthly Archives</label></li>
+									<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
+									<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
+									<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
+									<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
+									<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+									<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
+					</ul>	
+				</aside>
+
+				<!-- top bar nav -->
+				<nav class="top-bar hide-for-small-only" data-topbar>
+					<ul class="title-area">
+						<li class="name">
+							<h1 id="pagetitle"><span id="pagetitle"><a href="/" style="text-decoration:none">Katrina Ellison Geltman</a><span></h1>
+						</li>
+					</ul>
+
+					<section class="top-bar-section">
+						<ul class="left">
+						            <li ><a style="text-decoration:none;" href="/pages/about-me.html">About Me</a></li>
+						            <li ><a style="text-decoration:none;" href="/pages/projects.html">Projects</a></li>
+							    <li><a style="text-decoration:none;" href="/archives.html">Archives</a>
+						</ul>
+					</section>
+				</nav>
+
+				<!-- Main Page Content and Sidebar -->
+				<section class="main-section">
+					<div class="row">
+						<!-- Main Content -->
+						<div class="medium-9 small-12 columns" role="content">
+<article>
+    <h2>How to Recover a Pelican Site</h2>
+  	<h6>Written by <a href="/author/katrina-ellison-geltman.html">Katrina Ellison Geltman</a> on Sun 23 March 2025.</h6>
+	<p>Perhaps you, like me, have lost the original content used to generate a
+<a href="https://docs.getpelican.com/en/latest/index.html">Pelican</a> website.
+You have the site itself, but without the original settings and Markdown
+files, it's difficult to add any new content.</p>
+<p>This article is about how to recover that content.</p>
+<h3>Install Python and Pelican</h3>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">Ensure</span><span class="w"> </span><span class="n">Python</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">3.9</span>
+<span class="n">python3</span><span class="w"> </span><span class="o">--</span><span class="n">version</span>
+
+<span class="err">####</span><span class="w"> </span><span class="n">Install</span><span class="w"> </span><span class="n">venv</span>
+<span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">python3</span><span class="mf">.12</span><span class="o">-</span><span class="n">venv</span>
+
+<span class="err">#</span><span class="w"> </span><span class="n">Install</span><span class="w"> </span><span class="n">pelican</span>
+<span class="p">.</span><span class="o">/</span><span class="n">pelican</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">env</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">python</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">ensurepip</span><span class="w"> </span><span class="o">--</span><span class="k">default</span><span class="o">-</span><span class="n">pip</span>
+<span class="p">.</span><span class="o">/</span><span class="n">pelican</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">env</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">python</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="ss">&quot;pelican[markdown]&quot;</span>
+</code></pre></div>
+
+<h3>Serve Your Site Locally</h3>
+<p>When you want to preview your site, run this command in your project's root
+directory, then visit <em>localhost:3333</em> in your browser. It serves everything in
+the <em>output/</em> directory.</p>
+<div class="highlight"><pre><span></span><code>python3 -m http.server -d output 3333
+</code></pre></div>
+
+<h3>Install a Theme</h3>
+<p>Download one of the themes shown at <a href="https://pelicanthemes.com/">Pelican Themes</a>
+(most of them are available on GitHub). Put it in a directory that's outside
+your <em>content/</em> directory. I chose to make a directory called <em>themes/</em> and put
+it there, but you could also keep it completely outside of your site's code.</p>
+<p>Wherever you put it, add it to your <em>pelicanconf.py</em> like this:</p>
+<div class="highlight"><pre><span></span><code>THEME = &#39;./themes/foundation-default-colours&#39;
+</code></pre></div>
+
+<h3>Add Settings to <em>pelicanconf.py</em></h3>
+<p>You will likely need some settings in the file <em>pelicanconf.py</em>. These were mine:</p>
+<div class="highlight"><pre><span></span><code>THEME = &#39;./themes/foundation-default-colours&#39;
+SITENAME = &quot;Katrina Ellison Geltman&quot;
+FOUNDATION_FOOTER_TEXT = &#39; &#39;
+FOUNDATION_PYGMENT_THEME = &#39;bw&#39;
+MONTH_ARCHIVE_SAVE_AS = &#39;posts/{date:%Y}/{date:%m}/index.html&#39;
+STATIC_PATHS = [&#39;images&#39;, &#39;theme/img&#39;]
+LINKS = [[&#39;LinkedIn&#39;, &#39;http://www.linkedin.com/in/katrinaellison&#39;],
+     [&#39;GitHub&#39;, &#39;http://www.github.com/katrinae&#39;],
+     [&#39;SlideShare&#39;, &#39;http://www.slideshare.net/kellison00&#39;]
+    ]
+FOUNDATION_ALTERNATE_FONTS = &#39;True&#39;
+</code></pre></div>
+
+<p>See a full list of <a href="https://docs.getpelican.com/en/latest/settings.html">settings on the Pelican website</a>.</p>
+<h3>Generate Input Markdown Files</h3>
+<p>I used this script (generated by Copilot) to convert my output HTML files
+back to Markdown.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">html2text</span>
+
+<span class="c1"># Function to convert HTML file to Markdown</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">convert_html_to_markdown</span><span class="p">(</span><span class="n">html_file_path</span><span class="p">,</span><span class="w"> </span><span class="n">markdown_file_path</span><span class="p">):</span>
+<span class="k">with</span><span class="w"> </span><span class="nb">open</span><span class="p">(</span><span class="n">html_file_path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">html_file</span><span class="p">:</span>
+<span class="w">    </span><span class="n">html_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">html_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">markdown_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">html2text</span><span class="o">.</span><span class="n">html2text</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
+
+<span class="k">with</span><span class="w"> </span><span class="nb">open</span><span class="p">(</span><span class="n">markdown_file_path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">markdown_file</span><span class="p">:</span>
+<span class="w">    </span><span class="n">markdown_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">markdown_content</span><span class="p">)</span>
+
+<span class="c1"># Directory containing the HTML files</span>
+<span class="n">html_directory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/home/katrina/pelican-dev/katrinae.github.io/&#39;</span>
+<span class="c1"># Directory to save the converted Markdown files</span>
+<span class="n">markdown_directory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/home/katrina/pelican-dev/pelican-site/content/&#39;</span>
+
+<span class="c1"># Ensure the markdown directory exists</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">markdown_directory</span><span class="p">,</span><span class="w"> </span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Convert each HTML file in the directory to Markdown</span>
+<span class="k">for</span><span class="w"> </span><span class="n">html_file_name</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">html_directory</span><span class="p">):</span>
+<span class="k">if</span><span class="w"> </span><span class="n">html_file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.html&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="n">html_file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html_directory</span><span class="p">,</span><span class="w"> </span><span class="n">html_file_name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">markdown_file_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">html_file_name</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;.md&#39;</span>
+<span class="w">    </span><span class="n">markdown_file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">markdown_directory</span><span class="p">,</span><span class="w"> </span><span class="n">markdown_file_name</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">convert_html_to_markdown</span><span class="p">(</span><span class="n">html_file_path</span><span class="p">,</span><span class="w"> </span><span class="n">markdown_file_path</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Converted </span><span class="si">{</span><span class="n">html_file_name</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">markdown_file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>You also have to add some metadata to the beginning of each Markdown file,
+like this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Title</span><span class="o">:</span><span class="w"> </span><span class="n">How</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">Recover</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">Pelican</span><span class="w"> </span><span class="n">Site</span>
+<span class="n">Date</span><span class="o">:</span><span class="w"> </span><span class="n">Sunday</span><span class="o">,</span><span class="w"> </span><span class="n">March</span><span class="w"> </span><span class="mi">23</span><span class="w"> </span><span class="mi">2025</span>
+<span class="n">Author</span><span class="o">:</span><span class="w"> </span><span class="n">Katrina</span><span class="w"> </span><span class="n">Ellison</span><span class="w"> </span><span class="n">Geltman</span>
+<span class="n">Slug</span><span class="o">:</span><span class="w"> </span><span class="n">site</span><span class="o">-</span><span class="n">recovery</span>
+</code></pre></div>
+
+<p>The <code>slug</code> corresponds to the page's URL (i.e. <code>site-recovery</code> becomes
+<code>site-recovery.html</code>).</p>
+<h3>Copy Images</h3>
+<p>I put my images in <em>content/images/</em> and then added <code>STATIC_PATHS = ['images']</code> to my <em>pelicanconf.py</em>. This copies the images to <em>output/images/</em> so they can be
+served at <em>images/</em>.</p>
+<h3>Generate Output</h3>
+<p>When everything is in place, generate output with:</p>
+<div class="highlight"><pre><span></span><code>python -m pelican content -s pelicanconf.py
+</code></pre></div>
+
+<p>Then compare it to your old output. </p>
+</article>
+
+						</div>
+						<!-- End Main Content -->
+						<!-- Sidebar -->
+						<aside class="medium-3 hide-for-small-only columns">
+							<div class="panel">
+								<h5>Links</h5>
+								<ul class="side-nav">
+									<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+									<li><a href="http://www.github.com/katrinae">GitHub</a></li>
+									<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
+								</ul>
+							</div>
+
+							<div class="panel">
+								<h5>Monthly Archives</h5>
+								<ul class="side-nav">
+											<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
+											<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
+											<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
+											<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
+											<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+											<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
+								</ul>
+							</div>
+
+						</aside>
+						<!-- End Sidebar -->
+					</div>
+
+					<!-- Footer -->
+					<footer class="row">
+						<div class="medium-9 small-12">
+							<p class="text-center"> </p>
+						</div>
+					</footer>
+					<!-- End Footer -->
+				</section>
+				<a class="exit-off-canvas"></a>
+			</div><!--off-canvas inner-->
+		</div><!--off-canvas wrap-->
+
+		<script src="/theme/js/jquery.js"></script>
+		<script src="/theme/js/foundation.min.js"></script>
+		<script>
+			$(document).foundation();
+		</script>
+	</body>
+</html>

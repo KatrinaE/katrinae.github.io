@@ -6,15 +6,21 @@
 
 		<title>Katrina Ellison Geltman</title>
 		<meta name="description" content="">
-		<meta name="author" content="Katrina Ellison Geltman">
+		<meta name="author" content="">
 
 		<link rel="stylesheet" href="/theme/css/foundation.css" />
-		<link rel="stylesheet" href="/theme/css/pygment/manni.css" />
+		<link rel="stylesheet" href="/theme/css/pygment/bw.css" />
 		<link rel="stylesheet" href="/theme/css/custom.css" />
 
+		<!-- GOOGLE WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cookie&family=Pacifico&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/alt-fonts.css" />
 
 		<script src="/theme/js/modernizr.js"></script>
+
 		<!-- Feeds -->
+		<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Katrina Ellison Geltman Atom Feed" />
 
 
 		<!-- mathjax config similar to math.stackexchange -->
@@ -31,9 +37,7 @@
 			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
 		});
 		</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	</head>
 	<body>
 		<div class="off-canvas-wrap">
@@ -53,62 +57,41 @@
 				<aside class="left-off-canvas-menu">
 					<ul class="off-canvas-list">
 						<li><a href="">Home</a></li>
-						<li><label>Pages</label></li>
-							<li ><a href="/pages/about-me.html">About</a></li>
+						<li><label>Categories</label></li>
+							<li ><a href="/pages/about-me.html">About Me</a></li>
 							<li ><a href="/pages/projects.html">Projects</a></li>
+						<li><a href="/archives.html">Archives</a></li>
 
 						<li><label>Links</label></li>
 							<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
 							<li><a href="http://www.github.com/katrinae">GitHub</a></li>
 							<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
 
-						<!--
-							-->
-
 						<li><label>Monthly Archives</label></li>
+									<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
 									<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
 									<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
-									<li><a href="/posts/2014/04/">April 2014 (3)</a></li>
+									<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
 									<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
 									<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
-
-						<!--<li><label>Links</label></li>
-					</ul>-->
+					</ul>	
 				</aside>
 
 				<!-- top bar nav -->
 				<nav class="top-bar hide-for-small-only" data-topbar>
 					<ul class="title-area">
 						<li class="name">
-							<h1><a href="/">Katrina Ellison Geltman</a></h1>
+							<h1 id="pagetitle"><span id="pagetitle"><a href="/" style="text-decoration:none">Katrina Ellison Geltman</a><span></h1>
 						</li>
 					</ul>
 
-					<!-- <section class="top-bar-section">
-						<ul class="left">
-								<li class="active"><a href="/category/hacker-school.html">Hacker School</a></li>
-								<li ><a href="/category/how-to.html">How-to</a></li>
-								<li ><a href="/category/misc.html">misc</a></li>
-								<li ><a href="/category/python.html">Python</a></li>
-								<li ><a href="/category/seating-chart-creator.html">Seating Chart Creator</a></li>
-						</ul>
-					</section> -->
-
 					<section class="top-bar-section">
 						<ul class="left">
-								<li ><a href="/pages/about-me.html">About</a></li>
-								<li ><a href="/pages/projects.html">Projects</a></li>
+						            <li ><a style="text-decoration:none;" href="/pages/about-me.html">About Me</a></li>
+						            <li ><a style="text-decoration:none;" href="/pages/projects.html">Projects</a></li>
+							    <li><a style="text-decoration:none;" href="/archives.html">Archives</a>
 						</ul>
 					</section>
-
-
-					<section class="top-bar-section">
-					  <ul class="left">
-					    <li><a href="/archives.html">Archives</a></li>
-					  </ul>
-					</section>
-
-
 				</nav>
 
 				<!-- Main Page Content and Sidebar -->
@@ -117,11 +100,9 @@
 						<!-- Main Content -->
 						<div class="medium-9 small-12 columns" role="content">
 <article>
-	<h2>Hacker School Reflections
-	</h2>
-	<h5>Fri 30 May 2014</h5>
+    <h2>Hacker School Reflections</h2>
+  	<h6>Written by <a href="/author/katrina-ellison-geltman.html">Katrina Ellison Geltman</a> on Fri 30 May 2014.</h6>
 	<p>When I arrived at Hacker School, I laid out the following goals for myself:</p>
-<blockquote>
 <p>While I'm here, I want to:</p>
 <ul>
 <li>
@@ -140,37 +121,38 @@ about algorithms, the Linux kernel, and distributed computing),</p>
 wanted to become a Python ninja). </p>
 </li>
 </ul>
-</blockquote>
+
 <p>So... how'd I do?</p>
-<h4>Learning a statically typed language</h4>
-<p>I set this goal for myself because I felt like, having worked mostly
-   in Python, I wouldn't be a real programmer until I could use something
-   besides a scripting language.</p>
-<p>At Hacker School, I learned to read and write a little bit of Arduino 
-   code (a close cousin of C++), and I started learning about low-level 
-   concepts like pointers memory allocation (it helped that I read 
-   <a href="http://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1401493596&amp;sr=1-1&amp;keywords=code">Code</a> - a great book! - just before arriving). But I didn't spend nearly as much
-   time on this as I would have liked because I got distracted by solving 
-   problems that arose in my existing projects.</p>
-<h4>Using git correctly</h4>
-<p>I've had some scares (most recently, I accidentally created a duplicate 
-   copy of every single commit in a repository), but overall I'm much more
-   confident in my git abilities than I was when I arrived at Hacker School.</p>
-<h4>Finishing a 'real' project</h4>
-<p>I did that! I finished my Seating Chart Creator application and handed it off
-to my 'client' (the work was pro-bono and open source) earlier this month.</p>
-<h4>Learning algorithms</h4>
-<p>I set this goal because algorithms problems always seemed to involve
-solving fun puzzles, and I like doing that. I felt like 
-I had missed out on something by failing to study algorithms during undergrad
-and then taking a less-than-satisfying course on them afterwords.</p>
-<p>At Hacker School, I became intimately acquainted with 
-<a href="/simulated-annealing.html">simulated annealing</a>, but I didn't really study
-other algorithms. I think I turned away from them because it felt too much 
-like being a 'student' and not enough like being a 'real person'. After what
-feels like a lifetime of studying things that have no immediate application,
-I was ready to focus on more applied skills.</p>
-<h4>Exploring the Linux kernel and distributed computing</h4>
+<h2>Learning a statically typed language</h2>
+<p>I set this goal for myself because I felt like, having worked mostly in Python,
+I wouldn't be a real programmer until I could use something besides a scripting
+language.</p>
+<p>At Hacker School, I learned to read and write a little bit of Arduino code (a
+close cousin of C++), and I started learning about low-level concepts like
+pointers memory allocation (it helped that I read
+<a href="http://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1401493596&amp;sr=1-1&amp;keywords=code">Code</a>
+- a great book!). Unfortunately, I didn't spend as much time on this as I would
+have liked because I got distracted by solving problems that arose in my
+existing projects.</p>
+<h2>Using git correctly</h2>
+<p>I've had some scares (most recently, I accidentally created a duplicate copy of
+every single commit in a repository), but overall I'm much more confident in my
+git abilities than I was when I arrived at Hacker School.</p>
+<h2>Finishing a 'real' project</h2>
+<p>I did that! I finished my Seating Chart Creator application and handed it off to
+my 'client' (the work was pro-bono and open source) earlier this month.</p>
+<h2>Learning algorithms</h2>
+<p>I set this goal because algorithms problems always seemed to involve solving fun
+puzzles, and I like doing that. I felt like I had missed out on something by
+failing to study algorithms during undergrad and then taking a
+less-than-satisfying course on them afterwards.</p>
+<p>At Hacker School, I became intimately acquainted with <a href="/simulated-annealing.html">simulated
+annealing</a>, but I didn't really study other
+algorithms. I think I turned away from them because it felt too much like being
+a 'student' and not enough like being a 'real person'. After what feels like a
+lifetime of studying things that have no immediate application, I was ready to
+focus on more applied skills.</p>
+<h2>Exploring the Linux kernel and distributed computing</h2>
 <p>No and no. Maybe another session at Hacker School is in my future?</p>
 <h4>Becoming a Python ninja</h4>
 <p>Well, I wouldn't say I'm a ninja (aside: I hate that word. Why did I use it?)
@@ -179,14 +161,13 @@ idiomatic code, know a bit of what's going on under the covers, and am
 comfortable diving into the source code when I need to know more.</p>
 <p>My most satisfying Python learning moment? When I finally understood the syntax
 of doubly-nested list comprehensions:</p>
-<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
-<span class="k">print</span> <span class="p">[</span><span class="n">b</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">if</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
-<span class="c"># prints [1, 2]</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">b</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">if</span> <span class="n">b</span><span class="p">])</span>
+<span class="c1"># prints [1, 1]</span>
+</code></pre></div>
 
-
-<h3>What else did I do?</h3>
-<p>So if I didn't convincingly achieve all of my goals, what <em>did</em> I do?</p>
+<h2>What else did I do?</h2>
+<p>So if I didn't convincingly achieve all of my goals, what did I do?</p>
 <ul>
 <li>Built an Arduino RC car</li>
 <li>Made a simple web app with Node.js and Angular</li>
@@ -203,54 +184,35 @@ Schoolers, facilitators, and alums</li>
 </ul>
 <p>Most of these 'accomplishments' are intangible, but I'm okay with that. When
 you're working, most things have some sort of deliverable that needs to be
-delivered at some specific time. Hacker School gave me the luxury of focusing
-on the journey itself.</p>
-	<hr/>
-	<h6>Category: <a href="/category/hacker-school.html">Hacker School</a>.</h6>
+delivered at some specific time. Hacker School gave me the luxury of focusing on
+the journey itself.</p>
 </article>
 
-<hr/>
 						</div>
 						<!-- End Main Content -->
 						<!-- Sidebar -->
 						<aside class="medium-3 hide-for-small-only columns">
 							<div class="panel">
-								<ul class="side-nav">
-								  <img src="/theme/img/headshot.png" />
-								</ul>
-							</div>
-
-							<div class="panel">
 								<h5>Links</h5>
-								  <p style="margin-bottom:0px;"><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></p>
-								  <p style="margin-bottom:0px;"><a href="http://www.github.com/katrinae">GitHub</a></p>
-								  <p style="margin-bottom:0px;"><a href="http://www.slideshare.net/kellison00">SlideShare</a></p>
-							</div>
-
-							<!-- 
-							<div class="panel">
-								<h5>Tags</h5>
-								<ul class="tag-cloud">
+								<ul class="side-nav">
+									<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+									<li><a href="http://www.github.com/katrinae">GitHub</a></li>
+									<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
 								</ul>
-							</div>-->
+							</div>
 
 							<div class="panel">
 								<h5>Monthly Archives</h5>
-								<p style="margin-bottom:0px;"><a href="/posts/2015/12/">December 2015 (1)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/05/">May 2014 (2)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/04/">April 2014 (3)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/03/">March 2014 (2)</a>
-								<p style="margin-bottom:0px;"><a href="/posts/2014/02/">February 2014 (2)</a>
+								<ul class="side-nav">
+											<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
+											<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
+											<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
+											<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
+											<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+											<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
 								</ul>
 							</div>
 
-							<!--
-							<div class="panel">
-								<h5>Social</h5>
-								<ul class="side-nav">
-								</ul>
-							</div>
-							-->
 						</aside>
 						<!-- End Sidebar -->
 					</div>
@@ -258,8 +220,7 @@ on the journey itself.</p>
 					<!-- Footer -->
 					<footer class="row">
 						<div class="medium-9 small-12">
-							<hr/>
-							<p class="text-center"><span style="font-style:italic; color: lightgray;  font-size:1em">Powered by Pelican and based on a theme by <a href="http://hamaluik.com" style="color:lightgray; hover:lightgray">Kenton Hamaluik</a>.</span></p>
+							<p class="text-center"> </p>
 						</div>
 					</footer>
 					<!-- End Footer -->
