@@ -1,5 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link href="/" rel="alternate"></link><link href="/feeds/katrina-ellison-geltman.atom.xml" rel="self"></link><id>/</id><updated>2025-03-23T00:00:00+00:00</updated><entry><title>How to Recover a Pelican Site</title><link href="/site-recovery.html" rel="alternate"></link><published>2025-03-23T00:00:00+00:00</published><updated>2025-03-23T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2025-03-23:/site-recovery.html</id><summary type="html">&lt;p&gt;Perhaps you, like me, have lost the original content used to generate a
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link href="/" rel="alternate"></link><link href="/feeds/katrina-ellison-geltman.atom.xml" rel="self"></link><id>/</id><updated>2025-09-26T00:00:00+00:00</updated><entry><title>Paper Trader</title><link href="/paper-trader.html" rel="alternate"></link><published>2025-09-26T00:00:00+00:00</published><updated>2025-09-26T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2025-09-26:/paper-trader.html</id><summary type="html">&lt;h1&gt;Paper Trader&lt;/h1&gt;
+&lt;p&gt;Paper Trader is a command-line trading simulation that I work on for fun.
+It's nowhere near being a real trading application - for starters, it's
+written in Python, so performance is atrocious - but it's fun to build and,
+hopefully, fun to play.&lt;/p&gt;
+&lt;p&gt;It exists in a perpetually unfinished state …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Paper Trader&lt;/h1&gt;
+&lt;p&gt;Paper Trader is a command-line trading simulation that I work on for fun.
+It's nowhere near being a real trading application - for starters, it's
+written in Python, so performance is atrocious - but it's fun to build and,
+hopefully, fun to play.&lt;/p&gt;
+&lt;p&gt;It exists in a perpetually unfinished state, so everything is a bit rough.&lt;/p&gt;
+&lt;p&gt;The code is &lt;a href="https://github.com/KatrinaE/paper-trader"&gt;on Github&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Gameplay&lt;/h2&gt;
+&lt;p&gt;Here's what it looks like when you fire it up with &lt;code&gt;python3 main.py&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Paper Trader Intro Screen" src="/images/paper-trader-intro-screen.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;You have some products - forex and commodities because I like those, stocks
+because I felt compelled to throw those in - with a bid/ask spread for each.&lt;/p&gt;
+&lt;p&gt;You have a book with $10,000 cash.&lt;/p&gt;
+&lt;p&gt;Everything else is empty because you haven't started trading yet.&lt;/p&gt;
+&lt;p&gt;But market data is ticking, so you can see the bid and ask prices moving.&lt;/p&gt;
+&lt;p&gt;You decide to buy something. You make it a market order because #yolo.&lt;/p&gt;
+&lt;p&gt;You have to use the super janky CLI interface:&lt;/p&gt;
+&lt;p&gt;Type: &lt;code&gt;'b' &amp;lt;ret&amp;gt; 'AAPL' &amp;lt;ret&amp;gt; 5 &amp;lt;ret&amp;gt; 'market' &amp;lt;ret&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;BAM! You got filled. The fill shows up in your Recent Fills list, and the
+position is added to your book.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Paper Trader One Fill" src="/images/paper-trader-one-fill.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;Then say you decide to sell some of your AAPL position. You put in a sell order,
+limit this time because you've wised up to reality. Now you have an active order&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Paper Trader Active Order" src="/images/paper-trader-active-order.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;until it fills&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Paper Trader Two Fills" src="/images/paper-trader-two-fills.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;And that's the game. You sit there like a desk trader staring at the prices and
+trying to maximize your P&amp;amp;L. There's no way to win or lose, you just stop when
+you feel like it. I honestly don't find the gameplay all that
+compelling, which means either (1) I haven't optimized it for engagement enough,
+or (2) I am not cut out to be a desk trader (probably both). But I do really
+love hacking on it.&lt;/p&gt;
+&lt;h2&gt;Cool Aspects&lt;/h2&gt;
+&lt;p&gt;Some of my favorite parts are:&lt;/p&gt;
+&lt;h3&gt;Market data&lt;/h3&gt;
+&lt;p&gt;There are three market data modes: simulation, CLOB, and Twelve Data&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Simulation&lt;/em&gt; is the default mode. It generates prices for each product by simulating the product's volatility. There are random events that cause price dislocations, keeping things spicy. This is my favorite mode to play.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;CLOB (central limit order book)&lt;/em&gt; generates simulated orders (not simulated
+prices) and enters them in the exchange's order book. Your orders get matched
+(or not) against these simulated orders. This was fun to code because it felt
+more realistic, and also it's cool because you have the potential to impact
+the market, but I haven't really gotten into gameplay with it yet.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Twelve Data&lt;/em&gt; queries &lt;a href="https://twelvedata.com"&gt;Twelve Data&lt;/a&gt; for real market data. This never really worked very well: it only worked when the market was open,
+it kept rate limiting me (to be fair I was on an el cheapo plan) and it didn't
+have any of my favorite commodity and bond products (I think you might be able
+to rectify this by upgrading from the el cheapo plan). But I keep the code
+around because, hey! it might come in handy someday.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Positions&lt;/h3&gt;
+&lt;p&gt;There's a lot of tricky logic related to positions. When you buy or sell, you
+can add to or reverse your existing position in that
+product. For example, if you're long 5 lots of something and then you sell 7,
+you end up short 2 lots. P&amp;amp;L is calculated FIFO, so if you buy 2 lots at $100,
+then buy 3 lots at $105, then sell 3 lots at $110, you realize $25 in profit
+(2&lt;em&gt;($110-100) + 1&lt;/em&gt;($110-105)). Getting all this position stuff working was
+a bit tough.&lt;/p&gt;
+&lt;h3&gt;Order Types&lt;/h3&gt;
+&lt;p&gt;You can enter market orders (filled immediately at market price) and limit
+orders (to be executed at your specified price or better). &lt;/p&gt;
+&lt;h2&gt;What's Next (maybe)&lt;/h2&gt;
+&lt;p&gt;I just kind of do what I want on this project, but here are some of my
+ideas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Migrate to Rust (mostly because I want to learn Rust, also to see how much
+of a performance improvement I can squeeze out)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Split the simulation into multiple processes. Right now the exchange runs
+in the same process as the trading book, which is... not realistic lol 🙃.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add more order types. I think I'll start with TWAP (time weighted average aprice)
+and iceberg (only a small portion of the order is shown to the market).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Improve the UI. This is not really my forte, but maybe I can pair with
+someone on it, or at least strongarm Claude Code into helping me.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Again, this is my favorite project, I just find working on it relaxing. Probably
+because I have worked on trading systems before and so know sorta kinda what
+they're supposed to do. And also because I am reasonably fluent in Python and
+can express my thoughts in code easily. I find it really easy to go into a flow
+state with this one and can work on it for hours.&lt;/p&gt;
+&lt;p&gt;If you have questions about or ideas for this project, please let me know!
+I'd love to improve it through collaboration with others.&lt;/p&gt;</content><category term="misc"></category></entry><entry><title>How to Recover a Pelican Site</title><link href="/site-recovery.html" rel="alternate"></link><published>2025-03-23T00:00:00+00:00</published><updated>2025-03-23T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2025-03-23:/site-recovery.html</id><summary type="html">&lt;p&gt;Perhaps you, like me, have lost the original content used to generate a
 &lt;a href="https://docs.getpelican.com/en/latest/index.html"&gt;Pelican&lt;/a&gt; website.
 You have the site itself, but without the original settings and Markdown
 files, it's difficult to add any new content.&lt;/p&gt;

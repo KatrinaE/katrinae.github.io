@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link>/</link><description></description><lastBuildDate>Sun, 23 Mar 2025 00:00:00 +0000</lastBuildDate><item><title>How to Recover a Pelican Site</title><link>/site-recovery.html</link><description>&lt;p&gt;Perhaps you, like me, have lost the original content used to generate a
+<rss version="2.0"><channel><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link>/</link><description></description><lastBuildDate>Fri, 26 Sep 2025 00:00:00 +0000</lastBuildDate><item><title>Paper Trader</title><link>/paper-trader.html</link><description>&lt;h1&gt;Paper Trader&lt;/h1&gt;
+&lt;p&gt;Paper Trader is a command-line trading simulation that I work on for fun.
+It's nowhere near being a real trading application - for starters, it's
+written in Python, so performance is atrocious - but it's fun to build and,
+hopefully, fun to play.&lt;/p&gt;
+&lt;p&gt;It exists in a perpetually unfinished state …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2025-09-26:/paper-trader.html</guid><category>misc</category></item><item><title>How to Recover a Pelican Site</title><link>/site-recovery.html</link><description>&lt;p&gt;Perhaps you, like me, have lost the original content used to generate a
 &lt;a href="https://docs.getpelican.com/en/latest/index.html"&gt;Pelican&lt;/a&gt; website.
 You have the site itself, but without the original settings and Markdown
 files, it's difficult to add any new content.&lt;/p&gt;
