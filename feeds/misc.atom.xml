@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Katrina Ellison Geltman - misc</title><link href="/" rel="alternate"></link><link href="/feeds/misc.atom.xml" rel="self"></link><id>/</id><updated>2025-09-26T00:00:00+00:00</updated><entry><title>Paper Trader</title><link href="/paper-trader.html" rel="alternate"></link><published>2025-09-26T00:00:00+00:00</published><updated>2025-09-26T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2025-09-26:/paper-trader.html</id><summary type="html">&lt;h1&gt;Paper Trader&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Katrina Ellison Geltman - misc</title><link href="/" rel="alternate"></link><link href="/feeds/misc.atom.xml" rel="self"></link><id>/</id><updated>2025-10-03T00:00:00+00:00</updated><entry><title>Bootloaders for a Toy Rust OS</title><link href="/bootloaders.html" rel="alternate"></link><published>2025-10-03T00:00:00+00:00</published><updated>2025-10-03T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2025-10-03:/bootloaders.html</id><summary type="html">&lt;p&gt;I had to try a few different bootloaders with the toy Rust operating system
+I'm building. Here's what I was able to get working and what I gave up on.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;❌ Rust's &lt;a href="https://github.com/rust-osdev/bootloader"&gt;bootloader&lt;/a&gt; crate. I couldn't
+  get this to build without Rust's standard library.
+  bootloader depends on serde, which uses std …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;I had to try a few different bootloaders with the toy Rust operating system
+I'm building. Here's what I was able to get working and what I gave up on.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;❌ Rust's &lt;a href="https://github.com/rust-osdev/bootloader"&gt;bootloader&lt;/a&gt; crate. I couldn't
+  get this to build without Rust's standard library.
+  bootloader depends on serde, which uses std. Lots of errors like, "can't
+  find crate for std". I tried building the bootloader separately from the
+  kernel, but I wasn't able to do it successfully. (This is likely operator error, as
+  I'm not that familiar with cargo configuration files).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;✅ &lt;a href="https://github.com/limine-bootloader/limine"&gt;Limine&lt;/a&gt; with a 64-bit OS.
+  This worked, but the OS was
+  really slow to launch. Code and config &lt;a href="https://github.com/KatrinaE/rust-os/tree/3c9037ee725148e48ea660774075ae7105d62836"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;❌ QEMU's built-in bootloader with a 64-bit OS. This didn't work. I got errors like,
+ "Error loading uncompressed kernel without PVH ELF Note". My understanding is that
+ there is a way to do this, but it's complicated.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;✅ QEMU's built-in bootloader with a 32-bit OS. This worked, and the OS launched quickly.
+  Code and config &lt;a href="https://github.com/KatrinaE/rust-os/tree/680a7444399e388671d57e5e95d082e53d95d3ed"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="misc"></category></entry><entry><title>Paper Trader</title><link href="/paper-trader.html" rel="alternate"></link><published>2025-09-26T00:00:00+00:00</published><updated>2025-09-26T00:00:00+00:00</updated><author><name>Katrina Ellison Geltman</name></author><id>tag:None,2025-09-26:/paper-trader.html</id><summary type="html">&lt;h1&gt;Paper Trader&lt;/h1&gt;
 &lt;p&gt;Paper Trader is a command-line trading simulation that I work on for fun.
 It's nowhere near being a real trading application - for starters, it's
 written in Python, so performance is atrocious - but it's fun to build and,
@@ -83,7 +114,7 @@ of a performance improvement I can squeeze out)&lt;/p&gt;
 in the same process as the trading book, which is... not realistic lol 🙃.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Add more order types. I think I'll start with TWAP (time weighted average aprice)
+&lt;p&gt;Add more order types. I think I'll start with TWAP (time weighted average price)
 and iceberg (only a small portion of the order is shown to the market).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;

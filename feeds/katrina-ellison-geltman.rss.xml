@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link>/</link><description></description><lastBuildDate>Fri, 26 Sep 2025 00:00:00 +0000</lastBuildDate><item><title>Paper Trader</title><link>/paper-trader.html</link><description>&lt;h1&gt;Paper Trader&lt;/h1&gt;
+<rss version="2.0"><channel><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link>/</link><description></description><lastBuildDate>Fri, 03 Oct 2025 00:00:00 +0000</lastBuildDate><item><title>Bootloaders for a Toy Rust OS</title><link>/bootloaders.html</link><description>&lt;p&gt;I had to try a few different bootloaders with the toy Rust operating system
+I'm building. Here's what I was able to get working and what I gave up on.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;❌ Rust's &lt;a href="https://github.com/rust-osdev/bootloader"&gt;bootloader&lt;/a&gt; crate. I couldn't
+  get this to build without Rust's standard library.
+  bootloader depends on serde, which uses std …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2025-10-03:/bootloaders.html</guid><category>misc</category></item><item><title>Paper Trader</title><link>/paper-trader.html</link><description>&lt;h1&gt;Paper Trader&lt;/h1&gt;
 &lt;p&gt;Paper Trader is a command-line trading simulation that I work on for fun.
 It's nowhere near being a real trading application - for starters, it's
 written in Python, so performance is atrocious - but it's fun to build and,

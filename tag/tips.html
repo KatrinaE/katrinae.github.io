@@ -68,14 +68,8 @@
 							<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
 
 						<li><label>Monthly Archives</label></li>
-									<li><a href="/posts/2025/10/">October 2025 (1)</a></li>
-									<li><a href="/posts/2025/09/">September 2025 (1)</a></li>
 									<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
 									<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
-									<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
-									<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
-									<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
-									<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
 					</ul>	
 				</aside>
 
@@ -101,104 +95,30 @@
 					<div class="row">
 						<!-- Main Content -->
 						<div class="medium-9 small-12 columns" role="content">
+							<div class="row">
+								<div class="small-12 columns">
+									<h2>Posts Tagged With 'tips'</h2>
+								</div>
+							</div>
+
+        <li><a href="/tag/projects.html">projects</a> (2)</li>
+        <li><a href="/tag/tips.html">tips</a> (2)</li>
+        <li><a href="/tag/reflections.html">reflections</a> (2)</li>
+        <li><a href="/tag/goals.html">goals</a> (1)</li>
+        <li><a href="/tag/learning.html">learning</a> (1)</li>
+        <li><a href="/tag/dsa.html">dsa</a> (4)</li>
+        <li><a href="/tag/embedded.html">embedded</a> (3)</li>
+	
+<h3>Articles</h3>
 <article>
-    <h2>Paper Trader</h2>
-  	<h6>Written by <a href="/author/katrina-ellison-geltman.html">Katrina Ellison Geltman</a> on Fri 26 September 2025.</h6>
-	<h1>Paper Trader</h1>
-<p>Paper Trader is a command-line trading simulation that I work on for fun.
-It's nowhere near being a real trading application - for starters, it's
-written in Python, so performance is atrocious - but it's fun to build and,
-hopefully, fun to play.</p>
-<p>It exists in a perpetually unfinished state, so everything is a bit rough.</p>
-<p>The code is <a href="https://github.com/KatrinaE/paper-trader">on Github</a>.</p>
-<h2>Gameplay</h2>
-<p>Here's what it looks like when you fire it up with <code>python3 main.py</code>:</p>
-<p><img alt="Paper Trader Intro Screen" src="/images/paper-trader-intro-screen.jpeg"></p>
-<p>You have some products - forex and commodities because I like those, stocks
-because I felt compelled to throw those in - with a bid/ask spread for each.</p>
-<p>You have a book with $10,000 cash.</p>
-<p>Everything else is empty because you haven't started trading yet.</p>
-<p>But market data is ticking, so you can see the bid and ask prices moving.</p>
-<p>You decide to buy something. You make it a market order because #yolo.</p>
-<p>You have to use the super janky CLI interface:</p>
-<p>Type: <code>'b' &lt;ret&gt; 'AAPL' &lt;ret&gt; 5 &lt;ret&gt; 'market' &lt;ret&gt;</code></p>
-<p>BAM! You got filled. The fill shows up in your Recent Fills list, and the
-position is added to your book.</p>
-<p><img alt="Paper Trader One Fill" src="/images/paper-trader-one-fill.jpeg"></p>
-<p>Then say you decide to sell some of your AAPL position. You put in a sell order,
-limit this time because you've wised up to reality. Now you have an active order</p>
-<p><img alt="Paper Trader Active Order" src="/images/paper-trader-active-order.jpeg"></p>
-<p>until it fills</p>
-<p><img alt="Paper Trader Two Fills" src="/images/paper-trader-two-fills.jpeg"></p>
-<p>And that's the game. You sit there like a desk trader staring at the prices and
-trying to maximize your P&amp;L. There's no way to win or lose, you just stop when
-you feel like it. I honestly don't find the gameplay all that
-compelling, which means either (1) I haven't optimized it for engagement enough,
-or (2) I am not cut out to be a desk trader (probably both). But I do really
-love hacking on it.</p>
-<h2>Cool Aspects</h2>
-<p>Some of my favorite parts are:</p>
-<h3>Market data</h3>
-<p>There are three market data modes: simulation, CLOB, and Twelve Data</p>
-<ul>
-<li>
-<p><em>Simulation</em> is the default mode. It generates prices for each product by simulating the product's volatility. There are random events that cause price dislocations, keeping things spicy. This is my favorite mode to play.</p>
-</li>
-<li>
-<p><em>CLOB (central limit order book)</em> generates simulated orders (not simulated
-prices) and enters them in the exchange's order book. Your orders get matched
-(or not) against these simulated orders. This was fun to code because it felt
-more realistic, and also it's cool because you have the potential to impact
-the market, but I haven't really gotten into gameplay with it yet.</p>
-</li>
-<li>
-<p><em>Twelve Data</em> queries <a href="https://twelvedata.com">Twelve Data</a> for real market data. This never really worked very well: it only worked when the market was open,
-it kept rate limiting me (to be fair I was on an el cheapo plan) and it didn't
-have any of my favorite commodity and bond products (I think you might be able
-to rectify this by upgrading from the el cheapo plan). But I keep the code
-around because, hey! it might come in handy someday.</p>
-</li>
-</ul>
-<h3>Positions</h3>
-<p>There's a lot of tricky logic related to positions. When you buy or sell, you
-can add to or reverse your existing position in that
-product. For example, if you're long 5 lots of something and then you sell 7,
-you end up short 2 lots. P&amp;L is calculated FIFO, so if you buy 2 lots at $100,
-then buy 3 lots at $105, then sell 3 lots at $110, you realize $25 in profit
-(2<em>($110-100) + 1</em>($110-105)). Getting all this position stuff working was
-a bit tough.</p>
-<h3>Order Types</h3>
-<p>You can enter market orders (filled immediately at market price) and limit
-orders (to be executed at your specified price or better). </p>
-<h2>What's Next (maybe)</h2>
-<p>I just kind of do what I want on this project, but here are some of my
-ideas:</p>
-<ul>
-<li>
-<p>Migrate to Rust (mostly because I want to learn Rust, also to see how much
-of a performance improvement I can squeeze out)</p>
-</li>
-<li>
-<p>Split the simulation into multiple processes. Right now the exchange runs
-in the same process as the trading book, which is... not realistic lol 🙃.</p>
-</li>
-<li>
-<p>Add more order types. I think I'll start with TWAP (time weighted average price)
-and iceberg (only a small portion of the order is shown to the market).</p>
-</li>
-<li>
-<p>Improve the UI. This is not really my forte, but maybe I can pair with
-someone on it, or at least strongarm Claude Code into helping me.</p>
-</li>
-</ul>
-<p>Again, this is my favorite project, I just find working on it relaxing. Probably
-because I have worked on trading systems before and so know sorta kinda what
-they're supposed to do. And also because I am reasonably fluent in Python and
-can express my thoughts in code easily. I find it really easy to go into a flow
-state with this one and can work on it for hours.</p>
-<p>If you have questions about or ideas for this project, please let me know!
-I'd love to improve it through collaboration with others.</p>
+	<h6><a href="/site-recovery.html">How to Recover a Pelican Site</a> - March 23, 2025</h6>
 </article>
+<hr />
+<article>
+	<h6><a href="/unison-el-capitan.html">Installing Unison 2.40.63 on OS X El Capitan</a> - December 27, 2015</h6>
+</article>
+<hr />
+
 
 						</div>
 						<!-- End Main Content -->
@@ -216,14 +136,8 @@ I'd love to improve it through collaboration with others.</p>
 							<div class="panel">
 								<h5>Monthly Archives</h5>
 								<ul class="side-nav">
-											<li><a href="/posts/2025/10/">October 2025 (1)</a></li>
-											<li><a href="/posts/2025/09/">September 2025 (1)</a></li>
 											<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
 											<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
-											<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
-											<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
-											<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
-											<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
 								</ul>
 							</div>
 
