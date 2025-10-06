@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link>/</link><description></description><lastBuildDate>Fri, 03 Oct 2025 00:00:00 +0000</lastBuildDate><item><title>Bootloaders for a Toy Rust OS</title><link>/bootloaders.html</link><description>&lt;p&gt;I had to try a few different bootloaders with the toy Rust operating system
+<rss version="2.0"><channel><title>Katrina Ellison Geltman - Katrina Ellison Geltman</title><link>/</link><description></description><lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate><item><title>Leetcode in Rust: #125 - Valid Palindrome</title><link>/lc-125-valid-palindrome.html</link><description>&lt;p&gt;&lt;a href="https://leetcode.com/problems/valid-palindrome"&gt;https://leetcode.com/problems/valid-palindrome&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.&lt;/p&gt;
+&lt;p&gt;Given a string s, return true if it is a palindrome, or false …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Katrina Ellison Geltman</dc:creator><pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:None,2025-10-06:/lc-125-valid-palindrome.html</guid><category>misc</category></item><item><title>Bootloaders for a Toy Rust OS</title><link>/bootloaders.html</link><description>&lt;p&gt;I had to try a few different bootloaders with the toy Rust operating system
 I'm building. Here's what I was able to get working and what I gave up on.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;

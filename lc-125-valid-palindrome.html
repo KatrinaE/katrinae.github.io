@@ -1,0 +1,224 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Katrina Ellison Geltman</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<link rel="stylesheet" href="/theme/css/foundation.css" />
+		<link rel="stylesheet" href="/theme/css/pygment/bw.css" />
+		<link rel="stylesheet" href="/theme/css/custom.css" />
+
+		<!-- GOOGLE WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cookie&family=Pacifico&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/alt-fonts.css" />
+
+		<script src="/theme/js/modernizr.js"></script>
+
+		<!-- Feeds -->
+		<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Katrina Ellison Geltman Atom Feed" />
+
+
+		<!-- mathjax config similar to math.stackexchange -->
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			jax: ["input/TeX", "output/HTML-CSS"],
+			tex2jax: {
+				inlineMath: [ ['$', '$'] ],
+				displayMath: [ ['$$', '$$']],
+				processEscapes: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+			},
+			messageStyle: "none",
+			"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+		});
+		</script>
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	</head>
+	<body>
+		<div class="off-canvas-wrap">
+			<div class="inner-wrap">
+				<!-- mobile top bar to activate nav -->
+				<nav class="tab-bar show-for-small">
+					<section class="left-small">
+						<a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+					</section>
+
+					<section class="middle tab-bar-section">
+						<h1 class="title">Katrina&nbsp;Ellison&nbsp;Geltman</h1>
+					</section>
+				</nav>
+
+				<!-- mobile side bar nav -->
+				<aside class="left-off-canvas-menu">
+					<ul class="off-canvas-list">
+						<li><a href="">Home</a></li>
+						<li><label>Categories</label></li>
+							<li ><a href="/pages/about-me.html">About Me</a></li>
+							<li ><a href="/pages/projects.html">Projects</a></li>
+						<li><a href="/archives.html">Archives</a></li>
+
+						<li><label>Links</label></li>
+							<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+							<li><a href="http://www.github.com/katrinae">GitHub</a></li>
+							<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
+
+						<li><label>Monthly Archives</label></li>
+									<li><a href="/posts/2025/10/">October 2025 (2)</a></li>
+									<li><a href="/posts/2025/09/">September 2025 (1)</a></li>
+									<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
+									<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
+									<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
+									<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
+									<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+									<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
+					</ul>	
+				</aside>
+
+				<!-- top bar nav -->
+				<nav class="top-bar hide-for-small-only" data-topbar>
+					<ul class="title-area">
+						<li class="name">
+							<h1 id="pagetitle"><span id="pagetitle"><a href="/" style="text-decoration:none">Katrina Ellison Geltman</a><span></h1>
+						</li>
+					</ul>
+
+					<section class="top-bar-section">
+						<ul class="left">
+						            <li ><a style="text-decoration:none;" href="/pages/about-me.html">About Me</a></li>
+						            <li ><a style="text-decoration:none;" href="/pages/projects.html">Projects</a></li>
+							    <li><a style="text-decoration:none;" href="/archives.html">Archives</a>
+						</ul>
+					</section>
+				</nav>
+
+				<!-- Main Page Content and Sidebar -->
+				<section class="main-section">
+					<div class="row">
+						<!-- Main Content -->
+						<div class="medium-9 small-12 columns" role="content">
+<article>
+    <h2>Leetcode in Rust: #125 - Valid Palindrome</h2>
+  	<h6>Written by <a href="/author/katrina-ellison-geltman.html">Katrina Ellison Geltman</a> on Mon 06 October 2025.</h6>
+	<p><a href="https://leetcode.com/problems/valid-palindrome">https://leetcode.com/problems/valid-palindrome</a></p>
+<blockquote>
+<p>A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.</p>
+<p>Given a string s, return true if it is a palindrome, or false otherwise.</p>
+</blockquote>
+<h2>Solution #1 - Readable, but Suboptimal</h2>
+<p>This solution runs quickly, but allocates a new <code>Vec&lt;char&gt;</code> to hold the
+alphanumeric characters.</p>
+<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="n">Runtime</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">ms</span><span class="w"> </span><span class="n">beats</span><span class="w"> </span><span class="mi">100</span><span class="o">%</span>
+<span class="o">//</span><span class="w"> </span><span class="n">Memory</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mf">2.73</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="n">beats</span><span class="w"> </span><span class="mf">12.84</span><span class="o">%</span>
+<span class="n">pub</span><span class="w"> </span><span class="n">fn</span><span class="w"> </span><span class="n">is_palindrome</span><span class="p">(</span><span class="nl">s</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">bool</span><span class="w"> </span><span class="err">{</span>
+<span class="n">let</span><span class="w"> </span><span class="nl">t</span><span class="p">:</span><span class="w"> </span><span class="n">Vec</span><span class="o">&lt;</span><span class="nc">char</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span>
+<span class="w">    </span><span class="p">.</span><span class="n">to_lowercase</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">chars</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="k">filter</span><span class="p">(</span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">is_alphanumeric</span><span class="p">())</span>
+<span class="w">    </span><span class="p">.</span><span class="k">collect</span><span class="p">();</span>
+<span class="k">if</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">is_empty</span><span class="p">()</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="err">}</span>
+<span class="n">let</span><span class="w"> </span><span class="n">mut</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">let</span><span class="w"> </span><span class="n">mut</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="nf">len</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">t</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">t</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">    </span><span class="err">}</span>
+<span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">j</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="err">}</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<h2>Solution #2 - Optimal</h2>
+<p>This solution is more memory efficient than #1. It iterates directly
+over the input string, skipping non-alphanumeric characters.</p>
+<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="n">Runtime</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">ms</span><span class="w"> </span><span class="n">beets</span><span class="w"> </span><span class="mi">100</span><span class="o">%</span>
+<span class="o">//</span><span class="w"> </span><span class="n">Memory</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mf">2.30</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="n">beats</span><span class="w"> </span><span class="mf">93.51</span><span class="o">%</span>
+<span class="n">pub</span><span class="w"> </span><span class="n">fn</span><span class="w"> </span><span class="n">is_palindrome</span><span class="p">(</span><span class="nl">s</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">bool</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="n">let</span><span class="w"> </span><span class="n">mut</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">let</span><span class="w"> </span><span class="n">mut</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="nf">len</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="err">{</span>
+<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="nl">Note</span><span class="p">:</span><span class="w"> </span><span class="n">as_bytes</span><span class="p">()</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">OK</span><span class="w"> </span><span class="n">because</span><span class="w"> </span><span class="n">problem</span><span class="w"> </span><span class="k">statement</span><span class="w"> </span><span class="n">says</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="nf">ASCII</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="err">!</span><span class="n">s</span><span class="p">.</span><span class="n">as_bytes</span><span class="p">()</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="n">is_ascii_alphanumeric</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="nf">len</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="err">{</span>
+<span class="w">            </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="err">}</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="err">!</span><span class="n">s</span><span class="p">.</span><span class="n">as_bytes</span><span class="p">()</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">.</span><span class="n">is_ascii_alphanumeric</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">{</span>
+<span class="w">            </span><span class="n">j</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="err">}</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="err">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">        </span><span class="err">}</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">as_bytes</span><span class="p">()</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="n">to_ascii_lowercase</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">as_bytes</span><span class="p">()</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">.</span><span class="n">to_ascii_lowercase</span><span class="p">()</span><span class="w"> </span><span class="err">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">        </span><span class="err">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="nf">len</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="err">{</span>
+<span class="w">            </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="err">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">{</span>
+<span class="w">            </span><span class="n">j</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="err">}</span><span class="p">;</span>
+<span class="w">    </span><span class="err">}</span>
+<span class="w">    </span><span class="k">true</span>
+<span class="err">}</span>
+</code></pre></div>
+</article>
+
+						</div>
+						<!-- End Main Content -->
+						<!-- Sidebar -->
+						<aside class="medium-3 hide-for-small-only columns">
+							<div class="panel">
+								<h5>Links</h5>
+								<ul class="side-nav">
+									<li><a href="http://www.linkedin.com/in/katrinaellison">LinkedIn</a></li>
+									<li><a href="http://www.github.com/katrinae">GitHub</a></li>
+									<li><a href="http://www.slideshare.net/kellison00">SlideShare</a></li>
+								</ul>
+							</div>
+
+							<div class="panel">
+								<h5>Monthly Archives</h5>
+								<ul class="side-nav">
+											<li><a href="/posts/2025/10/">October 2025 (2)</a></li>
+											<li><a href="/posts/2025/09/">September 2025 (1)</a></li>
+											<li><a href="/posts/2025/03/">March 2025 (1)</a></li>
+											<li><a href="/posts/2015/12/">December 2015 (1)</a></li>
+											<li><a href="/posts/2014/05/">May 2014 (2)</a></li>
+											<li><a href="/posts/2014/04/">April 2014 (4)</a></li>
+											<li><a href="/posts/2014/03/">March 2014 (2)</a></li>
+											<li><a href="/posts/2014/02/">February 2014 (2)</a></li>
+								</ul>
+							</div>
+
+						</aside>
+						<!-- End Sidebar -->
+					</div>
+
+					<!-- Footer -->
+					<footer class="row">
+					  <div class="medium-9 small-12">
+					    <div class="rc-scout-wrapper"><div class="rc-scout" data-scout-rendered="true"><p class="rc-scout__text"><i class="rc-scout__logo"></i> Want to become a better programmer? <a class="rc-scout__link" href="https://www.recurse.com/scout/click?t=450d04a556051cf7aaf8591961e80270">Join the Recurse Center!</a></p></div> <style class="rc-scout__style" type="text/css">.rc-scout { display: block; padding: 0; border: 0; margin: 0; } .rc-scout__text { display: block; padding: 0; border: 0; margin: 0; height: 100%; font-size: 100%; text-align: center; } .rc-scout__logo { display: inline-block; padding: 0; border: 0; margin: 0; width: 0.85em; height: 0.85em; background: no-repeat center url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2012%2015%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2212%22%20height%3D%2210%22%20fill%3D%22%23000%22%3E%3C%2Frect%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%2210%22%20height%3D%228%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%228%22%20height%3D%226%22%20fill%3D%22%23000%22%3E%3C%2Frect%3E%3Crect%20x%3D%222%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%233dc06c%22%3E%3C%2Frect%3E%3Crect%20x%3D%224%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%233dc06c%22%3E%3C%2Frect%3E%3Crect%20x%3D%226%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%233dc06c%22%3E%3C%2Frect%3E%3Crect%20x%3D%223%22%20y%3D%225%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%233dc06c%22%3E%3C%2Frect%3E%3Crect%20x%3D%226%22%20y%3D%225%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%233dc06c%22%3E%3C%2Frect%3E%3Crect%20x%3D%224%22%20y%3D%229%22%20width%3D%224%22%20height%3D%223%22%20fill%3D%22%23000%22%3E%3C%2Frect%3E%3Crect%20x%3D%221%22%20y%3D%2211%22%20width%3D%2210%22%20height%3D%224%22%20fill%3D%22%23000%22%3E%3C%2Frect%3E%3Crect%20x%3D%220%22%20y%3D%2212%22%20width%3D%2212%22%20height%3D%223%22%20fill%3D%22%23000%22%3E%3C%2Frect%3E%3Crect%20x%3D%222%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%223%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%224%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%225%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%226%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%227%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%228%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%229%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3C%2Fsvg%3E'); } .rc-scout__link:link, .rc-scout__link:visited { color: #3dc06c; text-decoration: underline; } .rc-scout__link:hover, .rc-scout__link:active { color: #4e8b1d; }</style></div>
+							<p class="text-center"> </p>
+						</div>
+					</footer>
+					<!-- End Footer -->
+				</section>
+				<a class="exit-off-canvas"></a>
+			</div><!--off-canvas inner-->
+		</div><!--off-canvas wrap-->
+
+		<script src="/theme/js/jquery.js"></script>
+		<script src="/theme/js/foundation.min.js"></script>
+		<script>
+			$(document).foundation();
+		</script>
+	</body>
+</html>
