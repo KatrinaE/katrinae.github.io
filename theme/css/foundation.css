@@ -38,7 +38,7 @@ body {
   color: #000000;
   padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; 
   font-weight: normal;
   font-style: normal;
   line-height: 1;
@@ -46,7 +46,7 @@ body {
   cursor: default; }
 
 #pagetitle {
-  font-family: Agbalumo;
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
   text-decoration: none;  }
 
 a:hover {
@@ -1583,7 +1583,7 @@ meta.foundation-mq-topbar {
     color: white;
     padding: 12px 0 12px 0;
     padding-left: 15px;
-    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; 
     font-size: 0.8125rem;
     font-weight: normal;
     background: #000000; }
@@ -1892,7 +1892,7 @@ meta.foundation-mq-topbar {
 
 button, .button {
   cursor: pointer;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; 
   font-weight: normal;
   line-height: normal;
   margin: 0 0 1.25rem;
@@ -2436,7 +2436,7 @@ a.th {
     color: #eeeeee;
     font-weight: normal;
     font-size: 1rem;
-    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; }
   .pricing-table .price {
     background-color: #f6f6f6;
     padding: 0.9375rem 1.25rem;
@@ -2444,7 +2444,7 @@ a.th {
     color: #000000;
     font-weight: normal;
     font-size: 2rem;
-    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; }
   .pricing-table .description {
     background-color: white;
     padding: 0.9375rem;
@@ -2742,7 +2742,7 @@ a.th {
       padding-right: 2rem;
       padding-bottom: 1.0625rem;
       padding-left: 2rem;
-      font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+      font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; 
       font-size: 1rem; }
       .tabs dd > a:hover {
         background: #e2e2e2; }
@@ -2846,7 +2846,7 @@ ul.pagination {
   padding: 0.875rem 0;
   list-style-type: none;
   list-style-position: inside;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; }
   .side-nav li {
     margin: 0 0 0.4375rem 0;
     font-size: 0.875rem; }
@@ -2857,7 +2857,7 @@ ul.pagination {
     .side-nav li.active > a:first-child {
       color: #4d4d4d;
       font-weight: normal;
-      font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+      font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; }
     .side-nav li.divider {
       border-top: 1px solid;
       height: 0;
@@ -2883,7 +2883,7 @@ ul.pagination {
       color: #222222;
       padding: 1rem;
       display: block;
-      font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+      font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; }
       font-size: 1rem; }
       .accordion dd > a:hover {
         background: #e2e2e2; }
@@ -2955,7 +2955,7 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; 
   font-weight: 300;
   font-style: normal;
   color: #000000;
@@ -3640,7 +3640,7 @@ blockquote p {
     display: inline;
     margin-left: 1rem;
     margin-bottom: 0.625rem;
-    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; 
     font-weight: normal;
     font-size: 0.875rem;
     color: #999999; }
@@ -3824,7 +3824,7 @@ blockquote p {
       right: auto; } }
 .label {
   font-weight: normal;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; 
   text-align: center;
   text-decoration: none;
   line-height: 1;
@@ -3921,7 +3921,7 @@ nav.tab-bar {
     margin: 0; }
   nav.tab-bar h1, nav.tab-bar h2, nav.tab-bar h3, nav.tab-bar h4 {
     font-size: 1.125rem;
-    font-family: Agbalumo; }
+    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; }
 
 section.left-small {
   border-right: solid 1px #1a1a1a;

@@ -110,54 +110,54 @@ Uno) is able to reconnect, but cannot re-start a server.</p>
 <p>For example, here's the output of running the built-in <code>SimpleWebServerWiFi</code>
 sketch (you can find it in the Arduino IDE under File &gt; Examples &gt; WiFi &gt;
 SimpleWebServerWiFi).</p>
-<div class="highlight"><pre><span></span><code><span class="nv">Attempting</span> <span class="s s-Atom">to</span> <span class="s s-Atom">connect</span> <span class="s s-Atom">to</span> <span class="nv">Network</span> <span class="s s-Atom">named</span><span class="p">:</span> <span class="o">&lt;</span><span class="s s-Atom">my</span> <span class="s s-Atom">network</span><span class="o">&gt;</span>
-<span class="nv">SSID</span><span class="o">:</span> <span class="o">&lt;</span><span class="s s-Atom">my</span> <span class="s s-Atom">network</span><span class="o">&gt;</span>
-<span class="nv">IP</span> <span class="nv">Address</span><span class="o">:</span> <span class="o">&lt;</span><span class="s s-Atom">my</span> <span class="nv">IP</span><span class="o">&gt;</span>
-<span class="s s-Atom">signal</span> <span class="nf">strength</span> <span class="p">(</span><span class="nv">RSSI</span><span class="p">)</span><span class="o">:-</span><span class="mi">46</span> <span class="s s-Atom">dBm</span>
-<span class="nv">To</span> <span class="s s-Atom">see</span> <span class="s s-Atom">this</span> <span class="s s-Atom">page</span> <span class="s s-Atom">in</span> <span class="s s-Atom">action</span><span class="p">,</span> <span class="s s-Atom">open</span> <span class="s s-Atom">a</span> <span class="s s-Atom">browser</span> <span class="s s-Atom">to</span> <span class="s s-Atom">http</span><span class="p">:</span><span class="s s-Atom">//&lt;my</span> <span class="nv">IP</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code>Attempting to connect to Network named: &lt;my network&gt;
+SSID: &lt;my network&gt;
+IP Address: &lt;my IP&gt;
+signal strength (RSSI):-46 dBm
+To see this page in action, open a browser to http://&lt;my IP&gt;
 </code></pre></div>
 
 <p>Great - I think I'm connected! I can successfully ping the Arduino's IP
 address:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ping<span class="w"> </span>&lt;my<span class="w"> </span>IP&gt;
-PING<span class="w"> </span>&lt;my<span class="w"> </span>IP&gt;<span class="w"> </span><span class="o">(</span>&lt;my<span class="w"> </span>IP&gt;<span class="o">)</span>:<span class="w"> </span><span class="m">56</span><span class="w"> </span>data<span class="w"> </span>bytes
-<span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span>&lt;my<span class="w"> </span>IP&gt;:<span class="w"> </span><span class="nv">icmp_seq</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">255</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">4</span>.371<span class="w"> </span>ms
-<span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span>&lt;my<span class="w"> </span>IP&gt;:<span class="w"> </span><span class="nv">icmp_seq</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">255</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">6</span>.826<span class="w"> </span>ms
-<span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span>&lt;my<span class="w"> </span>IP&gt;:<span class="w"> </span><span class="nv">icmp_seq</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">255</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">17</span>.500<span class="w"> </span>ms
-<span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span>&lt;my<span class="w"> </span>IP&gt;:<span class="w"> </span><span class="nv">icmp_seq</span><span class="o">=</span><span class="m">3</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">255</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">5</span>.556<span class="w"> </span>ms
-<span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span>&lt;my<span class="w"> </span>IP&gt;:<span class="w"> </span><span class="nv">icmp_seq</span><span class="o">=</span><span class="m">4</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">255</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">7</span>.440<span class="w"> </span>ms
+<div class="highlight"><pre><span></span><code>$ ping &lt;my IP&gt;
+PING &lt;my IP&gt; (&lt;my IP&gt;): 56 data bytes
+64 bytes from &lt;my IP&gt;: icmp_seq=0 ttl=255 time=4.371 ms
+64 bytes from &lt;my IP&gt;: icmp_seq=1 ttl=255 time=6.826 ms
+64 bytes from &lt;my IP&gt;: icmp_seq=2 ttl=255 time=17.500 ms
+64 bytes from &lt;my IP&gt;: icmp_seq=3 ttl=255 time=5.556 ms
+64 bytes from &lt;my IP&gt;: icmp_seq=4 ttl=255 time=7.440 ms
 ^C
----<span class="w"> </span>&lt;my<span class="w"> </span>IP&gt;<span class="w"> </span>ping<span class="w"> </span>statistics<span class="w"> </span>---
-<span class="m">5</span><span class="w"> </span>packets<span class="w"> </span>transmitted,<span class="w"> </span><span class="m">5</span><span class="w"> </span>packets<span class="w"> </span>received,<span class="w"> </span><span class="m">0</span>.0%<span class="w"> </span>packet<span class="w"> </span>loss
-round-trip<span class="w"> </span>min/avg/max/stddev<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span>.371/8.339/17.500/4.701<span class="w"> </span>ms
+--- &lt;my IP&gt; ping statistics ---
+5 packets transmitted, 5 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 4.371/8.339/17.500/4.701 ms
 </code></pre></div>
 
 <p>But I can’t complete HTTP requests:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-G<span class="w"> </span>http://&lt;my<span class="w"> </span>IP&gt;
-curl:<span class="w"> </span><span class="o">(</span><span class="m">7</span><span class="o">)</span><span class="w"> </span>Failed<span class="w"> </span>connect<span class="w"> </span>to<span class="w"> </span>&lt;my<span class="w"> </span>IP&gt;:80<span class="p">;</span><span class="w"> </span>Connection<span class="w"> </span>refused
+<div class="highlight"><pre><span></span><code>$ curl -G http://&lt;my IP&gt;
+curl: (7) Failed connect to &lt;my IP&gt;:80; Connection refused
 </code></pre></div>
 
 <p>And using telnet is just weird:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>telnet<span class="w"> </span>&lt;my<span class="w"> </span>IP&gt;
-Trying<span class="w"> </span>&lt;my<span class="w"> </span>IP&gt;...
-Connected<span class="w"> </span>to<span class="w"> </span>&lt;my<span class="w"> </span>IP&gt;.
-Escape<span class="w"> </span>character<span class="w"> </span>is<span class="w"> </span><span class="s1">&#39;^]&#39;</span>.
-Hello,<span class="w"> </span>client!
-^C^<span class="o">]</span><span class="w"> </span>Iso<span class="w"> </span>conf<span class="w"> </span>am<span class="w"> </span>uso<span class="w"> </span>confsued^Msed??<span class="w"> </span>//<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span><span class="s1">&#39;I am so confused??&#39;</span>
+<div class="highlight"><pre><span></span><code>$ telnet &lt;my IP&gt;
+Trying &lt;my IP&gt;...
+Connected to &lt;my IP&gt;.
+Escape character is &#39;^]&#39;.
+Hello, client!
+^C^] Iso conf am uso confsued^Msed?? // should be &#39;I am so confused??&#39;
 </code></pre></div>
 
 <h3>Getting started</h3>
 <p>To test what happens when the Arduino disconnects from the WiFi network, I
 wrote some code to automatically disconnect every tenth time through Arduino's
 event loop, <code>loop()</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">void</span><span class="w"> </span><span class="k">loop</span><span class="ss">()</span><span class="w"> </span>{
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="ss">)</span><span class="w"> </span>{
-<span class="w">    </span><span class="nv">Serial</span>.<span class="nv">println</span><span class="ss">(</span><span class="s2">&quot;\nPurposely disconnecting WiFi\n&quot;</span><span class="ss">)</span><span class="c1">;</span>
-<span class="w">    </span><span class="nv">WiFi</span>.<span class="k">disconnect</span><span class="ss">()</span><span class="c1">;</span>
-<span class="w">    </span><span class="nv">delay</span><span class="ss">(</span><span class="mi">5000</span><span class="ss">)</span><span class="c1">;</span>
-<span class="w">    </span><span class="nv">WiFiSetup</span><span class="ss">()</span><span class="c1">;</span>
-<span class="w">  </span>}
-<span class="w">  </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="c1">;</span>
+<div class="highlight"><pre><span></span><code>void loop() {
+  if (i % 10 == 0) {
+    Serial.println(&quot;\nPurposely disconnecting WiFi\n&quot;);
+    WiFi.disconnect();
+    delay(5000);
+    WiFiSetup();
+  }
+  i = i + 1;
 }
 </code></pre></div>
 
@@ -180,14 +180,14 @@ release socket on connect
 fail</a>. The poster fixed the
 problem by editing <code>connect()</code> in WiFiClient.cpp, specifically by adding this
 single line to <code>WiFiClient::connect()</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="err">!</span><span class="n">connected</span><span class="p">())</span>
-<span class="err">{</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="k">Add</span><span class="w"> </span><span class="n">this</span>
-<span class="w">    </span><span class="nl">WiFiClass</span><span class="p">:</span><span class="err">:</span><span class="n">_state</span><span class="o">[</span><span class="n">_sock</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">add</span>
+<div class="highlight"><pre><span></span><code>if (!connected())
+{
+    // Add this
+    WiFiClass::_state[_sock] = -1;
+    // end of add
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="err">}</span>
+    return 0;
+}
 </code></pre></div>
 
 <p>This line runs if the client fails to connect; it resets the socket to make it
@@ -213,10 +213,10 @@ socket 2 and listening on port 80.</p>
 <p>These numbers weren't being reset when the WiFi disconnected, which meant that
 the server couldn't restart properly. To fix it, I created a <code>disconnect()</code>
 method in WiFiServer.cpp:</p>
-<div class="highlight"><pre><span></span><code><span class="n">void</span><span class="w"> </span><span class="nl">WiFiServer</span><span class="p">:</span><span class="err">:</span><span class="k">disconnect</span><span class="p">()</span><span class="w"> </span><span class="err">{</span>
-<span class="w">  </span><span class="nl">WiFiClass</span><span class="p">:</span><span class="err">:</span><span class="n">_state</span><span class="o">[</span><span class="n">_sock</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-<span class="w">  </span><span class="nl">WiFiClass</span><span class="p">:</span><span class="err">:</span><span class="n">_server_port</span><span class="o">[</span><span class="n">_sock</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code>void WiFiServer::disconnect() {
+  WiFiClass::_state[_sock] = -1;
+  WiFiClass::_server_port[_sock] = 0;
+}
 </code></pre></div>
 
 <p>This frees the socket the server was listening on by setting its state to -1
@@ -226,12 +226,12 @@ connect to them. The problem is that the server doesn’t actually restart.</p>
 <p>Fortunately, I discovered that this problem had a simple fix: delaying before
 restarting the WiFi. Adding the line <code>delay(10000);</code> before running
 <code>WiFiSetup()</code> does the trick:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">void</span><span class="w"> </span><span class="k">loop</span><span class="ss">()</span><span class="w"> </span>{
-<span class="w">  </span><span class="nv">Serial</span>.<span class="nv">println</span><span class="ss">(</span><span class="s2">&quot;\nPurposely disconnecting WiFi\n&quot;</span><span class="ss">)</span><span class="c1">;</span>
-<span class="w">  </span><span class="nv">server</span>.<span class="k">disconnect</span><span class="ss">()</span><span class="c1">;</span>
-<span class="w">  </span><span class="nv">WiFi</span>.<span class="k">disconnect</span><span class="ss">()</span><span class="c1">;</span>
-<span class="w">  </span><span class="nv">delay</span><span class="ss">(</span><span class="mi">10000</span><span class="ss">)</span><span class="c1">;</span>
-<span class="w">  </span><span class="nv">WiFiSetup</span><span class="ss">()</span><span class="c1">;</span>
+<div class="highlight"><pre><span></span><code>void loop() {
+  Serial.println(&quot;\nPurposely disconnecting WiFi\n&quot;);
+  server.disconnect();
+  WiFi.disconnect();
+  delay(10000);
+  WiFiSetup();
 }
 </code></pre></div>
 
@@ -266,11 +266,11 @@ precisely where it got stuck. It's during the line
 <code>SpiDrv::waitForSlaveReady()</code>. All this does is instruct the Arduino to wait
 while a pin called <code>SLAVEREADY</code> - the Arduino-WiFi Shield handshake pin - is
 high.</p>
-<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">define</span><span class="w"> </span><span class="nt">waitSlaveReady</span><span class="o">()</span><span class="w"> </span><span class="o">(</span><span class="nt">digitalRead</span><span class="o">(</span><span class="nt">SLAVEREADY</span><span class="o">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nt">LOW</span><span class="o">)</span>
-<span class="nt">void</span><span class="w"> </span><span class="nt">SpiDrv</span><span class="p">::</span><span class="nd">waitForSlaveReady</span><span class="o">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="err">while</span><span class="w"> </span><span class="err">(!waitSlaveReady())</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code>#define waitSlaveReady() (digitalRead(SLAVEREADY) == LOW)
+void SpiDrv::waitForSlaveReady()
+{
+    while (!waitSlaveReady());
+}
 </code></pre></div>
 
 <p>No matter how long I wait, that friggin slave just isn't ready. If this is the

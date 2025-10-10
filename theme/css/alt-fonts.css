@@ -1,9 +1,9 @@
 body {
-	font-family: 'Droid Serif', serif;
+	font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; 
 }
 
 h1, h2, h3, h4, h5, h6, .side-nav, .top-bar-section ul li > a, ul.off-canvas-list li {
-	font-family: 'Droid Sans', sans-serif;
+	font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; 
 }
 
 h1, h2, h3 {
@@ -16,5 +16,6 @@ pre {
 }
 
 code {
-        font-size: 0.8rem;
+    font-size: 1.0rem;
+    line-height: 1.2;
 }

@@ -109,24 +109,24 @@
 <p>Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.</p>
 <p>Assume the environment does not allow you to store 64-bit integers (signed or unsigned).</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="nt">pub</span><span class="w"> </span><span class="nt">fn</span><span class="w"> </span><span class="nt">reverse</span><span class="o">(</span><span class="nt">x</span><span class="o">:</span><span class="w"> </span><span class="nt">i32</span><span class="o">)</span><span class="w"> </span><span class="nt">-</span><span class="o">&gt;</span><span class="w"> </span><span class="nt">i32</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="err">let</span><span class="w"> </span><span class="err">mut</span><span class="w"> </span><span class="err">input</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">x</span><span class="p">;</span>
-<span class="w">    </span><span class="err">let</span><span class="w"> </span><span class="err">mut</span><span class="w"> </span><span class="err">output</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">0</span><span class="p">;</span>
-<span class="w">    </span><span class="err">let</span><span class="w"> </span><span class="err">mut</span><span class="w"> </span><span class="err">last_digit</span><span class="p">;</span>
-<span class="w">    </span><span class="err">while</span><span class="w"> </span><span class="err">input.abs()</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="err">0</span><span class="w"> </span><span class="err">{</span>
-<span class="w">        </span><span class="err">last_digit</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">input</span><span class="w"> </span><span class="err">%</span><span class="w"> </span><span class="err">10</span><span class="p">;</span>
-<span class="w">        </span><span class="err">input</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">input</span><span class="w"> </span><span class="err">/</span><span class="w"> </span><span class="err">10</span><span class="p">;</span>
-<span class="w">        </span><span class="err">if</span><span class="w"> </span><span class="err">output</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="n">i32</span><span class="p">:</span><span class="o">:</span><span class="n">MAX</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">10</span>
-<span class="w">            </span><span class="o">||</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">i32</span><span class="o">::</span><span class="n">MAX</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">last_digit</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">7</span>
-<span class="w">            </span><span class="o">||</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">i32</span><span class="o">::</span><span class="n">MIN</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">10</span>
-<span class="w">            </span><span class="o">||</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">i32</span><span class="o">::</span><span class="n">MIN</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">last_digit</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">-8</span>
-<span class="w">        </span><span class="err">{</span>
-<span class="w">            </span><span class="n">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="nt">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">output</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">last_digit</span><span class="o">;</span>
-<span class="w">    </span><span class="err">}</span>
-<span class="w">    </span><span class="nt">output</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code>pub fn reverse(x: i32) -&gt; i32 {
+    let mut input = x;
+    let mut output = 0;
+    let mut last_digit;
+    while input.abs() &gt; 0 {
+        last_digit = input % 10;
+        input = input / 10;
+        if output &gt; i32::MAX / 10
+            || output == i32::MAX / 10 &amp;&amp; last_digit &gt; 7
+            || output &lt; i32::MIN / 10
+            || output == i32::MIN / 10 &amp;&amp; last_digit &lt; -8
+        {
+            return 0;
+        }
+        output = output * 10 + last_digit;
+    }
+    output
+}
 </code></pre></div>
 
 <p>Why the <code>last_digit &gt; 7</code> and <code>last_digit &lt; -8</code> cases? This is because <code>i32::MAX = 2147483647</code>, so 214748364<b>8</b> and 214748364<b>9</b> will cause an overflow, and <code>i32::MIN = -2147483648</code>, so -214748364<b>9</b> will cause an underflow.</p>

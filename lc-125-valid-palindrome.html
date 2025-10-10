@@ -112,62 +112,62 @@
 <h2>Solution #1 - Readable, but Suboptimal</h2>
 <p>This solution runs quickly, but allocates a new <code>Vec&lt;char&gt;</code> to hold the
 alphanumeric characters.</p>
-<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="n">Runtime</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">ms</span><span class="w"> </span><span class="n">beats</span><span class="w"> </span><span class="mi">100</span><span class="o">%</span>
-<span class="o">//</span><span class="w"> </span><span class="n">Memory</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mf">2.73</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="n">beats</span><span class="w"> </span><span class="mf">12.84</span><span class="o">%</span>
-<span class="n">pub</span><span class="w"> </span><span class="n">fn</span><span class="w"> </span><span class="n">is_palindrome</span><span class="p">(</span><span class="nl">s</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">bool</span><span class="w"> </span><span class="err">{</span>
-<span class="n">let</span><span class="w"> </span><span class="nl">t</span><span class="p">:</span><span class="w"> </span><span class="n">Vec</span><span class="o">&lt;</span><span class="nc">char</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span>
-<span class="w">    </span><span class="p">.</span><span class="n">to_lowercase</span><span class="p">()</span>
-<span class="w">    </span><span class="p">.</span><span class="n">chars</span><span class="p">()</span>
-<span class="w">    </span><span class="p">.</span><span class="k">filter</span><span class="p">(</span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">is_alphanumeric</span><span class="p">())</span>
-<span class="w">    </span><span class="p">.</span><span class="k">collect</span><span class="p">();</span>
-<span class="k">if</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">is_empty</span><span class="p">()</span><span class="w"> </span><span class="err">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
-<span class="err">}</span>
-<span class="n">let</span><span class="w"> </span><span class="n">mut</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="n">let</span><span class="w"> </span><span class="n">mut</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="nf">len</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="k">while</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="err">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">t</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">t</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="err">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
-<span class="w">    </span><span class="err">}</span>
-<span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="n">j</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="err">}</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code>// Runtime of 0 ms beats 100%
+// Memory of 2.73 MB beats 12.84%
+pub fn is_palindrome(s: String) -&gt; bool {
+let t: Vec&lt;char&gt; = s
+    .to_lowercase()
+    .chars()
+    .filter(|x| x.is_alphanumeric())
+    .collect();
+if t.is_empty() {
+    return true;
+}
+let mut i = 0;
+let mut j = t.len() - 1;
+while i &lt; j {
+    if t[i] != t[j] {
+    return false;
+    }
+    i += 1;
+    j -= 1;
+}
+}
 </code></pre></div>
 
 <h2>Solution #2 - Optimal</h2>
 <p>This solution is more memory efficient than #1. It iterates directly
 over the input string, skipping non-alphanumeric characters.</p>
-<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="n">Runtime</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">ms</span><span class="w"> </span><span class="n">beets</span><span class="w"> </span><span class="mi">100</span><span class="o">%</span>
-<span class="o">//</span><span class="w"> </span><span class="n">Memory</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mf">2.30</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="n">beats</span><span class="w"> </span><span class="mf">93.51</span><span class="o">%</span>
-<span class="n">pub</span><span class="w"> </span><span class="n">fn</span><span class="w"> </span><span class="n">is_palindrome</span><span class="p">(</span><span class="nl">s</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">bool</span><span class="w"> </span><span class="err">{</span>
-<span class="w">    </span><span class="n">let</span><span class="w"> </span><span class="n">mut</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="n">let</span><span class="w"> </span><span class="n">mut</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="nf">len</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="err">{</span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="nl">Note</span><span class="p">:</span><span class="w"> </span><span class="n">as_bytes</span><span class="p">()</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">OK</span><span class="w"> </span><span class="n">because</span><span class="w"> </span><span class="n">problem</span><span class="w"> </span><span class="k">statement</span><span class="w"> </span><span class="n">says</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="nf">ASCII</span>
-<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="err">!</span><span class="n">s</span><span class="p">.</span><span class="n">as_bytes</span><span class="p">()</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="n">is_ascii_alphanumeric</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="nf">len</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="err">{</span>
-<span class="w">            </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">        </span><span class="err">}</span>
-<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="err">!</span><span class="n">s</span><span class="p">.</span><span class="n">as_bytes</span><span class="p">()</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">.</span><span class="n">is_ascii_alphanumeric</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">{</span>
-<span class="w">            </span><span class="n">j</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">        </span><span class="err">}</span>
+<div class="highlight"><pre><span></span><code>// Runtime of 0 ms beets 100%
+// Memory of 2.30 MB beats 93.51%
+pub fn is_palindrome(s: String) -&gt; bool {
+    let mut i = 0;
+    let mut j = s.len() - 1;
+    while i &lt; j {
+        // Note: as_bytes() is OK because problem statement says s only contains ASCII
+        while !s.as_bytes()[i].is_ascii_alphanumeric() &amp;&amp; i &lt; s.len() - 1 {
+            i += 1;
+        }
+        while !s.as_bytes()[j].is_ascii_alphanumeric() &amp;&amp; j &gt; 0 {
+            j -= 1;
+        }
 
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="err">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
-<span class="w">        </span><span class="err">}</span>
+        if i &gt;= j {
+            return true;
+        }
 
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">as_bytes</span><span class="p">()</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="n">to_ascii_lowercase</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">as_bytes</span><span class="p">()</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">.</span><span class="n">to_ascii_lowercase</span><span class="p">()</span><span class="w"> </span><span class="err">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
-<span class="w">        </span><span class="err">}</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="nf">len</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="err">{</span>
-<span class="w">            </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">        </span><span class="err">}</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">{</span>
-<span class="w">            </span><span class="n">j</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">        </span><span class="err">}</span><span class="p">;</span>
-<span class="w">    </span><span class="err">}</span>
-<span class="w">    </span><span class="k">true</span>
-<span class="err">}</span>
+        if s.as_bytes()[i].to_ascii_lowercase() != s.as_bytes()[j].to_ascii_lowercase() {
+            return false;
+        }
+        if i &lt; s.len() - 1 {
+            i += 1;
+        }
+        if j &gt; 0 {
+            j -= 1
+        };
+    }
+    true
+}
 </code></pre></div>
 </article>
 

@@ -124,9 +124,9 @@ overlap. In the example above, you'd have:</p>
 and seven pairings that occur once. <a href="http://stackoverflow.com/questions/10844556/python-counting-frequency-of-
 pairs-of-elements-in-a-list-of-lists">Stack Overflow will tell you how to do
 it</a>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">Counter</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">chain</span><span class="p">,</span><span class="w"> </span><span class="n">combinations</span>
-<span class="n">Counter</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="n">row</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">matrix</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code>from collections import Counter
+from itertools import chain, combinations
+Counter(chain.from_iterable(combinations(row, 2) for row in matrix))
 </code></pre></div>
 
 <p>That works, but it's completely confusing. I'm going to break down what it's
@@ -136,26 +136,26 @@ doing, beginning with <code>combinations(row, 2)</code>.</p>
 iterable (e.g. a list). The code below uses <code>combinations</code> to generate all the
 pairs in the matrix's first row. Each tuple represents one pairing; for
 example, <code>(1, 2)</code> indicates that 1 and 2 were in the same row one time.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">combinations</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; x = combinations(matrix[0], 2)
 
-<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nb">print</span><span class="w"> </span><span class="n">x</span>
-<span class="o">&lt;</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="mh">0x10d1719f0</span><span class="o">&gt;</span>
+&gt;&gt;&gt; print x
+&lt;itertools.combinations object at 0x10d1719f0&gt;
 
-<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nb">print</span><span class="w"> </span><span class="n">list</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)]</span>
+&gt;&gt;&gt; print list(x)
+[(1, 2), (1, 3), (2, 3)]
 </code></pre></div>
 
 <p>To find the combinations in all of the rows in the matrix, we apply
 <code>combinations()</code> to each row through a generator comprehension. A generator
 comprehension has the same syntax as a list comprehension but produces a
 generator instead of a list.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nv">combos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">(</span><span class="nv">combinations</span><span class="ss">(</span><span class="nv">row</span>,<span class="w"> </span><span class="mi">2</span><span class="ss">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">row</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">matrix</span><span class="ss">)</span>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; combos = (combinations(row, 2) for row in matrix)
 
-<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nv">print</span><span class="w"> </span><span class="nv">combos</span>
-<span class="o">&lt;</span><span class="nv">generator</span><span class="w"> </span><span class="nv">object</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">genexpr</span><span class="o">&gt;</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="mi">0</span><span class="nv">x10d168f00</span><span class="o">&gt;</span>
+&gt;&gt;&gt; print combos
+&lt;generator object &lt;genexpr&gt; at 0x10d168f00&gt;
 
-<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nv">print</span><span class="w"> </span>[<span class="nv">list</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">combos</span>]
-[[<span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span><span class="ss">)</span>,<span class="w"> </span><span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">3</span><span class="ss">)</span>,<span class="w"> </span><span class="ss">(</span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span><span class="ss">)</span>],<span class="w"> </span>[<span class="ss">(</span><span class="mi">4</span>,<span class="w"> </span><span class="mi">5</span><span class="ss">)</span>,<span class="w"> </span><span class="ss">(</span><span class="mi">4</span>,<span class="w"> </span><span class="mi">6</span><span class="ss">)</span>,<span class="w"> </span><span class="ss">(</span><span class="mi">5</span>,<span class="w"> </span><span class="mi">6</span><span class="ss">)</span>],<span class="w"> </span>[<span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span><span class="ss">)</span>,<span class="w"> </span><span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">6</span><span class="ss">)</span>,<span class="w"> </span><span class="ss">(</span><span class="mi">2</span>,<span class="w"> </span><span class="mi">6</span><span class="ss">)</span>]]
+&gt;&gt;&gt; print [list(x) for x in combos]
+[[(1, 2), (1, 3), (2, 3)], [(4, 5), (4, 6), (5, 6)], [(1, 2), (1, 6), (2, 6)]]
 </code></pre></div>
 
 <h3>Chaining the combinations</h3>

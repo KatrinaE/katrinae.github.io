@@ -123,8 +123,8 @@ my Mac, the IDE is at <code>/Applications/Arduino.app</code> and the WiFi firmwa
 <code>/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/firmwares/wifishield</code>.</p>
 <p>You can double-check that you have the right version by going to lines 41-42
 of <code>wifishield/wifiHD/src/main.c</code>. They should say this:</p>
-<div class="highlight"><pre><span></span><code><span class="o">/*</span><span class="w"> </span><span class="n">FIRMWARE</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">*/</span>
-<span class="k">const</span><span class="w"> </span><span class="nb">char</span><span class="o">*</span><span class="w"> </span><span class="n">fwVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1.1.0&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>/* FIRMWARE version */
+const char* fwVersion = &quot;1.1.0&quot;;
 </code></pre></div>
 
 <h4>From Github</h4>
@@ -201,16 +201,16 @@ Thank you!
 <h3>6th: Check that the install was successful</h3>
 <p>To verify that your WiFi shield is using the new firmware, mount the WiFi
 shield on your Arduino and upload this sketch:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;WiFi.h&gt;</span>
+<div class="highlight"><pre><span></span><code>#include &lt;WiFi.h&gt;
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;the version is: &quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">firmwareVersion</span><span class="p">());</span>
-<span class="p">}</span>
+void setup() {
+  Serial.begin(9600);
+  Serial.println(&quot;the version is: &quot;);
+  Serial.println(WiFi.firmwareVersion());
+}
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="p">}</span>
+void loop() {
+}
 </code></pre></div>
 
 <p>Check the serial output (in the IDE, you can do this by clicking on the

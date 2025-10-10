@@ -169,7 +169,7 @@ CurrentReceiver/CurrentReceiver.ino.</p>
 </table>
 <h4>Controlling the Car</h4>
 <p>The car can be controlled via CURL:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">curl</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">Arduino</span><span class="err">&#39;</span><span class="nx">s</span><span class="o">-</span><span class="nx">ip</span><span class="o">-</span><span class="nx">address</span><span class="p">&gt;</span><span class="w"> </span><span class="o">-</span><span class="nx">G</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">params</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code>curl &lt;Arduino&#39;s-ip-address&gt; -G &lt;params&gt;
 </code></pre></div>
 
 <p><code>&lt;params&gt;</code> is a string of integers. <em>The first integer, 0 or 1, indicates
@@ -177,17 +177,17 @@ whether the motor is to be turned on or off.</em> The second integer, 0 or 1,
 indicates the motor's direction. * the third integer, 000 to 255, indicates
 the motor's speed.</p>
 <p>For example,</p>
-<div class="highlight"><pre><span></span><code><span class="nx">curl</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">ip</span><span class="o">-</span><span class="nx">address</span><span class="p">&gt;</span><span class="w"> </span><span class="o">-</span><span class="nx">G</span><span class="w"> </span><span class="mi">11255</span>
+<div class="highlight"><pre><span></span><code>curl &lt;ip-address&gt; -G 11255
 </code></pre></div>
 
 <p>sends the car forward at top speed.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">curl</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">ip</span><span class="o">-</span><span class="nx">address</span><span class="p">&gt;</span><span class="w"> </span><span class="o">-</span><span class="nx">G</span><span class="w"> </span><span class="mi">10020</span>
+<div class="highlight"><pre><span></span><code>curl &lt;ip-address&gt; -G 10020
 </code></pre></div>
 
 <p>moves the car backward very slowly.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">curl</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">ip</span><span class="o">-</span><span class="nx">address</span><span class="p">&gt;</span><span class="w"> </span><span class="o">-</span><span class="nx">G</span><span class="w"> </span><span class="mi">01255</span>
-<span class="nx">curl</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">ip</span><span class="o">-</span><span class="nx">address</span><span class="p">&gt;</span><span class="w"> </span><span class="o">-</span><span class="nx">G</span><span class="w"> </span><span class="mi">00000</span>
-<span class="nx">curl</span><span class="w"> </span><span class="p">&lt;</span><span class="nx">ip</span><span class="o">-</span><span class="nx">address</span><span class="p">&gt;</span><span class="w"> </span><span class="o">-</span><span class="nx">G</span><span class="w"> </span><span class="mi">00125</span>
+<div class="highlight"><pre><span></span><code>curl &lt;ip-address&gt; -G 01255
+curl &lt;ip-address&gt; -G 00000
+curl &lt;ip-address&gt; -G 00125
 </code></pre></div>
 
 <p>All of the above (and anything else beginning with a zero) turn the motor off.</p>

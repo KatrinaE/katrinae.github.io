@@ -147,23 +147,23 @@ serve as the keys in the hash table, and the linked list nodes containing
 <a href="https://github.com/KatrinaE/miniprojects/tree/master/lru-cache">Github</a>. It
 has two separate parts: the cache itself and the circular doubly linked list.
 The cache is an object, so you can do things like:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LRUCache</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">myfunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="n">y</span>
-<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">cache</span><span class="o">.</span><span class="n">save_and_return</span><span class="p">(</span><span class="n">myfunc</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
-<span class="mi">6</span>
-<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">cache</span><span class="o">.</span><span class="n">save_and_return</span><span class="p">(</span><span class="n">myfunc</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span>
-<span class="mi">12</span>
-<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">cache</span><span class="o">.</span><span class="n">print_items</span><span class="p">()</span>
-<span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; cache = LRUCache()
+&gt;&gt;&gt; myfunc = lambda x,y: x*y
+&gt;&gt;&gt; cache.save_and_return(myfunc, 2, 3)
+6
+&gt;&gt;&gt; cache.save_and_return(myfunc, 3, 4)
+12
+&gt;&gt;&gt; cache.print_items()
+[12, 6]
 </code></pre></div>
 
 <p>Python 3 has LRU caches built in, but they're implemented as decorators rather
 than objects. If you want to use a cache with a particular function, you can
 wrap that function with an LRU cache decorator:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">lru_cache</span>
-<span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">myfunc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">):</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="n">y</span>
+<div class="highlight"><pre><span></span><code>from functools import lru_cache
+@lru_cache(maxsize=10)
+def myfunc(x, y):
+    return x*y
 </code></pre></div>
 
 <p>This presentation is perhaps more useful, though the underlying mechanics are

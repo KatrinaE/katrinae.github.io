@@ -118,8 +118,8 @@ work out of the box, but only in GUI form - the command line tool installer
 fails because of El Capitan's <a href="https://support.apple.com/en-us/HT204899">System Integrity
 Protection</a>, which prevents writing
 to /usr/bin/, even with sudo.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>/Applications/Unison.app/Contents/MacOS/cltool<span class="w"> </span>
-cp:<span class="w"> </span>/usr/bin/unison:<span class="w"> </span>Operation<span class="w"> </span>not<span class="w"> </span>permitted
+<div class="highlight"><pre><span></span><code>$ sudo /Applications/Unison.app/Contents/MacOS/cltool 
+cp: /usr/bin/unison: Operation not permitted
 </code></pre></div>
 
 <h3>Building from Source</h3>
@@ -145,7 +145,7 @@ agreement.</p>
 <p>Unison is written in the OCaml language, but El Capitan does not come with an
 OCaml compiler. However, the OCaml package manager, OPAM, is available via
 Homebrew and comes with a compiler.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>opam
+<div class="highlight"><pre><span></span><code>$ brew install opam
 </code></pre></div>
 
 <p>Unfortunately, OPAM's default compiler - version 4.02.3 - does not build
@@ -154,18 +154,18 @@ immediately. Fortunately, OPAM allows you to specify an alternative version
 when you set it up, and to quickly switch between versions after that. The
 most recent compiler version that worked for me was 4.01.0, so tell OPAM to
 use that.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>opam<span class="w"> </span>init<span class="w"> </span>--comp<span class="w"> </span><span class="m">4</span>.01.0
+<div class="highlight"><pre><span></span><code>$ opam init --comp 4.01.0
 </code></pre></div>
 
 <p>OPAM will ask you to let it modify <code>~/.bash_profile</code> and <code>~/.ocamlinit</code> so
 that it can properly set paths and environment variables. I told it yes ("y")
 to make life easier.</p>
 <p>Once OPAM is installed, activate it and verify that it works.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">eval</span><span class="w"> </span><span class="sb">`</span>opam<span class="w"> </span>config<span class="w"> </span>env<span class="sb">`</span>
-$<span class="w"> </span>opam<span class="w"> </span>--version
-<span class="m">1</span>.2.2
-$<span class="w"> </span>ocaml<span class="w"> </span>-version
-The<span class="w"> </span>OCaml<span class="w"> </span>toplevel,<span class="w"> </span>version<span class="w"> </span><span class="m">4</span>.01.0
+<div class="highlight"><pre><span></span><code>$ eval `opam config env`
+$ opam --version
+1.2.2
+$ ocaml -version
+The OCaml toplevel, version 4.01.0
 </code></pre></div>
 
 <h6>Switching Compilers</h6>
@@ -173,12 +173,12 @@ The<span class="w"> </span>OCaml<span class="w"> </span>toplevel,<span class="w"
 different version for some reason, e.g. for compatibility with a remote Unison
 installation. Fortunately, this is easy to do. For example, to switch to
 version 3.12.0 of the compiler, run</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>opam<span class="w"> </span>switch<span class="w"> </span><span class="m">3</span>.12.0
-$<span class="w"> </span><span class="nb">eval</span><span class="w"> </span><span class="sb">`</span>opam<span class="w"> </span>config<span class="w"> </span>env<span class="sb">`</span>
+<div class="highlight"><pre><span></span><code>$ opam switch 3.12.0
+$ eval `opam config env`
 </code></pre></div>
 
 <p>To see all available compiler versions, use</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>opam<span class="w"> </span>switch<span class="w"> </span>list
+<div class="highlight"><pre><span></span><code>$ opam switch list
 </code></pre></div>
 
 <p>You'll need to rebuild Unison after you switch compilers.</p>
@@ -187,15 +187,15 @@ $<span class="w"> </span><span class="nb">eval</span><span class="w"> </span><sp
 tarball</a>.
 If you'd like to keep the source code after installation, move it to wherever
 you'd like to put it. (I usually use /usr/local/src).</p>
-<div class="highlight"><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="n">tar</span><span class="w"> </span><span class="o">-</span><span class="n">C</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="w"> </span><span class="o">-</span><span class="n">zxvf</span><span class="w"> </span><span class="o">~/</span><span class="n">Downloads</span><span class="o">/</span><span class="n">unison</span><span class="o">-</span><span class="mf">2.40</span><span class="o">.</span><span class="mf">63.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
-<span class="o">$</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">unison</span><span class="o">-</span><span class="mf">2.40</span><span class="o">.</span><span class="mi">63</span><span class="o">/</span>
+<div class="highlight"><pre><span></span><code>$ tar -C /usr/local/src -zxvf ~/Downloads/unison-2.40.63.tar.gz
+$ cd /usr/local/src/unison-2.40.63/
 </code></pre></div>
 
 <p>If, on the other hand, you're planning to delete it once the build is
 complete, just leave the source code in ~/Downloads.</p>
-<div class="highlight"><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="o">~/</span><span class="n">Downloads</span>
-<span class="o">$</span><span class="w"> </span><span class="n">tar</span><span class="w"> </span><span class="o">-</span><span class="n">zxvf</span><span class="w"> </span><span class="n">unison</span><span class="o">-</span><span class="mf">2.40</span><span class="o">.</span><span class="mf">63.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
-<span class="o">$</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="n">unison</span><span class="o">-</span><span class="mf">2.40</span><span class="o">.</span><span class="mi">63</span>
+<div class="highlight"><pre><span></span><code>$ cd ~/Downloads
+$ tar -zxvf unison-2.40.63.tar.gz
+$ cd unison-2.40.63
 </code></pre></div>
 
 <h4>Step 2: Modifying the Source Code</h4>
@@ -229,25 +229,25 @@ are not too many places to update:</p>
 </ul>
 <h4>Step 3: Building</h4>
 <p>It's finally time to build the binary.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr/local/src/unison-2.40.63<span class="w">      </span><span class="c1"># Or wherever you put the source code in step 1</span>
-$<span class="w"> </span>make<span class="w"> </span><span class="nv">UISTYLE</span><span class="o">=</span>text
+<div class="highlight"><pre><span></span><code>$ cd /usr/local/src/unison-2.40.63      # Or wherever you put the source code in step 1
+$ make UISTYLE=text
 </code></pre></div>
 
 <p>If the build fails, clean up after it with 'make clean' before trying again:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>clean
+<div class="highlight"><pre><span></span><code>$ make clean
 </code></pre></div>
 
 <p>Running Unison without any arguments should bring up the help message. Note
 that you'll need to run <code>./unison</code>, not <code>unison</code>, as you haven't yet placed it
 on your path.</p>
-<div class="highlight"><pre><span></span><code><span class="err">$</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">unison</span>
-<span class="k">Usage</span><span class="err">:</span><span class="w"> </span><span class="n">unison</span><span class="w"> </span><span class="o">[</span><span class="n">options</span><span class="o">]</span>
-<span class="w">    </span><span class="ow">or</span><span class="w"> </span><span class="n">unison</span><span class="w"> </span><span class="n">root1</span><span class="w"> </span><span class="n">root2</span><span class="w"> </span><span class="o">[</span><span class="n">options</span><span class="o">]</span>
-<span class="w">    </span><span class="ow">or</span><span class="w"> </span><span class="n">unison</span><span class="w"> </span><span class="n">profilename</span><span class="w"> </span><span class="o">[</span><span class="n">options</span><span class="o">]</span>
+<div class="highlight"><pre><span></span><code>$ ./unison
+Usage: unison [options]
+    or unison root1 root2 [options]
+    or unison profilename [options]
 
-<span class="k">For</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">options</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="ss">&quot;unison -help&quot;</span><span class="p">.</span>
-<span class="k">For</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">tutorial</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">basic</span><span class="w"> </span><span class="k">usage</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="ss">&quot;unison -doc tutorial&quot;</span><span class="p">.</span>
-<span class="k">For</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">documentation</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="ss">&quot;unison -doc topics&quot;</span><span class="p">.</span>
+For a list of options, type &quot;unison -help&quot;.
+For a tutorial on basic usage, type &quot;unison -doc tutorial&quot;.
+For other documentation, type &quot;unison -doc topics&quot;.
 </code></pre></div>
 
 <h5>Testing</h5>
@@ -265,30 +265,30 @@ its compatibility with that machine.</p>
 copy or link it to <code>/usr/local/bin/unison</code> so that you can call it from
 anywhere via <code>unison</code>.</p>
 <p>If you're saving the source somewhere, you can use a symlink.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/usr/local/src/unison-2.40.63/unison<span class="w"> </span>/usr/local/bin/unison
+<div class="highlight"><pre><span></span><code>$ ln -s /usr/local/src/unison-2.40.63/unison /usr/local/bin/unison
 </code></pre></div>
 
 <p>Or you can copy the binary directly. (Note: you'll have to do it this way if
 you're planning to remove the source code, since the original binary is in the
 source code directory).</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cp<span class="w"> </span>unison<span class="w"> </span>/usr/local/bin/unison
+<div class="highlight"><pre><span></span><code>$ cp unison /usr/local/bin/unison
 </code></pre></div>
 
 <h3>Troubleshooting</h3>
 <h4>Problem</h4>
 <p>You see messages that look like this:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span><span class="nv">UISTYLE</span><span class="o">=</span>text
-ocamlc<span class="w"> </span>-o<span class="w"> </span>mkProjectInfo<span class="w"> </span>unix.cma<span class="w"> </span>str.cma<span class="w"> </span>mkProjectInfo.ml
-make:<span class="w"> </span>ocamlc:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
-<span class="c1"># [... more error output]</span>
+<div class="highlight"><pre><span></span><code>$ make UISTYLE=text
+ocamlc -o mkProjectInfo unix.cma str.cma mkProjectInfo.ml
+make: ocamlc: No such file or directory
+# [... more error output]
 </code></pre></div>
 
 <h5>Solution</h5>
 <p>Install an OCaml compiler (see step 1)</p>
 <h4>Problem</h4>
 <p>You see lots of warnings that look like this:</p>
-<div class="highlight"><pre><span></span><code><span class="n">ld</span><span class="o">:</span><span class="w"> </span><span class="n">warning</span><span class="o">:</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="n">file</span>
-<span class="o">(/</span><span class="n">usr</span><span class="sr">/local/lib/ocaml/</span><span class="n">libunix</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="n">rewinddir</span><span class="o">.</span><span class="na">o</span><span class="o">))</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">built</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">newer</span><span class="w"> </span><span class="n">OSX</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">(</span><span class="mf">10.11</span><span class="o">)</span><span class="w"> </span><span class="n">than</span><span class="w"> </span><span class="n">being</span><span class="w"> </span><span class="n">linked</span><span class="w"> </span><span class="o">(</span><span class="mf">10.5</span><span class="o">)</span>
+<div class="highlight"><pre><span></span><code>ld: warning: object file
+(/usr/local/lib/ocaml/libunix.a(rewinddir.o)) was built for newer OSX version (10.11) than being linked (10.5)
 </code></pre></div>
 
 <h5>Solution</h5>
@@ -296,8 +296,8 @@ make:<span class="w"> </span>ocamlc:<span class="w"> </span>No<span class="w"> <
 step 2).</p>
 <h4>Problem</h4>
 <p>Unison runs, but immediately segfaults.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./unison
-<span class="m">0</span>??Segmentation<span class="w"> </span>fault:<span class="w"> </span><span class="m">11</span>
+<div class="highlight"><pre><span></span><code>$ ./unison
+0??Segmentation fault: 11
 </code></pre></div>
 
 <h5>Solution 1</h5>
@@ -308,7 +308,7 @@ Capitan with OCaml 4.02.x. Try 4.01.x instead.</p>
 it's not in
 <code>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk</code>,
 look for it elsewhere(e.g. with mdfind).</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mdfind<span class="w"> </span>-name<span class="w"> </span>.sdk
+<div class="highlight"><pre><span></span><code>$ mdfind -name .sdk
 </code></pre></div>
 
 <h4>Problem</h4>
